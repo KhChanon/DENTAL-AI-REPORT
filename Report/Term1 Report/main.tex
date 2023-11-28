@@ -1,0 +1,179 @@
+\documentclass[12pt,oneside,openright,a4paper]{cpe-english-project}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage{thai}
+\newfontfamily\thaifont[Script=Thai,Scale=1.23]{TH Sarabun New}
+\defaultfontfeatures{Mapping=tex-text,Scale=1.0,LetterSpace=0.0}
+\setmainfont[Scale=1.0,LetterSpace=0,WordSpace=1.0,FakeStretch=1.0]{Times New Roman}
+\emergencystretch=10pt
+%\XeTeXlinebreaklocale "th_TH"	
+%\XeTeXlinebreakskip = 0pt plus 1pt
+%\setmathfont(Digits)[Scale=1.0,LetterSpace=0,FakeStretch=1.0]{Times New Roman}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Customize below to suit your needs 
+% The ones that are optional can be left blank. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First line of title
+\def\disstitleone{DENTAL AI CHATBOT FOR DIAGNOSTICS AND POST-SURGERY CARE}   
+% Your first name and lastname
+\def\dissauthor{MR. CHANON KHANIJOH}   % 1st member
+%%% Put other group member names here ..
+\def\dissauthortwo{MR. PECHDANAI SAEPONG}   % 2nd member (optional)
+\def\dissauthorthree{MS. FASAI SAE-TAE}   % 3rd member (optional)
+\def\dissauthorID{63070503408}              % Author of dissertation
+\def\dissauthortwoID{63070503434}              % Author of dissertation
+\def\dissauthorthreeID{63070503436}   
+\def\dissauthorEMAIL{chanon.kha@mail.kmutt.ac.th}              % Author of dissertation
+\def\dissauthortwoEMAIL{pechdanai.sp@mail.kmutt.ac.th}              % Author of dissertation
+\def\dissauthorthreeEMAIL{fasai.sae@mail.kmutt.ac.th}  
+
+
+% The degree that you're persuing..
+\def\dissdegree{Bachelor of Engineering} % Name of the degree
+\def\dissdegreeabrev{B.Eng} % Abbreviation of the degree
+\def\dissyear{2023}                   % Year of submission
+\def\thaidissyear{2566}               % Year of submission (B.E.)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Your project and independent study committee..
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\dissadvisor{Dr. Unchalisa Taetragool , Ph.D.}  % Advisor
+%%% Leave it empty if you have no Co-advisor
+\def\disscoadvisor{Dr. Vorapat Trachoo, D.D.S., M.D.}  % Co-advisor
+%%% Leave it empty if you have no Co-advisor 2
+\def\disscoadvisortwo{Dr. Kritsasith Warin, D.D.S.}  % Co-advisor 2
+
+\def\worktype{Project} %%  Project or Independent study
+\def\disscredit{3}   %% 3 credits or 6 credits
+
+
+\def\fieldofstudy{Computer Engineering} 
+\def\department{Computer Engineering} 
+\def\faculty{Engineering}
+ 
+\def\appendixnames{Appendix} %%% Appendices or Appendix
+
+% Change the line spacing here...
+\linespread{1.15}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End of personal customization.  Do not modify from this part 
+% to \begin{document} unless you know what you are doing...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%% Dissertation style %%%%%%%%%%%
+%\linespread{1.6} % Double-spaced  
+%%\oddsidemargin    0.5in
+%%\evensidemargin   0.5in
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand{\subfigtopskip}{10pt}
+%\renewcommand{\subfigbottomskip}{-5pt} 
+%\renewcommand{\subfigcapskip}{-6pt} %vertical space between caption
+%                                    %and figure.
+%\renewcommand{\subfigcapmargin}{0pt}
+
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\def\QED{\mbox{\rule[0pt]{1.5ex}{1.5ex}}}
+\def\proof{\noindent\hspace{2em}{\itshape Proof: }}
+\def\endproof{\hspace*{\fill}~\QED\par\endtrivlist\unskip}
+%\newenvironment{proof}{{\sc Proof:}}{~\hfill \blacksquare}
+%% The hyperref package redefines the \appendix. This one 
+%% is from the dissertation.cls
+%\def\appendix#1{\iffirstappendix \appendixcover \firstappendixfalse \fi \chapter{#1}}
+%\renewcommand{\arraystretch}{0.8}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\pdfstringdefDisableCommands{%
+\let\MakeUppercase\relax
+}
+\begin{center}
+  \includegraphics[width=2.8cm]{Image/image38.png}
+\end{center}
+\vspace*{-1cm}
+
+
+\maketitlepage 
+\makesignaturepage 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% ToC, List of figures/tables %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The three commands below automatically generate the table 
+% of content, list of tables and list of figures
+\tableofcontents                    
+\listoftables
+\listoffigures                      
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% List of symbols page %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You have to add this manually..
+\listofsymbols
+\begin{flushleft}
+\begin{tabular}{@{}p{0.07\textwidth}p{0.7\textwidth}p{0.1\textwidth}}
+\textbf{SYMBOL}  & & \textbf{UNIT} \\[0.2cm]
+$\alpha$ & Test variable\hfill & m$^2$ \\
+$\lambda$ & Interarival rate\hfill &  jobs/second\\
+$\mu$ & Service rate\hfill & jobs/second\\
+\end{tabular}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% List of vocabs & terms %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You also have to add this manually..
+\listofvocab
+\begin{flushleft}
+\begin{tabular}{@{}p{1in}@{=\extracolsep{0.5in}}p{0.73\textwidth}}
+ABC & Adaptive Bandwidth Control \\
+MANET & Mobile Ad Hoc Network  \\
+Test & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condimentum purus. Pellentesque sed augue sapien. In volutpat quis diam laoreet suscipit. Curabitur fringilla sem nisi, at condimentum lectus consequat vitae.
+\end{tabular}
+\end{flushleft}
+
+%\setlength{\parskip}{1.2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% Main body %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Introduction}
+\section{Keywords}
+\quad Keywords: Oral Surgery, Dentistry, Diagnose, Follow-up, Artificial Intelligence, Chatbot, Machine Learning, Natural Language Processing
+
+\section{Problem Statement}
+  \subsection{Problem Statement and Motivation}
+    \quad Individuals seeking healthcare in today's world often run into a number of challenges while attempting to acquire correct information regarding their symptoms and appropriate treatment. Many patients have minor illnesses or symptoms that might not necessarily require immediate medical attention from a doctor. Nevertheless, these individuals usually resort to clinics or hospitals for a diagnosis as there is a lack of information and assistance available. \par
+    \quad This rise in patient visits not only places a considerable burden on healthcare facilities but also results in financial implications for patients themselves. The associated costs, such as consultation fees, diagnostic tests, and travel expenses, can impose an unreasonable financial strain on individuals. Moreover, this increased demand for medical attention has contributed to an imbalance in the doctor-to-patient ratio, affecting the overall quality of healthcare services provided. According to the National Statistical Office, the ratio of doctor-to-patient ratio is 1 to 8,057.\par
+    \quad Furthermore, the challenges do not cease once treatment is initiated. After receiving medical care, many patients still have many concerns about their health conditions. Many patients desire prompt answers to their worries about their conditions. In addition to these concerns, patients often have recurring questions, commonly categorized as frequently asked questions (FAQs).\par
+    \quad Regrettably, doctors and medical staff find themselves overwhelmed by the immense workload caused from the increased patient influx. As they aim to deliver quality care and diagnosis, they may have limited time and resources to respond satisfactorily to the patients.\par
+    \quad To address these pressing issues and enhance the healthcare experience for both patients and healthcare providers, we were motivated to develop an application that can effectively address these issues. The application will have the capability to diagnose common diseases and answer frequently asked questions from the patient's symptoms. Additionally, it will feature a chatbot designed to follow up on patient conditions after surgery.\par
+
+
+  \subsection{Potential Benefits}
+    \quad The purpose of this dental application is to reduce frequently asked questions from patients regarding oral symptoms or diseases and also help with post-surgery follow-up thus reducing the workload of the dentist and medical staff. Dentists can use the extra time they gain to concentrate on patients who require more extensive care.\par
+    \quad In addition to the benefits that doctors receive from this application, patients and the general public also get their benefit as they have immediate access to oral diagnosis and knowledge. Since patients can understand their symptoms and get guidance on simple treatments, this helps to decrease needless doctor visits. Moreover, it can benefit patients by decreasing the expense of visiting the doctor to get a diagnosis. Another benefit that patients receive is continuous monitoring of their symptoms, which allows their doctor to be informed of any unexpected post-surgery problems.\par
+
+\section{Objectives}
+\begin{itemize}
+  \item To acquire the knowledge and skills necessary for developing an AI-powered chatbot. 
+  \item To build a chatbot specialized in providing accurate answers to specific dental questions.
+  \item To reduce doctors and staff by minimizing repeated questions and explanations from patients.
+\end{itemize}
+
+
+
+\end{document}
