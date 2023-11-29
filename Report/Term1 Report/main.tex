@@ -1,5 +1,5 @@
 \documentclass[12pt,oneside,openright,a4paper]{cpe-english-project}
-
+\usepackage{placeins}
 \usepackage{polyglossia}
 \setdefaultlanguage{english}
 \setotherlanguage{thai}
@@ -168,15 +168,131 @@ Test & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condi
     \qquad In addition to the benefits that doctors receive from this application, patients and the general public also get their benefit as they have immediate access to oral diagnosis and knowledge. Since patients can understand their symptoms and get guidance on simple treatments, this helps to decrease needless doctor visits. Moreover, it can benefit patients by decreasing the expense of visiting the doctor to get a diagnosis. Another benefit that patients receive is continuous monitoring of their symptoms, which allows their doctor to be informed of any unexpected post-surgery problems.\par
 
 \section{Objectives}
-\begin{itemize}
-  \item To acquire the knowledge and skills necessary for developing an AI-powered chatbot. 
-  \item To build a chatbot specialized in providing accurate answers to specific dental questions.
-  \item To reduce doctors and staff by minimizing repeated questions and explanations from patients.
-\end{itemize}
+  \begin{itemize}
+    \item To acquire the knowledge and skills necessary for developing an AI-powered chatbot. 
+    \item To build a chatbot specialized in providing accurate answers to specific dental questions.
+    \item To reduce doctors and staff by minimizing repeated questions and explanations from patients.
+  \end{itemize}
+
+\section{Expected Result}
+  \qquad This project aims to develop a chatbot utilizing advanced natural language processing and machine learning techniques to be able to address frequently asked questions related to oral surgeries and be able to perform post-surgery follow-up. The chatbot is expected to provide an accurate response. \par  
+
+\section{Scope of Work}
+  \qquad The scope of this project involves the development of a chatbot designed to address frequently asked questions related to oral surgeries and provide post-surgery follow-up support. The chat bot will utilize natural language processing (NLP) and machine learning algorithms. The primary functions of the chatbot includes answering queries about each surgery, performing post-surgery follow-up, offering guidance and suggestions. Our primary focus will be on 4 specific surgical operations: Tooth Extraction, Wisdom Tooth Removal, Periodontal Surgery, Dental Implant Surgery. \par
+  \qquad The final deliverable of this project will be a fully functional chatbot integrated into a web application, able to handle a range of frequently asked questions and perform post-surgery follow-ups. The project involves extensive research into relevant dentistry information, the development and training of machine learning models for question answering, and the design and implementation of the user interface. A usability test will be conducted to assess the effectiveness and user-friendliness of the chatbot and the associated web application. \par
+
+\section{Project Schedule}
+  \subsection{Semester 1}
+    \begin{enumerate}
+      \item Proposal
+        \begin{itemize}
+          \item Discuss Project with Advisors
+          \item Kick-off meeting
+          \item Write Project Idea
+          \item Write Proposal Report
+          \item Make Proposal Presentation          
+        \end{itemize}
+      \item Project Planning
+        \begin{itemize}
+          \item Collect Requirement
+          \item Plan Task Schedule          
+        \end{itemize}
+      \item Learning and Research
+        \begin{itemize}
+          \item Research on Methodology
+          \item Research On Oral Symptoms and FAG
+          \item Research on Related Paper
+          \item Study 4 Specific Oral Surgical Operations
+          \item Study Post Surgery Follow-Up Procedure
+        \end{itemize}
+      \item Collect Data
+        \begin{itemize}
+          \item Prepare for Data Collecting
+          \item Data Collecting
+          \item Clean Data                 
+        \end{itemize}
+      \item Design and Data Preparation
+        \begin{itemize}
+          \item Make Use Case Diagram
+          \item Make Architecture Diagram
+          \item Design Ux/Ui
+          \item Design AI Design
+          \item Make Navigation Map                  
+        \end{itemize}
+      \item Implementation
+        \begin{itemize}
+          \item Select an Appropriate State-of-the-art AI Model
+          \item Select an Appropriate Chatbot Framework 
+          \item Select an Appropriate Front End Framework                 
+        \end{itemize}
+      \item Final Report
+        \begin{itemize}
+          \item Write Final Report
+          \item Make Final Presentation              
+        \end{itemize}
+    \end{enumerate}
+
+  \subsection*{Deliverables for Term 1}
+    \begin{itemize}
+      \item Final Proposal
+      \item Use case diagram
+      \item Architecture Diagram
+      \item Navigation map
+      \item ER Diagram
+      \item Customer Journey
+      \item Final UX/UI design
+      \item Survey dental FAQ questionnaire for diagnosis and follow-up
+    \end{itemize}
+    \begin{figure}[!h]
+      \centering
+      \fbox{\includegraphics[width=.9\textwidth]{Image/Term1_Gantt.png}}
+      \caption{Semester 1 plan schedule}\label{fig:Term1_Gantt}
+    \end{figure}
+    \begin{figure}[!h]
+      \centering
+      \fbox{\includegraphics[width=.9\textwidth]{Image/Term1_Gantt_Actual.png}}
+      \caption{Semester 1 actual schedule}\label{fig:Term1_Gantt_Actual}
+    \end{figure}
+
+  \subsection{Semester 2}
+    \begin{enumerate}
+      \item Deep Learning and Chatbot Implementation
+        \begin{itemize}
+          \item Model Implement
+          \item Model Training
+          \item Model Testing and Evaluation
+        \end{itemize}
+      \item Web Application Implementation
+        \begin{itemize}
+          \item Backend
+          \item Frontend
+          \item Test Case Design
+          \item Unit Testing
+          \item Usability Testing
+        \end{itemize}
+      \item Semester 2 Report
+        \begin{itemize}
+          \item Write Semester Report
+          \item Semester Presentation
+        \end{itemize}
+    \end{enumerate}
+
+  \subsection*{Deliverables for Term 2}
+    \begin{itemize}
+      \item Mobile application in both iOS and Android platform
+      \item Testing result
+      \item Feedbacks from users
+      \item Senior Project Report
+    \end{itemize}
+    \begin{figure}[!h]
+      \centering
+      \fbox{\includegraphics[width=.9\textwidth]{Image/Term2_Gantt.png}}
+      \caption{Semester 2 plan schedule}\label{fig:Term2_Gantt}
+    \end{figure}
 
 \chapter{THEORY AND RELATED RESEARCH}
 \section{Introduction}
-\qquad This chapter will explain the details of the core concept and the solution planning. Theory and core concepts, languages and technologies, and related research will be discussed in this chapter. First, we will cover the theory and core concept of both dentistry and artificial intelligence. Second, programming languages and technologies that are intended to be used in this project will be described in the “Languages and Technologies” section. Lastly, related research and similar solution approaches to the objective will be discussed in the “Related Research and Competing Solutions” section.
+  \qquad This chapter will explain the details of the core concept and the solution planning. Theory and core concepts, languages and technologies, and related research will be discussed in this chapter. First, we will cover the theory and core concept of both dentistry and artificial intelligence. Second, programming languages and technologies that are intended to be used in this project will be described in the “Languages and Technologies” section. Lastly, related research and similar solution approaches to the objective will be discussed in the “Related Research and Competing Solutions” section.
 
 \section{Theory and Core Concepts}
   \qquad Common oral problems, including tooth decay, wisdom teeth complications, and gum disease, require consistent treatment for a considerable number of patients. Dentists, who routinely engage with patient inquiries and symptom tracking, have recommended that our focus be directed towards Tooth Extraction, Wisdom Tooth Removal, Periodontal Surgery, and Dental Implant Surgery. These specific procedures directly address the aforementioned common oral problems, aligning our work with the suggestions of dental professionals.\par
@@ -249,8 +365,76 @@ Test & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condi
     
     \subsubsection{ Pretrained Chatbot Model}
       \qquad A pretrained chatbot model is a Natural Language Processing (NLP) model that has been trained on a wide range of text data from sources such as books, articles, social media, etc. These models are equipped with the capability to understand and generate text that closely resembles human language, making them valuable for chatbot development and other natural language tasks. These chatbots can also undergo fine-tuning or additional training for a specific task or domain to enhance their accuracy and performance.\par
-      \paragraph{DeBERTa \\}
-        \quad DeBERTa (Decoding-enhanced BERT with disentangled attention) is a neural language model architecture designed to enhance the performance of pre-trained models like BERT (Bidirectional Encoder Representations from Transformers) and RoBERTa (Robustly optimized BERT approach) with two techniques, a disentangled attention mechanism and an enhanced mask decoder.\par
+      \paragraph{DeBERTa}\mbox{}\\
+        \null\qquad DeBERTa (Decoding-enhanced BERT with disentangled attention) is a neural language model architecture designed to enhance the performance of pre-trained models like BERT (Bidirectional Encoder Representations from Transformers) and RoBERTa (Robustly optimized BERT approach) with two techniques, a disentangled attention mechanism and an enhanced mask decoder.\par
+  
+\chapter{DESIGN AND METHODOLOGY}
 
+\chapter{EXPERIMENTAL RESULTS}
+  \section{Dental Frequently Asked Question Collection}
+    \qquad Since the project should be able to answer the input queries, we have gathered commonly asked questions about the 4 surgeries mentioned. We conducted surveys and consulted with experts to ensure accurate and appropriate answers. This section contains the questionnaire and its results. \par
+    \subsection{Collection Process}
+      \qquad The questions were gathered using Google Forms. The questionnaire below was created aimed to cover a wide range of opinions and concerns regarding dental health and medical treatments. Questions in the questionnaire consisted of \textthai{คุณเคยผ่านการรักษาหรือการผ่าตัดไหนมาแล้วบ้าง, สาเหตุที่คุณเข้ารับการรักษา/ผ่าตัด, คำถามที่มักจะเจอหรือสงสัยเกี่ยวกับโรคและการรักษา/ผ่าตัดข้างต้น, คำถามที่มักสงสัยหลังจากที่ได้รับการรักษา/ผ่าตัด.} \par
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.37\textwidth]{Image/Survey_1.png}}
+        \caption{First page of the questionnaire}\label{fig:Survey_1}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.37\textwidth]{Image/Survey_2.png}}
+        \caption{Second page of the questionnaire}\label{fig:Survey_2}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.4\textwidth]{Image/Survey_3.png}}
+        \caption{Third page of the questionnaire}\label{fig:Survey_3}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.4\textwidth]{Image/Survey_4.png}}
+        \caption{Fourth page of the questionnaire}\label{fig:Survey_4}
+      \end{figure}
+      \FloatBarrier
+    \subsection{Results}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_1.png}}
+        \caption{Pie chart of Distribution of Oral Surgery Experience}\label{fig:Result_1}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_2.png}}
+        \caption{Respondent’s Oral Surgeries Experience}\label{fig:Result_2}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_3.png}}
+        \caption{Reason the Respondent Attend the Treatment}\label{fig:Result_3}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_4.png}}
+        \caption{Common Questions and Concerns About Surgeries and Treatment}\label{fig:Result_4}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_5.png}}
+        \caption{Post-Treatment Frequently Asked Questions}\label{fig:Result_5}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_6.png}}
+        \caption{Recommendations for Website Development and Features}\label{fig:Result_6}
+      \end{figure}
+      \FloatBarrier
+
+  \section{Follow-Up Procedure Interview}
+    \qquad Since the follow-up process is one of the project's main features, we must examine every important aspect in order to emphasize the post-surgery follow-up in the context of dental healthcare, understand the importance of comprehensive patient care, as well as the details of the follow-up process. This will allow us to imitate the actual medical staff procedure. This section explains how we conducted interviews with the dental clinic's medical staff in order to gain important insights into the techniques used for post-surgery tracking. \par
+    \subsection{Interviewing Dental Clinic Around the University}
+      \qquad To gain an insight and understand post-surgery follow-up procedure, we have first conducted an interview at the dental clinic around the university. The interview question include question such as \textthai{ขั้นตอนการติดตามอาการผู้ป่วย, โดยปกติแล้วจะทำการโทรติดตามอาการคนไข้กี่ชั่วโมงหลังผ่าตัด, คำถามที่มักจะถามผู้ป่วยตอนติดตามอาการ, คำถามที่ผู้ป่วยมักจะถามกลับมา.} After these interviews, we have gained invaluable insights and a deeper understanding of the follow-up procedures, enhancing our research with firsthand perspectives on patient care in the post-surgical phase within the local dental healthcare landscape. \par
+    \subsection{Interviewing and Survey at Faculty of Dentistry at Chulalongkorn University}
+      \qquad According to the important requirement for an in-depth understanding of the practicalities involved with the follow-up procedure, we needed to familiarize ourselves with the patient's involvement following surgery. This includes an in-depth investigation of  complexity of questions, symptom assessment, patient interaction during the follow-up phase, and response to particular concerns. Regarding the complexity of these interactions, we think it is important to have discussions and obtain advice from professionals, especially those who have experience with the follow-up procedure, and patient communication. \par
+      \qquad In order to capture the view of the expert and  match our project with the actual demands of both medical professionals and patients, we conduct an on-site observation and interviews at the Faculty of Dentistry, Chulalongkorn University. \par
 
 \end{document}
