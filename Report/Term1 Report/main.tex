@@ -1,5 +1,5 @@
 \documentclass[12pt,oneside,openright,a4paper]{cpe-english-project}
-
+\usepackage{placeins}
 \usepackage{polyglossia}
 \setdefaultlanguage{english}
 \setotherlanguage{thai}
@@ -368,8 +368,73 @@ Test & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condi
       \paragraph{DeBERTa}\mbox{}\\
         \null\qquad DeBERTa (Decoding-enhanced BERT with disentangled attention) is a neural language model architecture designed to enhance the performance of pre-trained models like BERT (Bidirectional Encoder Representations from Transformers) and RoBERTa (Robustly optimized BERT approach) with two techniques, a disentangled attention mechanism and an enhanced mask decoder.\par
   
-
+\chapter{DESIGN AND METHODOLOGY}
 
 \chapter{EXPERIMENTAL RESULTS}
+  \section{Dental Frequently Asked Question Collection}
+    \qquad Since the project should be able to answer the input queries, we have gathered commonly asked questions about the 4 surgeries mentioned. We conducted surveys and consulted with experts to ensure accurate and appropriate answers. This section contains the questionnaire and its results. \par
+    \subsection{Collection Process}
+      \qquad The questions were gathered using Google Forms. The questionnaire below was created aimed to cover a wide range of opinions and concerns regarding dental health and medical treatments. Questions in the questionnaire consisted of \textthai{คุณเคยผ่านการรักษาหรือการผ่าตัดไหนมาแล้วบ้าง, สาเหตุที่คุณเข้ารับการรักษา/ผ่าตัด, คำถามที่มักจะเจอหรือสงสัยเกี่ยวกับโรคและการรักษา/ผ่าตัดข้างต้น, คำถามที่มักสงสัยหลังจากที่ได้รับการรักษา/ผ่าตัด.} \par
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.37\textwidth]{Image/Survey_1.png}}
+        \caption{First page of the questionnaire}\label{fig:Survey_1}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.37\textwidth]{Image/Survey_2.png}}
+        \caption{Second page of the questionnaire}\label{fig:Survey_2}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.4\textwidth]{Image/Survey_3.png}}
+        \caption{Third page of the questionnaire}\label{fig:Survey_3}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.4\textwidth]{Image/Survey_4.png}}
+        \caption{Fourth page of the questionnaire}\label{fig:Survey_4}
+      \end{figure}
+      \FloatBarrier
+    \subsection{Results}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_1.png}}
+        \caption{Pie chart of Distribution of Oral Surgery Experience}\label{fig:Result_1}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_2.png}}
+        \caption{Respondent’s Oral Surgeries Experience}\label{fig:Result_2}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_3.png}}
+        \caption{Reason the Respondent Attend the Treatment}\label{fig:Result_3}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_4.png}}
+        \caption{Common Questions and Concerns About Surgeries and Treatment}\label{fig:Result_4}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_5.png}}
+        \caption{Post-Treatment Frequently Asked Questions}\label{fig:Result_5}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_6.png}}
+        \caption{Recommendations for Website Development and Features}\label{fig:Result_6}
+      \end{figure}
+      \FloatBarrier
+
+  \section{Follow-Up Procedure Interview}
+    \qquad Since the follow-up process is one of the project's main features, we must examine every important aspect in order to emphasize the post-surgery follow-up in the context of dental healthcare, understand the importance of comprehensive patient care, as well as the details of the follow-up process. This will allow us to imitate the actual medical staff procedure. This section explains how we conducted interviews with the dental clinic's medical staff in order to gain important insights into the techniques used for post-surgery tracking. \par
+    \subsection{Interviewing Dental Clinic Around the University}
+      \qquad To gain an insight and understand post-surgery follow-up procedure, we have first conducted an interview at the dental clinic around the university. The interview question include question such as \textthai{ขั้นตอนการติดตามอาการผู้ป่วย, โดยปกติแล้วจะทำการโทรติดตามอาการคนไข้กี่ชั่วโมงหลังผ่าตัด, คำถามที่มักจะถามผู้ป่วยตอนติดตามอาการ, คำถามที่ผู้ป่วยมักจะถามกลับมา.} After these interviews, we have gained invaluable insights and a deeper understanding of the follow-up procedures, enhancing our research with firsthand perspectives on patient care in the post-surgical phase within the local dental healthcare landscape. \par
+    \subsection{Interviewing and Survey at Faculty of Dentistry at Chulalongkorn University}
+      \qquad According to the important requirement for an in-depth understanding of the practicalities involved with the follow-up procedure, we needed to familiarize ourselves with the patient's involvement following surgery. This includes an in-depth investigation of  complexity of questions, symptom assessment, patient interaction during the follow-up phase, and response to particular concerns. Regarding the complexity of these interactions, we think it is important to have discussions and obtain advice from professionals, especially those who have experience with the follow-up procedure, and patient communication. \par
+      \qquad In order to capture the view of the expert and  match our project with the actual demands of both medical professionals and patients, we conduct an on-site observation and interviews at the Faculty of Dentistry, Chulalongkorn University. \par
 
 \end{document}
