@@ -327,7 +327,6 @@ Test & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condi
   
       \subsubsection{Cascading Style Sheet}
         \qquad Cascading Style Sheets, abbreviated as CSS, is commonly referred to as a "style sheet." It is a language used to format HTML documents, with CSS being responsible for defining rules that specify the presentation of content within a document. These rules encompass aspects such as text color, background color, font type, and text positioning. The fundamental concept behind CSS is the separation of HTML document content from the instruction used for formatting its display. By employing this separation, CSS achieves two primary objectives. Firstly, it ensures that the document's display format is independent of its content, facilitating the task of formatting HTML documents, especially when the content undergoes frequent changes. Secondly, CSS enables precise control over the presentation format of HTML documents, ensuring consistency across all pages within the same website. Styling rules for HTML documents were initially introduced in HTML 4.0 back in 1996, in the form of CSS Level 1 recommendations established by the World Wide Web Consortium (W3C).\par
-  
     
     \subsection{Front-end Framework}
       \qquad Front-end frameworks play a crucial role in web development by simplifying the creation of user interfaces. They encompass design, layout, and interactive elements such as forms and buttons. These frameworks provide pre-written code that includes HTML, CSS, and JavaScript components, facilitating code reuse and maintaining consistency across web projects. By leveraging front-end frameworks, developers can efficiently generate HTML and CSS, design responsive layouts for various devices, ensure a consistent user experience, automate repetitive tasks, and manage their code efficiently. Ultimately, front-end frameworks streamline and structure the development process, enabling the creation of user-friendly and visually appealing web applications. Examples of front-end frameworks are as follows:\par
@@ -380,11 +379,65 @@ Test & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condi
         \subsubsection{Decision Tree}
           \qquad A decision tree is a supervised machine learning algorithm used for categorizing and regression tasks. A decision tree consists of root node, decision nodes, leaf nodes, splitting, pruning, and branches.\par
           \qquad The decision tree operates by employing various algorithms to decide to split a node into two or more sub-nodes. Decision trees work by iteratively partitioning nodes based on all available features and subsequently selecting the split that leads to the most uniform or homogeneous sub-nodes in terms of the target variable. This aims to create clear and distinct decision boundaries within the dataset, facilitating more accurate predictions or classifications by the decision tree model.\par
-  
-        \subsection{Random Forest}
+          \begin{figure}[!h]
+            \centering
+            \fbox{\includegraphics[width=.6\textwidth]{Image/Decision_Tree.png}}
+            \caption{Diagram explaining Decision Tree}\label{fig:Decision_Tree}
+          \end{figure}
+        
+        \subsubsection{Random Forest}
           \qquad Random Forest is the combination of many decision trees and using results from all decision trees by either averaging or majority voting making it less biased which helps in overfitting problems. As you can see from Figure 1.2, the final results are obtained after getting results from many decision trees.\par
-  
-    
+          \begin{figure}[!h]
+            \centering
+            \fbox{\includegraphics[width=.6\textwidth]{Image/Random_Forest.png}}
+            \caption{Diagram explaining Random Forest}\label{fig:Random_Forest}
+          \end{figure}
+    \subsection{Augmenting Data}
+      \qquad We augmented text data to expand data while trying to simulate human error such as misspelling a word or typing a key by mistake. We can achieve this by inserting random characters into the questions, deleting random characters in the questions, and swapping random characters in the questions. We are also able to expand by paraphrasing the sentence. In order to have the best performance for paraphrasing we need to first translate it to English then let the AI model paraphrase as it is an English paraphrasing model then translate the results back to Thai.\par
+    \subsection{Proposed Framework}
+      \qquad The proposed framework has 2 components that are to be used together:\par
+      \begin{itemize}
+        \item Random Forest: classify the input question into class
+        \item BERT: answer the user's question based on the identified class
+      \end{itemize}
+      \qquad We first input a question into a random forest in order to classify which class it belongs to. We then input that class in order to use the correct context in order to get the correct answer. With this method we can reduce time taken while trying to increase its accuracy\par
+  \section{Related research / Competing solutions}
+    \subsection{Related Research}
+      \qquad \textbf{Designing a Competent Chatbot to Counter the COVID-19 Pandemic and Empower Risk Communication in an Emergency Response System}\par
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.6\textwidth]{Image/Research_1.jpg}}
+        \caption{Overview of DSRM development process}\label{fig:Research_1}
+      \end{figure}
+      \qquad This paper presented the development process and the characteristics of a competent chatbot, with an emphasis on COVID-19. The paper used Design Science Research Methodology (DSRM) as the development process to implement the chatbot, which consisted of 6 steps. Line Application was chosen as the main channel for the development and was deployed using Dialog Flow. In phase one, the development focused on implementing a chatbot capable of answering various frequently asked questions and providing knowledge about COVID-19. The emphasis shifted to more complex questions and chatbot efficiency in phase 2 of the development.\par
+      \qquad The knowledge in this paper regarding the development process can be used and applied to our development process since the output products are similar in terms of use. However, the step of product evaluation will be different since we do not have a large number of users, and some key features, such as follow-up, are different.\par
+    \subsection{Competing Solution}
+      \subsubsection{DentalChat}
+        \begin{figure}[!h]
+          \centering
+          \fbox{\includegraphics[width=.2\textwidth]{Image/DentalChat_Logo.png}}
+          \caption{DentalChat Logo}\label{fig:DentalChat_Logo}
+        \end{figure}
+        \qquad DentalChat is an AI dental care application that connects and allows users to ask dental questions and is assisted by a dentist in real-time. DentalChat features consist of finding a local dentist, asking dental questions, post consult requests, and chatting with the dentist.\par
+      \subsubsection{PsyJai}
+        \begin{figure}[!h]
+          \centering
+          \fbox{\includegraphics[width=.2\textwidth]{Image/PsyJai_Logo.png}}
+          \caption{PsyJai Logo}\label{fig:PsyJai_Logo}
+        \end{figure}
+        \qquad PsyJai is a comprehensive automated AI mental health assistance system collaboration that can perform mental health assessments and provide psychological care based on the principles of psychology. PsyJai provides services through Facebook and Line. PsyJai has 4 main features: 1. Emotional Status Screening 2. Basic Care with Psychological Principles 3. General Conversations 4. Mood Dashboard.\par
+      \subsection{Comparison Table}
+        \begin{table}[h]
+          \centering
+          \caption{\centering Comparison table between our proposed solution, DentalChat and PsyJai}\label{tab:Comparison_Table}
+          \begin{tabular}{|c|c|c|c|} \hline
+            & Our proposed Solution & DentalChat & PsyJai \\\hline
+            Symptom Diagnosis & AI System & Manual & AI System \\\hline
+            Post-Surgery Follow Up & AI System & - & - \\\hline
+          \end{tabular}
+        \end{table}
+        \qquad According to Table 1, our proposed solution has 2 main features: symptom diagnosis and post-surgery follow-up, both of which are AI-based systems. In contrast, DentalChat only has a symptom diagnosis feature, which is manually answered by the doctors. Psyjai also has an AI-based system for symptom diagnosis but does not have the post-surgery follow-up feature.\par
+
 \chapter{DESIGN AND METHODOLOGY}
 
 \chapter{EXPERIMENTAL RESULTS}
