@@ -125,9 +125,9 @@
 \begin{flushleft}
 \begin{tabular}{@{}p{0.07\textwidth}p{0.7\textwidth}p{0.1\textwidth}}
 \textbf{SYMBOL}  & & \textbf{UNIT} \\[0.2cm]
-$\alpha$ & Test variable\hfill & m$^2$ \\
-$\lambda$ & Interarival rate\hfill &  jobs/second\\
-$\mu$ & Service rate\hfill & jobs/second\\
+% $\alpha$ & Test variable\hfill & m$^2$ \\
+% $\lambda$ & Interarival rate\hfill &  jobs/second\\
+% $\mu$ & Service rate\hfill & jobs/second\\
 \end{tabular}
 \end{flushleft}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -137,9 +137,32 @@ $\mu$ & Service rate\hfill & jobs/second\\
 \listofvocab
 \begin{flushleft}
 \begin{tabular}{@{}p{1in}@{=\extracolsep{0.5in}}p{0.73\textwidth}}
-ABC & Adaptive Bandwidth Control \\
-MANET & Mobile Ad Hoc Network  \\
-Test & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condimentum purus. Pellentesque sed augue sapien. In volutpat quis diam laoreet suscipit. Curabitur fringilla sem nisi, at condimentum lectus consequat vitae.
+AI & Artificial Intelligence \\
+API & Application Programming Interface \\
+BERT & Bidirectional Encoder Representations from Transformers \\
+CSS & Cascading Style Sheet \\
+DL & Deep Learning \\
+DOM & Document Object Model \\
+DSRM & Design Science Research Methodology \\
+DT & Decision Tree \\
+HTML & Hypertext Markup Language \\
+ID & Identification \\
+JS & JavaScript \\
+ML & Machine Learning \\
+mDeBERTa & Multilingual Decoding-enhanced BERT with disentangled attention \\
+NLP & Natural Language Processing \\
+NN & Neural Network \\
+ODM & Object Document Modelling \\
+OPD & Outpatient Department \\
+RF & Random Forest \\
+RoBERTa & Robustly Optimized BERT Approach \\
+SDK & Software Development Kit \\
+SQL & Structured Query Language \\
+TS & TypeScript \\
+UI & User Interface \\
+UX & User Experience \\
+WWW & World Wide Web \\
+
 \end{tabular}
 \end{flushleft}
 
@@ -200,7 +223,7 @@ Test & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condi
         \item Learning and Research
           \begin{itemize}
             \item Research on Methodology
-            \item Research On Oral Symptoms and FAG
+            \item Research On Oral Symptoms and FAQ
             \item Research on Related Paper
             \item Study 4 Specific Oral Surgical Operations
             \item Study Post Surgery Follow-Up Procedure
@@ -215,7 +238,7 @@ Test & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condi
           \begin{itemize}
             \item Make Use Case Diagram
             \item Make Architecture Diagram
-            \item Design Ux/Ui
+            \item Design UX/UI
             \item Design AI Design
             \item Make Navigation Map                  
           \end{itemize}
@@ -441,7 +464,7 @@ Test & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condi
 \chapter{DESIGN AND METHODOLOGY}
   \section{Introduction}
   \qquad This chapter will discuss the features and architecture including the features, functionalities, designing method and diagram of the web application. We will be discussing in detail about the functionality and the architecture of the web. \par
-  \section{Preject Functionality}
+  \section{Project Functionality}
     \subsection{System Requirements}
     \begin{itemize}
       \item The web application must allow user to login via Line Account.
@@ -453,7 +476,7 @@ Test & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condi
       \item The web applications must allow all login users to logout.
     \end{itemize}
 
-    \subsection{feature List}
+    \subsection{Feature List}
       \subsubsection{Patient Registration}
       \qquad This feature is designed as user registration for the web application, and can be accessible through Line Official. When the user accesses the web application via Line Official for the first time, they need to authorize the linking to their Line account. Once the user has authorized, when accessing the web application through Line Official menu, the user will be automatically logged in. \par
       \subsubsection{Frequently Asked Questions answering Chatbot}
@@ -490,7 +513,7 @@ Test & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condi
   \section{Use Case Diagram}
   \begin{figure}[!h]
     \centering
-    \fbox{\includegraphics[width=.8\textwidth]{Image/Use_Case.png}}
+    \fbox{\includegraphics[width=.99\textwidth]{Image/Use_Case.png}}
     \caption{Use Case Diagram}\label{fig:Use_Case}
   \end{figure}
 
@@ -884,4 +907,26 @@ Test & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condi
           \qquad The nurse records details such as the operation, discharge date, follow-up date, contact person, symptoms, and any additional notes. This approach is a comprehensive and accurate way of tracking patient data gathered during follow-up calls. \par
         \end{flushleft}
       \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% Comment this in your report to show only references you have
+%%%% cited. Otherwise, all the references below will be shown.
+%\nocite{*}
+%% Use the kmutt.bst for bibtex bibliography style 
+%% You must have cpe.bib and string.bib in your current directory.
+%% You may go to file .bbl to manually edit the bib items.
+
+% Sept, 2021 by Thanin
+% improve url breaks to prevent unnecessary big white spaces in some cases
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+% 
+
+\bibliographystyle{kmutt}
+\bibliography{string,cpe}
+      
 \end{document}
