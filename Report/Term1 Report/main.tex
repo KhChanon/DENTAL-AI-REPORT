@@ -136,7 +136,7 @@
 % You also have to add this manually..
 \listofvocab
 \begin{flushleft}
-\begin{tabular}{@{}p{1in}@{=\extracolsep{0.5in}}p{0.73\textwidth}}
+\begin{tabular}{@{}p{1in}@{=\extracolsep{0.5in}}p{0.7\textwidth}}
 AI & Artificial Intelligence \\
 API & Application Programming Interface \\
 BERT & Bidirectional Encoder Representations from Transformers \\
@@ -180,7 +180,7 @@ WWW & World Wide Web \\
   \section{Problem Statement}
     \subsection{Problem Statement and Motivation}
       \qquad Individuals seeking healthcare in today's world often run into a number of challenges while attempting to acquire correct information regarding their symptoms and appropriate treatment. Many patients have minor illnesses or symptoms that might not necessarily require immediate medical attention from a doctor. Nevertheless, these individuals usually resort to clinics or hospitals for a diagnosis as there is a lack of information and assistance available. \par
-      \qquad This rise in patient visits not only places a considerable burden on healthcare facilities but also results in financial implications for patients themselves. The associated costs, such as consultation fees, diagnostic tests, and travel expenses, can impose an unreasonable financial strain on individuals. Moreover, this increased demand for medical attention has contributed to an imbalance in the doctor-to-patient ratio, affecting the overall quality of healthcare services provided. According to the National Statistical Office, the ratio of doctor-to-patient ratio is 1 to 8,057.\par
+      \qquad This rise in patient visits not only places a considerable burden on healthcare facilities but also results in financial implications for patients themselves. The associated costs, such as consultation fees, diagnostic tests, and travel expenses, can impose an unreasonable financial strain on individuals. Moreover, this increased demand for medical attention has contributed to an imbalance in the doctor-to-patient ratio, affecting the overall quality of healthcare services provided. According to the National Statistical Office, the ratio of doctor-to-patient ratio is 1 to 8,057\cite{NSODashboard}.\par
       \qquad Furthermore, the challenges do not cease once treatment is initiated. After receiving medical care, many patients still have many concerns about their health conditions. Many patients desire prompt answers to their worries about their conditions. In addition to these concerns, patients often have recurring questions, commonly categorized as frequently asked questions (FAQs).\par
       \qquad Regrettably, doctors and medical staff find themselves overwhelmed by the immense workload caused from the increased patient influx. As they aim to deliver quality care and diagnosis, they may have limited time and resources to respond satisfactorily to the patients.\par
       \qquad To address these pressing issues and enhance the healthcare experience for both patients and healthcare providers, we were motivated to develop an application that can effectively address these issues. The application will have the capability to diagnose common diseases and answer frequently asked questions from the patient's symptoms. Additionally, it will feature a chatbot designed to follow up on patient conditions after surgery.\par
@@ -391,21 +391,21 @@ WWW & World Wide Web \\
           \null\qquad DeBERTa (Decoding-enhanced BERT with disentangled attention) is a neural language model architecture designed to enhance the performance of pre-trained models like BERT (Bidirectional Encoder Representations from Transformers) and RoBERTa (Robustly optimized BERT approach) with two techniques, a disentangled attention mechanism and an enhanced mask decoder.\par
           \qquad The disentangled attention mechanism involves representing each word with two vectors—one for content and one for position. Attention weights among words are then calculated using disentangled matrices for content and relative positions, allowing the model to independently consider semantic content and positional relationships during computations.\par
           \qquad The enhanced mask decoder replaces the output softmax layer to predict masked tokens during model pre-training. Additionally, a new virtual adversarial training method is applied during fine-tuning to enhance the model's generalization for downstream tasks.\par
-          \qquad The DeBERTa V2 model is a variant of the transformer architecture designed for question-answering tasks. Its structure consists of an embedding layer for word representations, employing layer normalization and dropout for regularization. The core encoder is composed of multiple DeBERTa V2 layers, each featuring a disentangled self-attention mechanism, an intermediate layer with GELU activation, and output layers for attention and transformation. The model incorporates relative positional embeddings to efficiently capture token dependencies. The final layer includes a linear output module specialized for predicting start and end positions in the input sequence, crucial for question answering. Overall, DeBERTa V2 integrates advanced attention mechanisms and positional embeddings to enhance its ability to capture complex relationships within the input data for improved performance in question-answering tasks.\par
+          \qquad The DeBERTa V2 model is a variant of the transformer architecture designed for question-answering tasks. Its structure consists of an embedding layer for word representations, employing layer normalization and dropout for regularization. The core encoder is composed of multiple DeBERTa V2 layers, each featuring a disentangled self-attention mechanism, an intermediate layer with GELU activation, and output layers for attention and transformation. The model incorporates relative positional embeddings to efficiently capture token dependencies. The final layer includes a linear output module specialized for predicting start and end positions in the input sequence, crucial for question answering. Overall, DeBERTa V2 integrates advanced attention mechanisms and positional embeddings to enhance its ability to capture complex relationships within the input data for improved performance in question-answering tasks.\cite{deberta1,deberta2}\par
   
         \paragraph{mDeBERTa}\mbox{}\\
-          \null\qquad mDeBERTa is the multilingual version of DeBERTa. Both models have the same architecture but mDeBERTa supports multiple languages while DeBERTa supports only English.\par
+          \null\qquad mDeBERTa\cite{huggingface1} is the multilingual version of DeBERTa. Both models have the same architecture but mDeBERTa supports multiple languages while DeBERTa supports only English.\par
       
     \subsection{Machine Learning}
       \qquad Machine Learning (ML) is a branch of Artificial Intelligence that tries to replicate how humans work. It uses the accumulated data in order to let machines learn step by step in order to improve its accuracy in the task they are trained to do.\par
         
         \subsubsection{Decision Tree}
           \qquad A decision tree is a supervised machine learning algorithm used for categorizing and regression tasks. A decision tree consists of root node, decision nodes, leaf nodes, splitting, pruning, and branches.\par
-          \qquad The decision tree operates by employing various algorithms to decide to split a node into two or more sub-nodes. Decision trees work by iteratively partitioning nodes based on all available features and subsequently selecting the split that leads to the most uniform or homogeneous sub-nodes in terms of the target variable. This aims to create clear and distinct decision boundaries within the dataset, facilitating more accurate predictions or classifications by the decision tree model.\par
+          \qquad The decision tree operates by employing various algorithms to decide to split a node into two or more sub-nodes. Decision trees work by iteratively partitioning nodes based on all available features and subsequently selecting the split that leads to the most uniform or homogeneous sub-nodes in terms of the target variable. This aims to create clear and distinct decision boundaries within the dataset, facilitating more accurate predictions or classifications by the decision tree model.\cite{decisiontree1}\par
           \begin{figure}[!h]
             \centering
             \fbox{\includegraphics[width=.6\textwidth]{Image/Decision_Tree.png}}
-            \caption{Diagram explaining Decision Tree}\label{fig:Decision_Tree}
+            \caption{Diagram explaining Decision Tree\cite{decisiontree2}}\label{fig:Decision_Tree}
           \end{figure}
         
         \subsubsection{Random Forest}
@@ -416,7 +416,7 @@ WWW & World Wide Web \\
             \caption{Diagram explaining Random Forest}\label{fig:Random_Forest}
           \end{figure}
     \subsection{Augmenting Data}
-      \qquad We augmented text data to expand data while trying to simulate human error such as misspelling a word or typing a key by mistake. We can achieve this by inserting random characters into the questions, deleting random characters in the questions, and swapping random characters in the questions. We are also able to expand by paraphrasing the sentence. In order to have the best performance for paraphrasing we need to first translate it to English then let the AI model paraphrase as it is an English paraphrasing model then translate the results back to Thai.\par
+      \qquad We augmented text data to expand data while trying to simulate human error such as misspelling a word or typing a key by mistake. We can achieve this by inserting random characters into the questions, deleting random characters in the questions, and swapping random characters in the questions. We are also able to expand by paraphrasing the sentence. In order to have the best performance for paraphrasing we need to first translate it to English then let the AI model\cite{huggingface2} paraphrase as it is an English paraphrasing model then translate the results back to Thai.\par
     \subsection{Proposed Framework}
       \qquad The proposed framework has 2 components that are to be used together:\par
       \begin{itemize}
@@ -430,7 +430,7 @@ WWW & World Wide Web \\
       \begin{figure}[!h]
         \centering
         \fbox{\includegraphics[width=.6\textwidth]{Image/Research_1.jpg}}
-        \caption{Overview of DSRM development process}\label{fig:Research_1}
+        \caption{Overview of DSRM development process\cite{relatedwork1}}\label{fig:Research_1}
       \end{figure}
       \qquad This paper presented the development process and the characteristics of a competent chatbot, with an emphasis on COVID-19. The paper used Design Science Research Methodology (DSRM) as the development process to implement the chatbot, which consisted of 6 steps. Line Application was chosen as the main channel for the development and was deployed using Dialog Flow. In phase one, the development focused on implementing a chatbot capable of answering various frequently asked questions and providing knowledge about COVID-19. The emphasis shifted to more complex questions and chatbot efficiency in phase 2 of the development.\par
       \qquad The knowledge in this paper regarding the development process can be used and applied to our development process since the output products are similar in terms of use. However, the step of product evaluation will be different since we do not have a large number of users, and some key features, such as follow-up, are different.\par
@@ -439,14 +439,14 @@ WWW & World Wide Web \\
         \begin{figure}[!h]
           \centering
           \fbox{\includegraphics[width=.2\textwidth]{Image/DentalChat_Logo.png}}
-          \caption{DentalChat Logo}\label{fig:DentalChat_Logo}
+          \caption{DentalChat Logo\cite{dentalchat}}\label{fig:DentalChat_Logo}
         \end{figure}
         \qquad DentalChat is an AI dental care application that connects and allows users to ask dental questions and is assisted by a dentist in real-time. DentalChat features consist of finding a local dentist, asking dental questions, post consult requests, and chatting with the dentist.\par
       \subsubsection{PsyJai}
         \begin{figure}[!h]
           \centering
           \fbox{\includegraphics[width=.2\textwidth]{Image/PsyJai_Logo.png}}
-          \caption{PsyJai Logo}\label{fig:PsyJai_Logo}
+          \caption{PsyJai Logo\cite{psyjai}}\label{fig:PsyJai_Logo}
         \end{figure}
         \qquad PsyJai is a comprehensive automated AI mental health assistance system collaboration that can perform mental health assessments and provide psychological care based on the principles of psychology. PsyJai provides services through Facebook and Line. PsyJai has 4 main features: 1. Emotional Status Screening 2. Basic Care with Psychological Principles 3. General Conversations 4. Mood Dashboard.\par
       \subsection{Comparison Table}
@@ -513,7 +513,7 @@ WWW & World Wide Web \\
   \section{Use Case Diagram}
   \begin{figure}[!h]
     \centering
-    \fbox{\includegraphics[width=.99\textwidth]{Image/Use_Case.png}}
+    \fbox{\includegraphics[width=.95\textwidth]{Image/Use_Case.png}}
     \caption{Use Case Diagram}\label{fig:Use_Case}
   \end{figure}
 
