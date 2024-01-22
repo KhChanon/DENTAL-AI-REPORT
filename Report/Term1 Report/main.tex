@@ -676,7 +676,7 @@ WWW & World Wide Web \\
   \section{Navigation Map}
     \begin{figure}[!h]
       \centering
-      \fbox{\includegraphics[width=.6\textwidth]{Image/Navigation_Map.png}}
+      \fbox{\includegraphics[width=.4\textwidth]{Image/Navigation_Map.png}}
       \caption{Chatbot web application navigation map}\label{fig:Navigation_Map}
       \begin{flushleft}
         \qquad For the web application, there are two roles which are Guest user and Registered user. Every user starts with the Homepage, Guest can only access the FAQ Chatbot and Login page, while Registered users can also access the Follow Up page and View Case History page. \par
@@ -687,10 +687,10 @@ WWW & World Wide Web \\
   \section{ER Diagram}
     \begin{figure}[!h]
       \centering
-      \fbox{\includegraphics[width=.5\textwidth]{Image/ER.png}}
+      \fbox{\includegraphics[width=.4\textwidth]{Image/ER2.png}}
       \caption{ER-Diagram}\label{fig:ER}
       \begin{flushleft}
-        \qquad Figure 3.10 shows the basic database design, which is required for store registered users. There are a total of 4 objects in our application. In the User object, it will have userID, Username, Profilepic, StatusMessage which is linked to Line profile. The User object will also contain  lists of RecordObject and FollowUpObject. In RecordsObject, there is RecordID, TimeStamp, SurgicalProcedure and Status. The RecordID is linked to the User object.  In FollowUp Object, there is FollowUpID, Title, TimeStamp, Chat and ChatResult. The FollowUpID is linked to the Record object and it is one to one relation. In ChatObject, there is ChatID, UserChat, TimeStamp, and Text. The ChatID is linked to the FollowUp object. \par
+        \qquad Figure 3.10 shows the basic database design, which is required for store registered users. There are a total of 4 objects in our application. In the User object, it will have userID, LineUsername, LineProfilepic, LineStatusMessage which is linked to Line profile. The User object will also contain  lists of Records object. In Records object, there is RecordID, TimeStamp, SurgicalProcedure, Status, ChatMessage, and Chat. The RecordID is linked to the User object to collect the data related to user's follow-up information and follow-up procedure. In FollowUpChat object, there is ChatID, UserChat, TimeStamp, and Text. The ChatID is linked to the FollowUp object. The FollowUpChat object will store each message that interacted between user and the system. The last object is FAQChatHist object. In the FAQChatHist object, will have FAQChatHistID, UserChat, Text. This object will store each message that was received from the user's input question. \par
       \end{flushleft}
     \end{figure}
 \newpage
