@@ -124,7 +124,7 @@
 \listofsymbols
 \begin{flushleft}
 \begin{tabular}{@{}p{0.07\textwidth}p{0.7\textwidth}p{0.1\textwidth}}
-\textbf{SYMBOL}  & & \textbf{UNIT} \\[0.2cm]
+\textbf{SYMBOL}  & & \textbf{UNIT} \\[0.000001cm]
 % $\alpha$ & Test variable\hfill & m$^2$ \\
 % $\lambda$ & Interarival rate\hfill &  jobs/second\\
 % $\mu$ & Service rate\hfill & jobs/second\\
@@ -183,7 +183,7 @@ WWW & World Wide Web \\
       \qquad This rise in patient visits not only places a considerable burden on healthcare facilities but also results in financial implications for patients themselves. The associated costs, such as consultation fees, diagnostic tests, and travel expenses, can impose an unreasonable financial strain on individuals. Moreover, this increased demand for medical attention has contributed to an imbalance in the doctor-to-patient ratio, affecting the overall quality of healthcare services provided. According to the National Statistical Office, the ratio of doctor-to-patient ratio is 1 to 8,057\cite{NSODashboard}.\par
       \qquad Furthermore, the challenges do not cease once treatment is initiated. After receiving medical care, many patients still have many concerns about their health conditions. Many patients desire prompt answers to their worries about their conditions. In addition to these concerns, patients often have recurring questions, commonly categorized as frequently asked questions (FAQs).\par
       \qquad Regrettably, doctors and medical staff find themselves overwhelmed by the immense workload caused from the increased patient influx. As they aim to deliver quality care and diagnosis, they may have limited time and resources to respond satisfactorily to the patients.\par
-      \qquad To address these pressing issues and enhance the healthcare experience for both patients and healthcare providers, we were motivated to develop an application that can effectively address these issues. The application will have the capability to diagnose common diseases and answer frequently asked questions from the patient's symptoms. Additionally, it will feature a chatbot designed to follow up on patient conditions after surgery.\par
+      \qquad To address these pressing issues and enhance the healthcare experience for both patients and healthcare providers, we were motivated to develop an application that can effectively address these issues. The application will have the capability to diagnose common diseases and answer frequently asked questions from the patient's symptoms. Additionally, it will feature a chatbot designed to follow-up on patient conditions after surgery.\par
 
 
     \subsection{Potential Benefits}
@@ -456,37 +456,37 @@ WWW & World Wide Web \\
           \begin{tabular}{|c|c|c|c|} \hline
             & Our proposed Solution & DentalChat & PsyJai \\\hline
             Symptom Diagnosis & AI System & Manual & AI System \\\hline
-            Post-Surgery Follow Up & AI System & - & - \\\hline
+            Post-Surgery Follow-Up & AI System & - & - \\\hline
           \end{tabular}
         \end{table}
         \qquad According to Table 1, our proposed solution has 2 main features: symptom diagnosis and post-surgery follow-up, both of which are AI-based systems. In contrast, DentalChat only has a symptom diagnosis feature, which is manually answered by the doctors. Psyjai also has an AI-based system for symptom diagnosis but does not have the post-surgery follow-up feature.\par
 
 \chapter{DESIGN AND METHODOLOGY}
   \section{Introduction}
-  \qquad This chapter will discuss the features and architecture including the features, functionalities, designing method and diagram of the web application. We will be discussing in detail about the functionality and the architecture of the web. \par
+  \qquad This chapter will cover the features, architecture, functionalities, design methods, and diagrams of our web application. We will delve into the details of the application’s functionality and architecture. \par
   \section{Project Functionality}
     \subsection{System Requirements}
     \begin{itemize}
-      \item The web application must allow user to login via Line Account.
-      \item The web application must automatically login if user access via line.
-      \item The web application must allow all users to ask frequently asked questions from chatbot.
-      \item The web application must allow the login users to scan qr code to create a new follow-up case.
-      \item The web application must allow login users to answer follow-up chatbot.
-      \item The web application must allow login users to view their own profile.
-      \item The web applications must allow all login users to logout.
+      \item The web application must allow users to log in via Line Account.
+      \item The web application must automatically log in users accessing via Line.
+      \item The web application must facilitate all users in asking frequently asked questions through a chatbot.
+      \item The web application must enable logged-in users to scan a QR code to create a new follow-up case.
+      \item The web application must allow logged-in users to respond to follow-up chatbot queries.
+      \item The web application must permit logged-in users to view their individual profiles.
+      \item The web applications must provide the option for all logged-in users to log out.
     \end{itemize}
 
     \subsection{Feature List}
       \subsubsection{Patient Registration}
-      \qquad This feature is designed as user registration for the web application, and can be accessible through Line Official. When the user accesses the web application via Line Official for the first time, they need to authorize the linking to their Line account. Once the user has authorized, when accessing the web application through Line Official menu, the user will be automatically logged in. \par
-      \subsubsection{Frequently Asked Questions answering Chatbot}
-      \qquad This feature is designed to provide information and answer common questions about specific surgical procedures, including Tooth Extraction, Wisdom Tooth Removal, Periodontal Surgery, and Dental Implant Surgery. Users can input their question related to the surgery mentioned, and the chatbot will provide the relevant information. When there are questions that the chatbot has never encountered and cannot answer, the chatbot will return an error message and will keep that question for future training. \par
-      \subsubsection{Follow-up Chatbot}
-      \qquad This feature is designed to streamline the post-surgery monitoring process by replacing the traditional method of medical staff making follow-up calls to check on patients' conditions. The chatbot is proactive in questioning by targeting follow-up questions based on the surgery the patient has undergone to gather an insight of the patient's current state to assess their condition and to provide appropriate advice. \par
-      \subsubsection{Add new follow-up case}
-      \qquad This feature is to create a new follow-up case by enabling the user to generate a follow-up chatbot by scanning a given QR code at the healthcare unit and selecting the operation that has undergone. \par
-      \subsubsection{View past follow up case}
-      \qquad This feature allows the user to view their past follow-up case history. 
+      \qquad This feature entails user registration for the web application, accessible through Line Official. Upon the user’s initial accesses to the web application via Line Official, they are required to authorize the linking of their Line account. Once authorized, subsequent accesses to the web application through Line Official menu will result in automatic user login. \par
+      \subsubsection{Frequently Asked Questions Answering Chatbot}
+      \qquad This feature is designed to provide information and address common inquiries concerning distinct surgical procedures, including Tooth Extraction, Wisdom Tooth Removal, Periodontal Surgery, and Dental Implant Surgery. Users can input questions related to these surgeries, and the chatbot will provide pertinent information. In instances where the chatbot encounters unfamiliar questions that it cannot answer, it will return an error message and retain the question for future training purposes. \par
+      \subsubsection{Follow-Up Chatbot}
+      \qquad This feature aims to streamline the post-surgery monitoring process by replacing traditional methods where medical staff make follow-up calls to assess patients' conditions. The proactive chatbot targets follow-up questions based on the patient’s surgery, gathering insights into their current state for condition assessment and providing relevant advice. \par
+      \subsubsection{Add New Follow-Up Case}
+      \qquad This feature enables users to initiate a new follow-up case by scanning a provided QR code at the healthcare unit and selecting the undergone operation. \par
+      \subsubsection{View Past Follow-Up Case}
+      \qquad This feature allows users to review their history of past follow-up cases. 
   \section{System Architecture}
   \begin{figure}[!h]
     \centering
@@ -496,15 +496,15 @@ WWW & World Wide Web \\
       \qquad In the Figure 3.1 above, show the architecture design of our project. The Technology that we use in this project include. \par
       \begin{itemize}
         \item[] 1. React (Front-end JavaScript library for building UI)
-        \item[] 2. Sweetalert2 (beautiful popup box react component use in React)
-        \item[] 3. TailwindCSS (Css framework for styling the UI and use with React)
-        \item[] 4. Chart.js (free open source JavaScript library for data visualization)
-        \item[] 5. Node.js (back-end JavaScript runtime environment)
+        \item[] 2. Sweetalert2 (Beautiful popup box react component used in React)
+        \item[] 3. TailwindCSS (CSS framework for styling the UI and used with React)
+        \item[] 4. Chart.js (Free open-source JavaScript library for data visualization)
+        \item[] 5. Node.js (Back-end JavaScript runtime environment)
         \item[] 6. Express (Back-end framework for Node.js for building REST API)
         \item[] 7. MongoDB (NoSQL Database)
         \item[] 8. Mongoose (Node.js based Object Data Modelling (ODM) library for MongoDB)
-        \item[] 9. React selects a flexible and beautiful Select Input control for ReactJS with multiselect, autocomplete, async and creatable support
-        \item[] 10. Dialogflow is used for follow-up using its api in order to reduce resource used in client browser
+        \item[] 9. React Select (A flexible and beautiful Select Input control for ReactJS with multiselect, autocomplete, async, and creatable support)
+        \item[] 10. Dialogflow is employed for follow-up using its API to reduce resource usage in the client’s browser.
       \end{itemize}
     \end{flushleft}        
   \end{figure}
@@ -513,103 +513,103 @@ WWW & World Wide Web \\
   \section{Use Case Diagram}
   \begin{figure}[!h]
     \centering
-    \fbox{\includegraphics[width=.95\textwidth]{Image/Use_Case.png}}
+    \fbox{\includegraphics[width=.8\textwidth]{Image/Use_Case.png}}
     \caption{Use Case Diagram}\label{fig:Use_Case}
   \end{figure}
 
   \section{Use Case Narrative}
     \subsection{Question Answer}
       \qquad Use case name: Question Answer \par
-      \qquad Actors: All User \par
-      \qquad Goal: User ask questions and receive answer \par
+      \qquad Actors: All Uses \par
+      \qquad Goal: Users ask questions and receive answers \par
       \qquad Preconditions: - \par
       \qquad Main success scenario:
       \begin{itemize}
-        \item[] 1. User go to home page
-        \item[] 2. User select chatbot button
-        \item[] 3. User Input question
-        \item[] 4. System answer the question
+        \item[] 1. Users go to the home page.
+        \item[] 2. User selects the chatbot button.
+        \item[] 3. User inputs a question.
+        \item[] 4. System provides an answer to the question.
       \end{itemize}
 
     \subsection{Login}
       \qquad Use case name: Login \par
-      \qquad Actors: General User \par
-      \qquad Goal: User login to the system \par
-      \qquad Preconditions: User already registered \par
+      \qquad Actors: General Users \par
+      \qquad Goal: Users log in to the system \par
+      \qquad Preconditions: User is already registered \par
       \qquad Main success scenario:
       \begin{itemize}
         \item[] 1. User go to website homepage
-        \item[] 2. User select login with line application button
-        \item[] 3. System navigate to line page and set token to this account
-        \item[] 4. System navigate user to FAQ page
+        \item[] 2. User selects the “Login with Line Application” button
+        \item[] 3. System navigates to the Line page and sets the token to this account.
+        \item[] 4. System navigates the user to the FAQ page.
       \end{itemize}
 
       \subsection{Register}
         \qquad Use case name: Register \par
-        \qquad Actors: General User \par
-        \qquad Goal: Add new user to the system \par
+        \qquad Actors: General Users \par
+        \qquad Goal: Add a new user to the system \par
         \qquad Preconditions: - \par
         \qquad Main success scenario:
         \begin{itemize}
-          \item[] 1. User go to website homepage
-          \item[] 2. User select login with line button
-          \item[] 3. System navigate to line official login page
-          \item[] 4. User select allow button
-          \item[] 5. System get new user
+          \item[] 1. User goes to the website homepage.
+          \item[] 2. User selects the “Login with Line” button.
+          \item[] 3. System navigates to the Line official login page.
+          \item[] 4. User selects the “Allow” button.
+          \item[] 5. System adds the new user.
         \end{itemize}
         \qquad Extension (a)
         \begin{itemize}
-          \item[] 1a. User open line application
-          \item[] 2a. User scan qr code
-          \item[] 3a. User add line official
-          \item[] 4a. User select allow button
-          \item[] 5a. System get new user
+          \item[] 1a. System adds the new user.
+          \item[] 2a. User scans the QR code. 
+          \item[] 3a. User adds Line Official.
+          \item[] 4a. User selects the “Allow” button. 
+          \item[] 5a. System adds the new user.
         \end{itemize}
       
-      \subsection{Follow-up}
-        \qquad Use case name: Follow up \par
+      \subsection{Follow-Up}
+        \qquad Use case name: Follow-Up \par
         \qquad Actors: Registered User (Patient) \par
-        \qquad Goal: Registered User answer follow up question then system send suggestion \par
-        \qquad Preconditions: User have done surgery and scan the QR code \par
+        \qquad Goal: Registered User answers follow-up questions, and the system provides suggestions \par
+        \qquad Preconditions: User has undergone surgery and scanned the QR code \par
         \qquad Main success scenario:
         \begin{itemize}
-          \item[] 1. User login to the system
-          \item[] 2. System ask follow-up question
-          \item[] 3. Login user answer the question
-          \item[] 4. The answer relate to the question
-          \item[] 5. System analysis and give suggestion to patient
+          \item[] 1. User logs into the system.
+          \item[] 2. System presents follow-up questions.
+          \item[] 3. Logged-in user answers the questions.
+          \item[] 4. The answer pertains to the question.
+          \item[] 5. System analyzes and offers suggestions to the patient.
         \end{itemize}
         \qquad Extension (a)
         \begin{itemize}
-          \item[] 4a. The answer does not relate to the question.
-          \item[] 5a. System sends an error message. Return to step2.
+          \item[] 4a. The answer does not correspond to the question.
+          \item[] 5a. System sends an error message and returns to step 2.
         \end{itemize}
 
-      \subsection{View case history}
-        \qquad Use case name: View case history \par
+      \subsection{View Case History}
+        \qquad Use case name: View Case History \par
         \qquad Actors: Registered User (Patient) \par
-        \qquad Goal: Registered User (Patient) access user case page \par
-        \qquad Preconditions: User have done surgery \par
+        \qquad Goal: Registered User (Patient) accesses the user case page \par
+        \qquad Preconditions: User has undergone surgery \par
         \qquad Main success scenario:
         \begin{itemize}
-          \item[] 1. User login to the system
-          \item[] 2. System navigate to FAQ Page
-          \item[] 3. User select “Profile” button
-          \item[] 4. User access to Profile Page with case history
+          \item[] 1. User logs into to the system.
+          \item[] 2. System navigates to the FAQ page.
+          \item[] 3. User selects the “Profile” button.
+          \item[] 4. User accesses the Profile page displaying case history.
         \end{itemize}
-      \subsection{Add new case via QR code}
-        \qquad Use case name: Add new case via QR code \par
+      \subsection{Add New Case via QR Code}
+        \qquad Use case name: Add New Case via QR Code \par
         \qquad Actors: Registered User (Patient) \par
-        \qquad Goal: Registered User (Patient) add new case to system \par
-        \qquad Preconditions: User have done surgery \par
+        \qquad Goal: Registered User (Patient) adds a new case to the system\par
+        \qquad Preconditions: User has undergone surgery. \par
         \qquad Main success scenario:
         \begin{itemize}
-          \item[] 1. User login to the system
-          \item[] 2. User select scan qr code in system line official
-          \item[] 3. User scan qr code
-          \item[] 4. User access to the form
-          \item[] 5. User select 1 treatment operation
-          \item[] 6. User submit the form to system
+          \item[] 1. User logs into the system.
+          \item[] 2. User selects “Scan QR Code” in the Line Official system.
+          \item[] 3. User scans the QR code.
+          \item[] 4. User gains access to the form.
+          \item[] 5. User selects a treatment operation.
+          \item[] 6. User submits the form to the system.
         \end{itemize}
 
 \newpage
@@ -620,7 +620,7 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.15\textwidth]{Image/AD_FAQ.png}}
         \caption{Question Answering Activity Diagram}\label{fig:AD_FAQ}
         \begin{flushleft}
-          \qquad When user access to homepage and click “\textthai{เริ่มบทสนทนา}” button, system will show chatbot interface and user can input a question in input text box then system will answer that question. \par
+          \qquad When users access the homepage and click the “\textthai{เริ่มบทสนทนา}” button, the system will display the chatbot interface. Users can then input their questions into the provided text box, and the system will respond with the appropriate answer to the question. \par
         \end{flushleft}
       \end{figure}
 
@@ -630,7 +630,7 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.15\textwidth]{Image/AD_Login.png}}
         \caption{Login Activity Diagram}\label{fig:AD_Login}
         \begin{flushleft}
-          \qquad When user access to homepage and click “\textthai{เข้าสู่ระบบผ่าน} LINE”, system will navigate user to line page then navigate to FAQ page. \par
+          \qquad When users access the homepage and click the “\textthai{เข้าสู่ระบบผ่าน} LINE”, the system will redirect the user to the Line page and subsequently navigate them to the FAQ page. \par
         \end{flushleft}
       \end{figure}
 \newpage
@@ -640,36 +640,38 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.4\textwidth]{Image/AD_Regis.png}}
         \caption{Register Activity Diagram}\label{fig:AD_Register}
         \begin{flushleft}
-          \qquad When user access to homepage and click “\textthai{เข้าสู่ระบบผ่าน} LINE” button, system will navigate user to add line official page and user click add line official then system will register this user automatically. In another way, user access via line application and select scan qr code then scan our qr code at medical unit, and select add line official, system will register this user automatically as well. \par
+          \qquad When users access the homepage and click the “\textthai{เข้าสู่ระบบผ่าน} LINE” button, the system will direct the user to the “Add Line Official” page. If the user clicks “Add Line Official” there, the system will automatically register this user.  \par
+          \qquad Alternatively, if a user accesses via the Line application, selects “Scan QR Code,” scan our QR code at the medical unit, and then selects “Add Line Official,” the system will also automatically register this user.  \par
         \end{flushleft}
       \end{figure}
 
       \subsection{Follow-Up}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.15\textwidth]{Image/AD_Follow.png}}
+        \fbox{\includegraphics[width=.12\textwidth]{Image/AD_Follow.png}}
         \caption{Follow-Up Activity Diagram}\label{fig:AD_Follow}
         \begin{flushleft}
-          \qquad When user access FAQ page after login completely and switch to Follow-up page, system will show follow-up chatbot interface then system will ask follow-up question, and user answer questions, if answer related to question system will analyze that answer and give suggestion to user, but if answer does not related to question, system will try to ask again to get related answer from user.  \par
+          \qquad When users access the FAQ page after completing the login process and subsequently switch to the Follow-up page, the system will present the follow-up chatbot interface. The system will then initiate by asking a follow-up question. Upon receiving the user’s answer, the system will analyze it and provide a suggestion to the user. However, if the answer does not pertain to the question asked, the system will attempt to reask the question to obtain a related answer from the user.   \par
         \end{flushleft}
       \end{figure}
 \newpage
-      \subsection{View case history}
+      \subsection{View Case History}
       \begin{figure}[!h]
         \centering
         \fbox{\includegraphics[width=.15\textwidth]{Image/AD_ViewCase.png}}
         \caption{View case history Activity Diagram}\label{fig:AD_ViewCase}
         \begin{flushleft}
-          \qquad When user access FAQ or Follow-up page and click on “Profile” button, system will navigate to profile page with case history.  \par
+          \qquad When users access the FAQ or Follow-up page and click on the “Profile” button, the system will direct them to the profile page, displaying their case history.  \par
         \end{flushleft}
       \end{figure}
-      \subsection{Add new case via QR code}
+\newpage
+      \subsection{Add New Case via QR Code}
       \begin{figure}[!h]
         \centering
         \fbox{\includegraphics[width=.12\textwidth]{Image/AD_AddCase.png}}
         \caption{Add new case via QR code Activity Diagram}\label{fig:AD_AddCase}
         \begin{flushleft}
-          \qquad When user open line application and scan our qr code, user will access to the form that user need to select one of treatment operations and submit the form.  \par
+          \qquad When users open the Line application and scan our QR code, they will access a form where they need to select one of the treatment operations and submit the form.  \par
         \end{flushleft}
       \end{figure}
 
@@ -679,144 +681,161 @@ WWW & World Wide Web \\
       \fbox{\includegraphics[width=.4\textwidth]{Image/Navigation_Map.png}}
       \caption{Chatbot web application navigation map}\label{fig:Navigation_Map}
       \begin{flushleft}
-        \qquad For the web application, there are two roles which are Guest user and Registered user. Every user starts with the Homepage, Guest can only access the FAQ Chatbot and Login page, while Registered users can also access the Follow Up page and View Case History page. \par
-        \qquad When accessing the platform through Line Official for the first time, the account will automatically create and link to the user’s line account. For users who already have an existing account, if the user accesses any feature via the menu in Line official, will automatically login. However, if the user accesses the platform through normal web interface, will first land on the homepage and be able to use only Question Answering chatbot without the need to login. To access the follow-up feature through normal web interface, users are required to login via line account. \par
+        \qquad For the web application, two user roles exist: Guest users and Registered users. Upon entering the platform, all users start at the Homepage. Guest users have access solely to the FAQ chatbot and the Login page. Conversely, registered users can additionally access the Follow-Up  and View Case History pages.  \par
+        \qquad Upon initial access via Line Official, an account will be automatically created and linked to the user’s Line account. For existing account holders, accessing any feature via the Line Official menu will trigger automatic login. However, when users access the platform through the normal web interface, they initially land on the homepage. In this scenario, they can use the Question Answering chatbot without needing to log in.  \par
+        \qquad To access the follow-up feature via the normal web interface, users must login using their Line account. \par
       \end{flushleft}
     \end{figure}
 
   \section{ER Diagram}
     \begin{figure}[!h]
       \centering
-      \fbox{\includegraphics[width=.4\textwidth]{Image/ER2.png}}
+      \fbox{\includegraphics[width=.5\textwidth]{Image/ER2.png}}
       \caption{ER-Diagram}\label{fig:ER}
-      \begin{flushleft}
-        \qquad Figure 3.10 shows the basic database design, which is required for store registered users. There are a total of 4 objects in our application. In the User object, it will have userID, LineUsername, LineProfilepic, LineStatusMessage which is linked to Line profile. The User object will also contain  lists of Records object. In Records object, there is RecordID, TimeStamp, SurgicalProcedure, Status, ChatMessage, and Chat. The RecordID is linked to the User object to collect the data related to user's follow-up information and follow-up procedure. In FollowUpChat object, there is ChatID, UserChat, TimeStamp, and Text. The ChatID is linked to the FollowUp object. The FollowUpChat object will store each message that interacted between user and the system. The last object is FAQChatHist object. In the FAQChatHist object, will have FAQChatHistID, UserChat, Text. This object will store each message that was received from the user's input question. \par
-      \end{flushleft}
+      \begin{itemize}
+        \item[] 1. User Object: This object includes userID, Username, Profilepic, and StatusMessage, all linked to the Line profile. Additionally, the User object contains lists of RecordObject and FollowUpObject.
+        \item[] 2. Records Object: It encompasses RecordID, TimeStamp, SurgicalProcedure, and Status. The RecordID is linked to the User object. 
+        \item[] 3. FollowUp Object: This object contains FollowUpID, Title, TimeStamp, Chat, and ChatResult. The FollowUpID is linked to the Record object in a one-to-one relation.
+        \item[] 4. Chat Object: It includes ChatID, UserChat, TimeStamp, and Text. The ChatID is linked to the FollowUp object.   
+        \item[] These objects and their interconnections form the basic structure of our database for storing user-related information, their records, follow-ups, and chat interactions.
+      \end{itemize}
     \end{figure}
-\newpage
   \section{User Interface}
     \subsection{Home Page}
     \begin{figure}[!h]
       \centering
-      \begin{minipage}{.6\textwidth}
+      \begin{minipage}{.5\textwidth}
         \centering
-        \fbox{\includegraphics[width=.8\linewidth]{Image/Desk_Home.png}}
+        \fbox{\includegraphics[width=.7\linewidth]{Image/Desk_Home.png}}
       \end{minipage}%
       \begin{minipage}{.3\textwidth}
         \centering
-        \fbox{\includegraphics[width=.6\linewidth]{Image/Mob_Home.png}}
+        \fbox{\includegraphics[width=.4\linewidth]{Image/Mob_Home.png}}
       \end{minipage}
       \caption{Website home page (Desktop and mobile respectively)}\label{fig:HomePage}
       \begin{flushleft}
-        \qquad Figure 3.11 is the home page of the web application, this page will show a short description about our website and includes 2 buttons, Start Chatting and Login by Line. The Start Chatting button will take the user to the question answering page and Login by Line will link to the Line login page. \par
+        \qquad Figure 3.11 represents the home page of our web application. This page provides a brief description of our website and features two primary buttons: “Start Chatting” and “Login by Line”.
+        \begin{itemize}
+          \item The “Start Chatting” button redirect users to the question answering page, facilitating interaction with the chatbot for inquiries.
+          \item “Login by Line” directs users to the Line login page, allowing them to log into the platform using their Line account credentials.
+        \end{itemize}
       \end{flushleft}
     \end{figure}
 
     \subsection{Follow-Up page}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.6\textwidth]{Image/Desk_Follow.png}}
+        \fbox{\includegraphics[width=.4\textwidth]{Image/Desk_Follow.png}}
         \caption{Desktop Follow-Up page}\label{fig:Desk_Follow}
         \begin{flushleft}
-          \qquad Figure 3.12 is the Follow-Up page of the web application on desktop, this page includes case history in the left side of the page which is able to click to see follow-up chat history and chat box in the middle of the page, and input textbox under the chat box, and switch bar in the top of chat box use  for switch between FAQ and Follow-up feature. \par
+          \qquad Figure 3.12 showcases the Follow-Up page of the web application specifically designed for the desktop use. The layout consists of several key components: \par
+          \begin{itemize}
+            \item Case History: Positioned on the left side of the page, this section displays the user’s case history. Users can click on specific cases to view their follow-up chat history. 
+            \item Chat Box: Positioned in the middle of the page, this area hosts the ongoing chat conversation. User can engage in follow-up discussions within this section. 
+            \item Input Textbox: Positioned beneath the chat box, this textbox enables users to input their responses during the follow-up conversation. 
+            \item Switch Bar: Located at the top of the chat box, this bar facilitates the transition between the FAQ and Follow-up features.
+          \end{itemize}
         \end{flushleft}
       \end{figure}
-\newpage
-    \subsection{Follow-Up page}
+
     \begin{figure}[!h]
       \centering
-      \begin{minipage}{.3\textwidth}
+      \begin{minipage}{.15\textwidth}
         \centering
         \fbox{\includegraphics[width=.7\linewidth]{Image/Mob_Follow_1.png}}
       \end{minipage}%
-      \begin{minipage}{.3\textwidth}
+      \begin{minipage}{.15\textwidth}
         \centering
         \fbox{\includegraphics[width=.7\linewidth]{Image/Mob_Follow_2.png}}
       \end{minipage}%
-      \begin{minipage}{.3\textwidth}
+      \begin{minipage}{.15\textwidth}
         \centering
         \fbox{\includegraphics[width=.7\linewidth]{Image/Mob_Follow_3.png}}
       \end{minipage}
       \caption{Mobile Follow-Up page}\label{fig:Mob_Follow}
       \begin{flushleft}
-        \qquad Figure 3.13 is the Follow-Up page of the web application on mobile, on the left is its normal state and on the center is when the keyboard is used. On the right is when the hamburger button is pressed, the keyboard input will be dismissed and be replaced with a long closed button to go back to its normal state. \par
+        \qquad Figure 3.13 display the mobile version of the Follow-Up page in various scenarios:  \par
+        \begin{itemize}
+          \item Normal Page (Left): This view represents the default appearance of the Follow-Up page on a mobile device.
+          \item Keyboard Usage (Center): When the keyboard is engaged, this display is centered on the chat or input area.
+          \item Hamburger Button Pressed (Right): Upon pressing the hamburger button, the keyboard input is dismissed, replaced by a long-closed button. This button allows users to return to the Follow-Up page.
+        \end{itemize}
       \end{flushleft}
     \end{figure}
 
     \subsection{FAQ page}
     \begin{figure}[!h]
       \centering
-      \fbox{\includegraphics[width=.7\textwidth]{Image/Desk_FAQ.png}}
+      \fbox{\includegraphics[width=.4\textwidth]{Image/Desk_FAQ.png}}
       \caption{Desktop Question Answering page}\label{fig:Desk_Follow}
       \begin{flushleft}
-        \qquad Figure 3.14 is the Question Answering page of the web application on desktop, this page includes a chat box in the middle of the page and input textbox in the bottom and switch bar in the top of the chat box used for switching between FAQ and Follow-up feature. \par
+        \qquad Figure 3.14 depicts the desktop version of the Question Answering page within the web application. The page features a central chat box facilitating user-system interaction for addressing queries, accompanied by an input textbox positioned at the bottom. Additionally, a switch bar located atop the chat box facilitates switching between the FAQ and Follow-up features. \par
       \end{flushleft}
     \end{figure}
-\newpage
     \begin{figure}[!h]
       \centering
       \begin{minipage}{.3\textwidth}
         \centering
-        \fbox{\includegraphics[width=.7\linewidth]{Image/Mob_FAQ_1.png}}
+        \fbox{\includegraphics[width=.6\linewidth]{Image/Mob_FAQ_1.png}}
       \end{minipage}%
       \begin{minipage}{.3\textwidth}
         \centering
-        \fbox{\includegraphics[width=.7\linewidth]{Image/Mob_FAQ_2.png}}
+        \fbox{\includegraphics[width=.6\linewidth]{Image/Mob_FAQ_2.png}}
       \end{minipage}%
       \caption{Mobile Question Answering page}\label{fig:Mobile Question Answering page}
       \begin{flushleft}
-        \qquad Figure 3.15 is the Question Answering page of the web application on desktop, on the left is its normal state and on the right is when the keyboard is used. \par
+        \qquad Figure 3.15 illustrates the Question Answering page of the web application on mobile. On the left is its normal page view, and on the right is the interface when the keyboard is in use. \par
       \end{flushleft}
     \end{figure}
-
+\newpage
     \subsection{Patient Info page}
     \begin{figure}[!h]
       \centering
       \begin{minipage}{.7\textwidth}
         \centering
-        \fbox{\includegraphics[width=.8\linewidth]{Image/Desk_Info.png}}
+        \fbox{\includegraphics[width=.7\linewidth]{Image/Desk_Info.png}}
       \end{minipage}%
       \begin{minipage}{.25\textwidth}
         \centering
-        \fbox{\includegraphics[width=.8\linewidth]{Image/Mob_Info.png}}
+        \fbox{\includegraphics[width=.6\linewidth]{Image/Mob_Info.png}}
       \end{minipage}
       \caption{Patient Information page (Desktop and mobile respectively)}\label{fig:Patient Information page}
       \begin{flushleft}
-        \qquad Figure 3.16 is the Patient Information page of the web application, it shows all the patient oral medical history that they registered. The record shows the record ID, Timestamp, Surgical Procedures type, status and the conditions. \par
+        \qquad Figure 3.16 represents the Patient Information page within the web application, displaying the comprehensive oral medical history registered by the patient. The records display the Record ID, Timestamp, Surgical Procedures type, status, and associated conditions. \par
       \end{flushleft}
     \end{figure}
-\newpage
     \subsection{Line official page}
     \begin{figure}[!h]
       \centering
       \begin{minipage}{.3\textwidth}
         \centering
-        \fbox{\includegraphics[width=.8\linewidth]{Image/Line_1.png}}
+        \fbox{\includegraphics[width=.6\linewidth]{Image/Line_1.png}}
       \end{minipage}%
       \begin{minipage}{.3\textwidth}
         \centering
-        \fbox{\includegraphics[width=.8\linewidth]{Image/Line_2.png}}
+        \fbox{\includegraphics[width=.6\linewidth]{Image/Line_2.png}}
       \end{minipage}%
     
       \caption{Line Login Page}\label{fig:Line Login Page}
       \begin{flushleft}
-        \qquad Figure 3.17 is how the line official page will look like, all notifications will be sent through here. The FAQ button will lead to the question answer website, Follow-up will lead to the follow up page of the website and view case will lead to the patient information page. \par
+        \qquad Figure 3.17 showcases the layout of the Line Official page, acting as the central notification hub within the application. The FAQ button directs users to the question answer website, the Follow-up button leads to the follow-up page on the website, and the View Case navigates users to the patient information page. \par
       \end{flushleft}
     \end{figure}
+\newpage
   \section{Evaluation Plan}
     \subsection{User Evaluation}
-      \qquad After developing the platform in accordance with our goals , We will test our application and gather user feedback. We will collect the data about overall satisfaction, usability, user experience, and improvement suggestions. After the data has been collected, we will analyze and evaluate the application. \par
+      \qquad Upon the completion of platform development aligned with our objectives, we aim to conduct testing and gather user feedback. Our assessment will encompass overall satisfaction, usability, user experience, and suggestions for enhancements. Subsequently, the collected data will undergo thorough analysis to evaluate the application. \par
     \subsection{Application Evaluation}
-      \qquad In assessing the performance of critical components, focus will be placed on two key metrics. First, Response Latency will be closely monitored the speed at which the chatbot responds to user queries. Additionally, Load Tests will be conducted to evaluate the system's capacity to handle user interactions. Furthermore, accuracy in providing precise and correct answers to dental queries ensures the chatbot's proficiency in delivering accurate information. \par
+      \qquad For assessing critical components, our focus will center on two key metrics. First, Response Latency will be closely monitored to gauge the chatbot’s speed in addressing user queries. Moreover, the accuracy in providing precise and correct responses to dental inquiries will ensures the chatbot's proficiency in delivering accurate information. \par
 
 \chapter{EXPERIMENTAL RESULTS}
   \section{Dental Frequently Asked Question Collection}
-    \qquad Since the project should be able to answer the input queries, we have gathered commonly asked questions about the 4 surgeries mentioned. We conducted surveys and consulted with experts to ensure accurate and appropriate answers. This section contains the questionnaire and its results. \par
+    \qquad To ensure the project’s ability to address user queries effectively, we have gathered a list of frequently asked questions about the four specified surgeries. Surveys were conducted, and experts were consulted to guarantee accurate and appropriate answers. This section contains the questionnaire and its corresponding results. \par
     \subsection{Collection Process}
-      \qquad The questions were gathered using Google Forms. The questionnaire below was created aimed to cover a wide range of opinions and concerns regarding dental health and medical treatments. Questions in the questionnaire consisted of \textthai{คุณเคยผ่านการรักษาหรือการผ่าตัดไหนมาแล้วบ้าง, สาเหตุที่คุณเข้ารับการรักษา/ผ่าตัด, คำถามที่มักจะเจอหรือสงสัยเกี่ยวกับโรคและการรักษา/ผ่าตัดข้างต้น, คำถามที่มักสงสัยหลังจากที่ได้รับการรักษา/ผ่าตัด.} \par
+      \qquad The questions were collected using Google Forms. The provided questionnaire aimed to cover a broad range of opinions and concerns regarding dental health and medical treatments. Questions within the questionnaire included inquiries about past treatments or surgeries (\textthai{คุณเคยผ่านการรักษาหรือการผ่าตัดไหนมาแล้วบ้าง}), reasons for undergoing treatment/surgery (\textthai{สาเหตุที่คุณเข้ารับการรักษา/ผ่าตัด}), commonly encountered or doubtful inquiries regarding the aforementioned diseases, treatments, or surgeries (\textthai{คำถามที่มักจะเจอหรือสงสัยเกี่ยวกับโรคและการรักษา/ผ่าตัดข้างต้น}), and questions often raised post-treatment/surgery (\textthai{คำถามที่มักสงสัยหลังจากที่ได้รับการรักษา/ผ่าตัด}). \par
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.37\textwidth]{Image/Survey_1.png}}
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Survey_1.png}}
         \caption{First page of the questionnaire}\label{fig:Survey_1}
       \end{figure}
       \begin{figure}[!h]
@@ -838,73 +857,76 @@ WWW & World Wide Web \\
     \subsection{Results}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_1.png}}
+        \fbox{\includegraphics[width=.6\textwidth]{Image/Result_1.png}}
         \caption{Pie chart of Distribution of Oral Surgery Experience}\label{fig:Result_1}
       \end{figure}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_2.png}}
+        \fbox{\includegraphics[width=.6\textwidth]{Image/Result_2.png}}
         \caption{Respondent’s Oral Surgeries Experience}\label{fig:Result_2}
       \end{figure}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_3.png}}
+        \fbox{\includegraphics[width=.6\textwidth]{Image/Result_3.png}}
         \caption{Reason the Respondent Attend the Treatment}\label{fig:Result_3}
       \end{figure}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_4.png}}
+        \fbox{\includegraphics[width=.6\textwidth]{Image/Result_4.png}}
         \caption{Common Questions and Concerns About Surgeries and Treatment}\label{fig:Result_4}
       \end{figure}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_5.png}}
+        \fbox{\includegraphics[width=.6\textwidth]{Image/Result_5.png}}
         \caption{Post-Treatment Frequently Asked Questions}\label{fig:Result_5}
       \end{figure}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.5\textwidth]{Image/Result_6.png}}
+        \fbox{\includegraphics[width=.6\textwidth]{Image/Result_6.png}}
         \caption{Recommendations for Website Development and Features}\label{fig:Result_6}
       \end{figure}
       \FloatBarrier{}
+      \qquad The survey results indicate that out of 169 respondents, 63.3 percentage have experienced oral surgery, primarily involving procedures like tooth extraction, wisdom tooth removal, periodontal surgery, and dental implant surgery. The prevalent reason reported for surgery was toothache. Frequently asked questions revolved around surgical procedures, post-operative self-care, necessary care instructions, recommendations, and essential guidelines for proper care. \par
+
 
   \section{Follow-Up Procedure Interview}
-    \qquad Since the follow-up process is one of the project's main features, we must examine every important aspect in order to emphasize the post-surgery follow-up in the context of dental healthcare, understand the importance of comprehensive patient care, as well as the details of the follow-up process. This will allow us to imitate the actual medical staff procedure. This section explains how we conducted interviews with the dental clinic's medical staff in order to gain important insights into the techniques used for post-surgery tracking. \par
+    \qquad As the follow-up process stands as a primary feature of our project, it is essential to thoroughly examine every critical element. This interview aims to emphasize the post-surgery follow-up in the context of dental healthcare, understand the importance of comprehensive patient care, and delve into the specifics of the follow-up process. This comprehension allows us to replicate the actual medical staff procedure effectively.  \par
+    \qquad This section elucidates our methodology in conducting interviews with the dental clinic's medical staff to gain important insights into the techniques used for post-surgery tracking. \par
     \subsection{Interviewing Dental Clinic Around the University}
-      \qquad To gain an insight and understand post-surgery follow-up procedure, we have first conducted an interview at the dental clinic around the university. The interview question include question such as \textthai{ขั้นตอนการติดตามอาการผู้ป่วย, โดยปกติแล้วจะทำการโทรติดตามอาการคนไข้กี่ชั่วโมงหลังผ่าตัด, คำถามที่มักจะถามผู้ป่วยตอนติดตามอาการ, คำถามที่ผู้ป่วยมักจะถามกลับมา.} After these interviews, we have gained invaluable insights and a deeper understanding of the follow-up procedures, enhancing our research with firsthand perspectives on patient care in the post-surgical phase within the local dental healthcare landscape. \par
+      \qquad To gain an insight into and understand the post-surgery follow-up procedure, we initiated interviews at the dental clinic around the university. The interview questions included inquiries about patient symptom monitoring procedures (\textthai{ขั้นตอนการติดตามอาการผู้ป่วย}), typically how many hours post-surgery patient symptoms are usually followed up (\textthai{โดยปกติแล้วจะทำการโทรติดตามอาการคนไข้กี่ชั่วโมงหลังผ่าตัด}), common inquiries asked to patients during symptom follow-ups (\textthai{คำถามที่มักจะถามผู้ป่วยตอนติดตามอาการ}), and the typical questions patients commonly ask during follow-ups (\textthai{คำถามที่ผู้ป่วยมักจะถามกลับมา}). These interviews provided invaluable insights and a deeper understanding of follow-up procedures, enriching our research with firsthand perspectives on patient care during the post-surgical phase within the local dental healthcare landscape. \par
+
     \subsection{Interviewing and Survey at Faculty of Dentistry at Chulalongkorn University}
-      \qquad According to the important requirement for an in-depth understanding of the practicalities involved with the follow-up procedure, we needed to familiarize ourselves with the patient's involvement following surgery. This includes an in-depth investigation of  complexity of questions, symptom assessment, patient interaction during the follow-up phase, and response to particular concerns. Regarding the complexity of these interactions, we think it is important to have discussions and obtain advice from professionals, especially those who have experience with the follow-up procedure, and patient communication. \par
-      \qquad In order to capture the view of the expert and  match our project with the actual demands of both medical professionals and patients, we conduct an on-site observation and interviews at the Faculty of Dentistry, Chulalongkorn University. \par
+      \qquad Recognizing the necessity for an in-depth understanding of the practicalities involved in the follow-up procedure, we aimed to acquaint ourselves with the patient involvement post-surgery. This includes a thorough investigation of the intricacies of questions, symptom assessment, patient interaction during follow-ups, and addressing specific concerns. Given the complexity of these interactions, we believed it crucial to engage in discussions and seek advice from professionals, experienced in follow-up procedures, and patient communication. To align our project with the actual demands of both medical professionals and patients, we conducted an on-site observation and interviews at the Faculty of Dentistry, Chulalongkorn University. \par
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.8\textwidth]{Image/Interview_1.jpg}}
+        \fbox{\includegraphics[width=.6\textwidth]{Image/Interview_1.jpg}}
         \caption{Our team and the call-center representative}\label{fig:Interview_1}
         \begin{flushleft}
-          \qquad The call-center representative works at the OPD Instant Clinic's call center. The department is in charge of answering questions and helping out OPD patients. \par
+          \qquad Figure 4.11 depicts our team alongside the call-center representative employed at the OPD Instant Clinic's call center. This department is responsible for answering questions and assisting OPD patients. \par
         \end{flushleft}        
       \end{figure}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.8\textwidth]{Image/Interview_2.jpg}}
+        \fbox{\includegraphics[width=.6\textwidth]{Image/Interview_2.jpg}}
         \caption{Working environment of the OPD Instant Clinic's call center}\label{fig:Interview_2}
         \begin{flushleft}
-          \qquad The OPD Instant Clinic's call center is following-up with their patient a day after the surgeries. \par
+          \qquad Figure 4.12 shows the operational environment within the OPD Instant Clinic's call center, where staff members engage in follow-up procedures with patients a day after their surgeries. \par
         \end{flushleft}
       \end{figure}
       \begin{figure}
         \centering
-        \fbox{\includegraphics[width=.8\textwidth]{Image/Interview_3.jpg}}
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Interview_3.jpg}}
         \caption{Conversation with the nurse who is experienced in the patient follow-up process}\label{fig:Interview_3}
         \begin{flushleft}
-          \qquad The follow-up process usually happens three days following a patient's discharge. The nurse will follow-up with the patients and give them advice if needed. \par
+          \qquad We engaged in a conversation with an experienced nurse specializing in the patient follow-up process. This follow-up routine typically occurs three days after a patient's discharge, during which the nurse contacts patients and provides necessary advice and support. \par
         \end{flushleft}
       \end{figure}
       \begin{figure}
         \centering
-        \fbox{\includegraphics[width=.8\textwidth]{Image/Interview_4.jpg}}
+        \fbox{\includegraphics[width=.5\textwidth]{Image/Interview_4.jpg}}
         \caption{Document that the nurse has documented patient information during follow-up sessions}\label{fig:Interview_4}
         \begin{flushleft}
-          \qquad The nurse records details such as the operation, discharge date, follow-up date, contact person, symptoms, and any additional notes. This approach is a comprehensive and accurate way of tracking patient data gathered during follow-up calls. \par
+          \qquad Figure 4.14 displays the document used by the nurse to document patient information during follow-up sessions. This documentation includes essential details such as the operation performed, discharge date, follow-up date, contact person, symptoms observed, and any additional notes. This method ensures a comprehensive and precise approach to tracking patient data obtained during follow-up calls. \par
         \end{flushleft}
       \end{figure}
 
