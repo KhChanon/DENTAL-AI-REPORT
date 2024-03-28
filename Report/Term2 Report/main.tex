@@ -985,6 +985,27 @@ WWW & World Wide Web \\
   \FloatBarrier{}    
   \section{Frequently Ask Question Dataset}
     \subsection{Prepare Dataset For Training Classification Model}
+      \qquad Initially, the dataset of the project had 240 questions, and we wanted to divide the questions into 4 operations according to the scope of this project. However, due to the large amount of content in each operation, we decided to further divide the data of each operation into different 'Question Types' to make the content clearer and easier to use in the subsequent steps of answering questions. \par
+      \qquad When attempting to train a classification model to predict the corresponding operation for a given question, we achieved a maximum accuracy of 0.7. However, the model encountered difficulties in accurately predicting certain question types due to insufficient representation of those types in the dataset. To address this issue, we opted to source additional questions from various channels, resulting in a total of 798 questions. Subsequently, we augmented the dataset using techniques including random insertion, random deletion, random swap, back translation, and paraphrased text. This augmentation process resulted in a total of 2,033 questions within the dataset. \par
+      \qquad The questions were initially categorized into 5 types \textthai{(ข้อดี, ข้อแนะนำ, ทั่วไป, ปัจจัยเสี่ยง, สาเหตุ)}, which we denoted as Question Type 1 (Q1). However, there was an imbalance in the number of questions across each category, which introduced bias during the training process. Therefore, we attempted to reclassify the question types into 7 new categories (Procedure-related, Post-procedure Care, Symptom-related, Risk-related, Medical-related, Technical-related, and General Health), referred to as Question Type 2 (Q2). This restructuring aimed to achieve a more equitable distribution of questions in our dataset, as illustrated in Figure 4. \par
+      \qquad Moreover, during our experimentation with classification models, we noticed instances where certain questions did not clearly align with a specific operation, leading to inaccuracies in the models’ predictions. Therefore, we aggregated such questions into a distinct class labeled "No Class," thereby expanding the total number of operations to 5. \par
+      \begin{figure}[!h]
+        \centering
+        \begin{minipage}{.3\textwidth}
+          \centering
+          \fbox{\includegraphics[width=.6\linewidth]{Image/EDAQ1.png}}
+        \end{minipage}%
+        \begin{minipage}{.3\textwidth}
+          \centering
+          \fbox{\includegraphics[width=.6\linewidth]{Image/EDAQ2.png}}
+        \end{minipage}%
+        \caption{Distribution of Question Type}\label{fig:Distribution of Question Type}
+      \end{figure}
+      
+    \subsection{Train and Test Set of Classification Model}
+      \qquad In every classification model, training followed a structured approach using three types of datasets, arranged in the following sequence: Normal Dataset, Added Normal Dataset, and Augmented Dataset. The dataset sizes differ to facilitate performance comparison across the models. Each dataset is subdivided into training and testing sets at a ratio of 4:1. \par
+      \qquad In tables 4.1 – 4.4, you will observe the inclusion of random state numbers as control variables to regulate the data splitting process within the function. This ensures consistency in test usage across comparisons, a crucial aspect for accurately assessing the model accuracies. \par
+      \qquad In the actual dataset, there are a total of 5 operations: \textthai{ถอนฟัน, ผ่าฟันคุด,ผ่าตัดเหงือก, ผ่าตัดรากฟันเทียม} and NC(No Class). However, for training the Operation + Question Type and Operation -> Question Type models, we excluded the NC operation. Consequently, the dataset sizes are reduced to 689 and 1,767 for the Added Normal and Augmented datasets respectively. As for answering NC operation questions, users will be prompted to re-enter their questions while specifying the operation they are inquiring about. Therefore, classifying this operation class is not necessary for the current model objectives. \par
       \begin{table}
         \centering
         \caption{Train and Test Set of Normal and Augmented Dataset Training With Operation+Q1 and Operation+Q2 Classification model}
@@ -999,7 +1020,6 @@ WWW & World Wide Web \\
         \end{tabular}
         }
       \end{table}
-    \subsection{Train and Test Set of Classification Model}
       \begin{table}
         \centering
         \caption{Train and Test Set of Normal and Augmented Dataset Training With Operation, Q1, and Q2 Classification Model}
@@ -1060,9 +1080,19 @@ WWW & World Wide Web \\
         }
       \end{table}
   \section{Question Answering Feature Flow}
-  
+    \begin{figure}
+      \centering
+      \fbox{\includegraphics[width=.5\textwidth]{Image/FAQ-flow.png}}
+      \caption{FAQ Flow}\label{fig:FAQ Flow}
+      \begin{flushleft}
+        \qquad Initially, the design question answering feature flow involves taking questions received from users and using them to find labels with the classification model. Then, the labels are matched with contexts that have the same labels. Then use both the question and the context to find the answer to the question using the question-answering pretrained model (DeBERTa). \par
+      \end{flushleft}
+    \end{figure}
   \section{Classification Model Experiment}
+    \qquad In our experimentation with training models for classifying question types, we chose to explore various machine learning approaches. Specifically, we employed the Python modules sklearn.naivebayes and sklearn.ensemble to utilize a range of algorithms including BernoulliNB, MultinomialNB, GaussianNB, ComplementNB, CategoricalNB, and RandomForestClassifier. Additionally, we employed a technique known as grid search, which involves systematically searching for the optimal hyperparameters by specifying potential values for each machine learning algorithm. This grid search approach enables efficient identification of the best hyperparameters, thereby saving time in tuning each model. The results from all models were derived from testing against two types of test sets: the normal test set and the augmented test set.  The main difference between these two test sets lies in the presence of typing errors, whereas the augmented test set includes samples with simulated typing errors added using the text augmentation technique outlined in section 2.3.7, applied to the normal dataset. \par
+    \qquad Through our experimentation, we explored three main types of classification methodologies: Simple Classification, Parallel Classification, and Sequential Classification. In Parallel Classification, the label prediction for a question occurs concurrently using both the operation model and the question type model. Sequential Classification involves predicting the label for a question first using the operation model and subsequently using the question type model trained with data specific to each operation. Lastly, Simple Classification pairs each operation with its corresponding question type and utilizes a single model to predict the label for the matched pair. \par
     \subsection{Operation Classification }
+      \qquad In our quest to determine the optimal model for predicting the operation of each question, we opted to leverage machine learning techniques. Upon analyzing the dataset, we observed that many questions already contain distinct keywords that hint at the associated operations. Consequently, we embarked on further experimentation by incorporating a Keyword Search technique into our methodology. \par
       \subsubsection{Machine Learning Model}
         \begin{table}
           \scriptsize
@@ -1084,6 +1114,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad Table 4.5 illustrates that for the added normal dataset, the Gaussian Naïve Bayes model achieved the highest accuracy of 0.906 on the normal test set. Additionally, for the augmented dataset, the Categorical Naïve Bayes model resulted in the highest accuracy of 0.981on the normal test set. \par
       \subsubsection{Keyword Search}
         \begin{table}
           \centering
@@ -1101,6 +1132,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad For Keyword Search, we evaluated the algorithm’s accuracy using the entire dataset, comprising 798 samples for the Normal Data and 2,033 for the Augmented Data. Among the different search methods, Keyword Search2, which employs regular expressions to search for words, outperformed other conventional search techniques in the augmented dataset. This superiority is attributed to its capability to accommodate input questions with errors, leading to significantly improved performance. \par
     \subsection{Simple  Classification}
       \subsubsection{Operation + Q1 Classification}
         \begin{table}
@@ -1123,6 +1155,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Categorical Naïve Bayes model achieved the highest accuracy of 0.681 on the normal test set. For the augmented dataset, both the Random Forest and Gaussian Naïve Bayes models attained the highest accuracy of 0.920 on the normal test set. Consequently, when evaluating accuracy from testing with augmented test data, it was determined that the Random Forest model exhibited the highest accuracy, as shown in Table 4.7. \par
       \subsubsection{Operation + Q2 Classification}
         \begin{table}
           \scriptsize
@@ -1144,7 +1177,9 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad As shown in Table 4.8, for the added normal dataset, the Bernoulli Naïve Bayes model achieved the highest accuracy of 0.572. Conversely,  the augmented dataset,  the  Gaussian Naïve Bayes model achieved the highest accuracy at 0.928. \par
     \subsection{Parallel  Classification}
+      \qquad In the Parallel Classification experimentation, both the operation model and the question type model are utilized to label the data. However, due to the distinction in categorizing question types into either 5 question types or 7 question types, the models used for training are referred to as Q1 Classification and Q2 Classification, respectively. \par
       \subsubsection{Q1 Classification}
         \begin{table}
           \scriptsize
@@ -1166,6 +1201,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+      \qquad In the added normal dataset, both the Complement Naïve Bayes and Categorical Naïve Bayes models achieved the highest accuracy of 0.756 on the normal test set. However, on the augmented test set, the Complement Naïve Bayes model outperformed the Categorical Naïve Bayes model. Additionally, for the augmented dataset, the Random Forest model attained the highest accuracy of 0.956 on the normal test set, as shown in Table 4.9. \par
       \subsubsection{Q2 Classification}
         \begin{table}
           \scriptsize
@@ -1187,7 +1223,9 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+      \qquad The added normal dataset trained with Complement Naïve Bayes achieved the highest accuracy at 0.706 on normal test set, and for the augmented dataset trained with Categorical Naïve Bayes have achieved the highest accuracy 0.95 on normal test set as shown in the Table 4.10. \par
     \subsection{Sequential Classification}
+      \qquad In Sequential Classification experimentation, the data is first labeled using the operation model, and then the labeled data is further used to predict the question type label using the question type model. This means that each experiment involves four main question type models, categorized according to the four operations that are the focus of this project. \par
       \subsubsection{Q1-Operation Classification}
         \begin{table}
           \scriptsize
@@ -1211,6 +1249,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy of 0.758 on the normal test set. Additionally, for the augmented dataset, the Complement Naïve Bayes model achieved the highest accuracy of 0.939 on the normal test set, as shown in the Table 4.11. \par
         \begin{table}
           \scriptsize
           \centering
@@ -1233,6 +1272,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Categorical Naïve Bayes model achieved the highest accuracy of 0.750 on the normal test set. Additionally, for the augmented dataset, the Random Forest, Gaussian Naïve Bayes, Bernoulli Naïve Bayes, and Categorical Naïve Bayes model achieved the highest accuracy of 0.917 on the normal test set, as shown in the Table 4.12. \par
         \begin{table}
           \scriptsize
           \centering
@@ -1255,6 +1295,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.815 on the normal test set. Additionally, for the augmented dataset, the Categorical Naïve Bayes model achieved the highest accuracy of 0.963 on the normal test set, as shown in the Table 4.13. \par
         \begin{table}
           \scriptsize
           \centering
@@ -1277,6 +1318,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Multinomial Naïve Bayes and Categorical Naïve Bayes model achieved the highest accuracy 0.639 on the normal test set. Additionally, for the augmented dataset, the Random Forest model achieved the highest accuracy of 0.944 on the normal test set, as shown in the Table 4.14. \par
       \subsubsection{Q1-Operation with NC Classification}
         \begin{table}
           \scriptsize
@@ -1300,6 +1342,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Random Forest model achieved the highest accuracy 0.738 on the normal test set. Additionally, for the augmented dataset, the Random Forest and Gaussian Naïve Bayes  model achieved the highest accuracy of 0.934 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table 4.15. \par
         \begin{table}
           \scriptsize
           \centering
@@ -1322,6 +1365,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Random Forest model achieved the highest accuracy 0.734 on the normal test set. Additionally, for the augmented dataset, the Random Forest model achieved the highest accuracy of 0.953 on the normal test set, as shown in the Table 4.16. \par
         \begin{table}
           \scriptsize
           \centering
@@ -1344,6 +1388,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.764 on the normal test set. Additionally, for the augmented dataset, the Random Forest model achieved the highest accuracy of 0.964 on the normal test set, as shown in the Table 4.17. \par
         \begin{table}
           \scriptsize
           \centering
@@ -1365,7 +1410,8 @@ WWW & World Wide Web \\
             \bottomrule
           \end{tabular}
           }
-        \end{table} 
+        \end{table}
+        \qquad In the added normal dataset, the Categorical Naïve Bayes model achieved the highest accuracy 0.719 on the normal test set. Additionally, for the augmented dataset, the Bernoulli Naïve Bayes model achieved the highest accuracy of 0.964 on the normal test set, as shown in the Table 4.18. \par
       \subsubsection{Q2-Operation Classification}
         \begin{table}
           \scriptsize
@@ -1389,6 +1435,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.630 on the normal test set. Additionally, for the augmented dataset, the Multinomial Naïve Bayes, Bernoulli Naïve Bayes and Complement Naïve Bayes model achieved the highest accuracy of 0.963 on the normal test set; when considering the augmented test data, Multinomial Naïve Bayes receives the highest accuracy shown in Table 4.19. \par
         \begin{table}
           \scriptsize
           \centering
@@ -1411,6 +1458,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Multinomial Naïve Bayes model achieved the highest accuracy 0.600 on the normal test set. Additionally, for the augmented dataset, the Random Forest, Gaussian Naïve Bayes, Bernoulli Naïve Bayes and Categorical Naïve Bayes model achieved the highest accuracy of 0.920 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table 4.20. \par
         \begin{table}
           \scriptsize
           \centering
@@ -1433,6 +1481,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Random Forest model achieved the highest accuracy 0.545 on the normal test set. Additionally, for the augmented dataset, the Random Forest, Multinomial Naïve Bayes, Gaussian Naïve Bayes, Bernoulli Naïve Bayes and Categorical Naïve Bayes model achieved the highest accuracy of 0.909 on the normal test set; when considering the augmented test data, Multinomial Naïve Bayes, Gaussian Naïve Bayes, Bernoulli Naïve Bayes, and Categorical Naïve Bayes receives the highest accuracy shown in Table 4.21. \par
         \begin{table}
           \scriptsize
           \centering
@@ -1455,6 +1504,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Random Forest, Multinomial Naïve Bayes, and Complement Naïve Bayes model achieved the highest accuracy 0.714 on the normal test set. When considering the augmented test data, Multinomial Naïve Bayes receive the highest accuracy. Additionally, for the augmented dataset, the Random Forest, Gaussian Naïve Bayes, and Bernoulli Naïve Bayes model achieved the highest accuracy of 0.976 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table 4.22. \par
       \subsubsection{Q2-Operation with NC Classification}
         \begin{table}
           \scriptsize
@@ -1478,6 +1528,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.609 on the normal test set. Additionally, for the augmented dataset, the Multinomial Naïve Bayes, and Categorical Naïve Baye model achieved the highest accuracy of 0.978 on the normal test set; when considering the augmented test data, Categorical Naïve Bayes receives the highest accuracy shown in Table 4.23. \par
         \begin{table}
           \scriptsize
           \centering
@@ -1500,6 +1551,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Gaussian Naïve Bayes model achieved the highest accuracy 0.638 on the normal test set. Additionally, for the augmented dataset, the Gaussian Naïve Bayes model achieved the highest accuracy of 0.942 on the normal test set, as shown in the Table 4.24. \par
         \begin{table}
           \scriptsize
           \centering
@@ -1522,6 +1574,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Gaussian Naïve Bayes model achieved the highest accuracy 0.512 on the normal test set. Additionally, for the augmented dataset, the Random Forest, Gaussian Naïve Bayes, Bernoulli Naïve Bayes, and Categorical Naïve Bayes achieved the highest accuracy of 0.951 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table 4.25. \par
         \begin{table}
           \scriptsize
           \centering
@@ -1544,6 +1597,7 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
+        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.639 on the normal test set. Additionally, for the augmented dataset, the Random Forest, and Multinomial Naïve Bayes achieved the highest accuracy of 0.984 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table 4.26. \par
     \subsection{Final Accuracy}
       \begin{table}
         \centering\
@@ -1569,6 +1623,8 @@ WWW & World Wide Web \\
         \end{tabular}
         }
       \end{table}
+      \qquad From the table, it can be seen that the Operation parallel with Q1, which uses the Operation model paired with the Question type model being Random Forest, achieved the highest final accuracy of 0.95 for the normal test set and 0.885 for the augmented test set. As for the Operation parallel with Q2, it can be seen that Categorical Naïve Bayes achieved the highest final accuracy of 0.95. However, for the augmented test set, it is slightly lower than Random Forest by 0.035 or 3.5 percent. But for the normal test set, Random Forest's accuracy is only lower by 0.006. Therefore, it can be concluded that for Q2, the Operation parallel with Q2, which utilizes Random Forest as the question type model, is the best. \par
+
 
   \section{Follow-Up}
     \subsection{Follow-Up Flow Chart}
