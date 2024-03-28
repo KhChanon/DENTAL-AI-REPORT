@@ -419,7 +419,7 @@ WWW & World Wide Web \\
             \caption{Diagram explaining Random Forest}\label{fig:Random_Forest}
           \end{figure}
         \subsubsection{Naive Bayes}
-          \qquad Naive Bayes uses the Bayes theorem where it calculates the probability of event A based on the past data given. In Naive Bayes it applies this theorem with the ‘Naive’ assumption that the features are independent of each other.\par
+          \qquad Naive Bayes uses the Bayes theorem where it calculates the probability of event A based on the past data given. In Naive Bayes it applies this theorem with the ‘Naive’ assumption that the features are independent of each other.\cite{NaïveBayes1, NaïveBayes2}\par 
           \begin{equation}
             P(y|X) = \frac{P(X|y) * P(y)}{P(X)}
           \end{equation}
@@ -436,7 +436,7 @@ WWW & World Wide Web \\
             P(y|x_1,x_2,\ldots,x_3) \propto P(y) \prod\limits_{i=1}^{n} P(x_i|y)
           \end{equation}
     \subsection{Keyword Search}
-      \qquad For keyword search we have 2 types. One of them uses normal search word search in a sentence while another uses Regular Expression, or Regex for short, in order to find a word in a sentence. Using Regex will allow the word to be searched even if there are typing mistakes in the word such as typing ถอมฟัน instead of ถอนฟัน. The cases that we included for this regular expression is having a letter swapped, added or removed. \par
+      \qquad For keyword search we have 2 types. One of them uses normal search word search in a sentence while another uses Regular Expression, or Regex for short, in order to find a word in a sentence. Using Regex will allow the word to be searched even if there are typing mistakes in the word such as typing \textthai{ถอมฟัน} instead of \textthai{ถอนฟัน}. The cases that we included for this regular expression is having a letter swapped, added or removed. \par
 
     \subsection{Augmenting Data}
       \qquad We augmented text data to expand data while trying to simulate human error such as misspelling a word or typing a key by mistake. We can achieve this by inserting random characters into the questions, deleting random characters in the questions, and swapping random characters in the questions. We are also able to expand by paraphrasing the sentence. In order to have the best performance for paraphrasing we need to first translate it to English then let the AI model\cite{huggingface2} paraphrase as it is an English paraphrasing model then translate the results back to Thai.\par
@@ -726,7 +726,6 @@ WWW & World Wide Web \\
   \section{Navigation Map}
     \begin{figure}[!h]
       \centering
-      \fbox{\includegraphics[width=.4\textwidth]{Image/Navigation_Map.png}}
       \fbox{\includegraphics[width=.4\textwidth]{Image/Navigation_Map.png}}
       \caption{Chatbot web application navigation map}\label{fig:Navigation_Map}
       \begin{flushleft}
@@ -1626,45 +1625,180 @@ WWW & World Wide Web \\
       \qquad From the table, it can be seen that the Operation parallel with Q1, which uses the Operation model paired with the Question type model being Random Forest, achieved the highest final accuracy of 0.95 for the normal test set and 0.885 for the augmented test set. As for the Operation parallel with Q2, it can be seen that Categorical Naïve Bayes achieved the highest final accuracy of 0.95. However, for the augmented test set, it is slightly lower than Random Forest by 0.035 or 3.5 percent. But for the normal test set, Random Forest's accuracy is only lower by 0.006. Therefore, it can be concluded that for Q2, the Operation parallel with Q2, which utilizes Random Forest as the question type model, is the best. \par
 
 
-  \section{Follow-Up}
-    \subsection{Follow-Up Flow Chart}
-      \subsubsection{Overall Flow}
-      \subsubsection{Bleeding Flow}
-      \subsubsection{Pain Flow}
-      \subsubsection{Swell Flow}
-      \subsubsection{Diet  Flow}
-      \subsubsection{Oral Hygiene Flow}
-    \subsection{Follow-Up Chatbot}
-
-  \section{Web application Development}
-    \subsection{Web Application Final Design}
-      \subsubsection{Homepage}
-      \subsubsection{Login Page}
-      \subsubsection{FAQ Page}
-      \subsubsection{All Follow-Up Page}
-      \subsubsection{Follow-Up Page}
-      \subsubsection{Patient Info Page}
-      \subsubsection{Add Case Page}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%% Comment this in your report to show only references you have
-%%%% cited. Otherwise, all the references below will be shown.
-%\nocite{*}
-%% Use the kmutt.bst for bibtex bibliography style 
-%% You must have cpe.bib and string.bib in your current directory.
-%% You may go to file .bbl to manually edit the bib items.
-
-% Sept, 2021 by Thanin
-% improve url breaks to prevent unnecessary big white spaces in some cases
-\makeatletter
-\g@addto@macro{\UrlBreaks}{\UrlOrds}
-\makeatother
-% 
-
-\bibliographystyle{kmutt}
-\bibliography{string,cpe}
-      
-\end{document}
+      \section{Follow-Up}
+      \subsection{Follow-Up Flow Chart}
+        \subsubsection{Overall Flow}
+          \begin{figure}[!h]
+            \centering
+            \fbox{\includegraphics[width=.2\textwidth]{Image/FollowUp-OverallFlow.png}}
+            \caption{Overall Follow-Up Flow}\label{fig:FollowUpFlow1}
+            \begin{flushleft}
+              \qquad The overall flow of the follow-up  begins with inquiring about bleeding, followed by asking about pain and then swelling around the wound. After that, questions will be asked about food intake and oral hygiene. Finally, the follow-up will conclude with summarizing the follow-up process.\par
+            \end{flushleft}        
+          \end{figure}
+        \subsubsection{Bleeding Flow}
+          \begin{figure}[!h]
+            \centering
+            \fbox{\includegraphics[width=.4\textwidth]{Image/FollowUp-BleedingFlow.png}}
+            \caption{Bleeding Follow-Up Flow}\label{fig:FollowUpFlow2}
+            \begin{flushleft}
+              \qquad This flow section focuses primarily on bleeding. The bot will ask the user to choose from three levels of bleeding: 1. No bleeding from the wound \textthai{(ไม่มีเลือกซึมจากแผล)}, 2. Bleeding from the wound with saliva mixed with blood \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดปนน้ำลาย)}, 3. Bleeding from the wound with fresh red blood and/or blood clots \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดสีแดงสด และ/หรือมีลิ่มเลือดปนออกมาด้วย)}.\par
+              \qquad If the user selects level 1 "No bleeding from the wound," the bot will recommend that the user rinse their mouth and brush their teeth as usual. If the user selects level 2 "Bleeding from the wound with saliva mixed with blood," the bot will recommend that the user bite on gauze for another 30 minutes and avoid spitting frequently. And if the user selects level 3 "Bleeding from the wound with fresh red blood and/or blood clots," the bot will recommend that the user bite on gauze and seek medical attention.\par
+            \end{flushleft}        
+          \end{figure}
+        \subsubsection{Pain Flow}
+          \begin{figure}[!h]
+            \centering
+            \fbox{\includegraphics[width=.5\textwidth]{Image/FollowUp-PainFlow.png}}
+            \caption{Pain Follow-Up Flow}\label{fig:FollowUpFlow3}
+            \begin{flushleft}
+              \qquad This flow section focuses primarily on bleeding. The bot will ask the user to choose from three levels of bleeding: 1. No bleeding from the wound \textthai{(ไม่มีเลือกซึมจากแผล)}, 2. Bleeding from the wound with saliva mixed with blood \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดปนน้ำลาย)}, 3. Bleeding from the wound with fresh red blood and/or blood clots \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดสีแดงสด และ/หรือมีลิ่มเลือดปนออกมาด้วย)}.\par
+              \qquad This flow focuses on pain monitoring. The bot will prompt users to select a pain score from 0-10, where 0 means no pain at all and 10 means unbearable pain. If the user selects a pain level less than 7, the bot will proceed to monitor the  further follow-up procedure and inform the user that there will be another follow-up in 24 hours. If the user selects a pain level of 7 or higher, the bot will ask if the user has taken pain reliever medication. If not, it will recommend taking the pain reliever medication, and if they have taken it, it will inquire if the pain has decreased. If the pain has decreased or is less than 4, the bot will proceed to monitor the further follow-up procedure. If the pain has not decreased or is still greater than 4, the bot will recommend that the user seek medical attention.\par
+            \end{flushleft}        
+          \end{figure}
+        \subsubsection{Swell Flow}
+          \begin{figure}[!h]
+            \centering
+            \fbox{\includegraphics[width=.5\textwidth]{Image/FollowUp-SwellFlow.png}}
+            \caption{Swellness Follow-Up Flow}\label{fig:FollowUpFlow4}
+            \begin{flushleft}
+              \qquad This flow of monitoring swelling around a wound will begin by asking about the level of swelling around the wound, ranging from 0-10, where 0 means no swelling at all and 10 means the most severe swelling ever experienced. If the user selects a swelling level less than 5, the bot will recommend applying cold compress. However, if the user selects a swelling level of 5 or higher, the bot will inquire about how many days since the surgery. If it's within 3 days of surgery, the bot will recommend applying cold compress. But if it's been more than 3 days since surgery, the bot will ask if there is any accompanying pain or increased swelling. If not, it will recommend applying compression. However, if yes, the bot will recommend that the user seek medical attention.\par
+            \end{flushleft}        
+          \end{figure}
+        \subsubsection{Diet  Flow}
+          \begin{figure}[!h]
+            \centering
+            \fbox{\includegraphics[width=.5\textwidth]{Image/FollowUp-DietFlow.png}}
+            \caption{Diet Follow-Up Flow}\label{fig:FollowUpFlow5}
+            \begin{flushleft}
+              \qquad In this flow, the bot will focus on the user's diet. It will start by asking if the user can eat normally or not. If the user answers yes,  the bot will proceed to monitor the further follow-up procedure. If not, the bot will inquire about what type of food the user consumes. If the user responds with soft food, the bot will recommend that the user see a medical attention. However, if the user does not consume soft food, the bot will recommend consuming soft food and there will be another follow-up in 24 hours.\par
+            \end{flushleft}        
+          \end{figure}
+        \subsubsection{Oral Hygiene Flow}
+          \begin{figure}[!h]
+            \centering
+            \fbox{\includegraphics[width=.5\textwidth]{Image/FollowUp-HygieneFlow.png}}
+            \caption{Oral Hygiene Follow-Up Flow}\label{fig:FollowUpFlow6}
+            \begin{flushleft}
+              \qquad In this flow, the bot will focus on the user's oral hygiene. It will ask if the user can brush their teeth or rinse their mouth. If the user responds yes, the bot will then conclude the symptom monitoring and summarize the condition to end the follow-up process. However, if the user responds negatively, the bot will recommend that the user gently avoid cleaning the surgical area.\par
+            \end{flushleft}        
+          \end{figure}
+      \subsection{Follow-Up Chatbot}
+  
+    \section{Web application Development}
+      \subsection{Web Application Final Design}
+        \subsubsection{Homepage}\
+          \begin{figure}[!h]
+            \centering
+            \begin{minipage}{.5\textwidth}
+              \centering
+              \fbox{\includegraphics[width=.9\linewidth]{Image/web-homepage.png}}
+            \end{minipage}%
+            \begin{minipage}{.5\textwidth}
+              \centering
+              \fbox{\includegraphics[width=.9\linewidth]{Image/web-homepage_login.png}}
+            \end{minipage}%
+          
+            \caption{Homepage Web Application}\label{fig:WebAppHomepage}
+            \begin{flushleft}
+              \qquad Figure 4.21 represents the home page of our web application. On the left side is the home page for users who  haven't logged in, while on the right side is the home page for logged-in users.\par
+              \qquad The homepage consists of a brief description of our website and two primary buttons: “Start Chatting” and “Login by Line”.  The “Start Chatting” button redirects users to the question answering page, facilitating interaction with the chatbot for inquiries. “Login by Line” directs users to the Line login page, allowing them to log into the platform using their Line account credentials.\par
+              \qquad Once users logged in, the  "Login by Line" button is hidden,  and a follow-up button appears on the navigation bar. Additionally, the login button on the navigation bar changes to the user's username.\par
+            \end{flushleft}
+          \end{figure}
+        \subsubsection{Login Page}
+          \begin{figure}[!h]
+            \centering
+            \begin{minipage}{.5\textwidth}
+              \centering
+              \fbox{\includegraphics[width=.9\linewidth]{Image/web-line login.png}}
+            \end{minipage}%
+            \begin{minipage}{.5\textwidth}
+              \centering
+              \fbox{\includegraphics[width=.9\linewidth]{Image/web-line login2.png}}
+            \end{minipage}%
+          
+            \caption{Line Login Web Application}\label{fig:WebAppLineLogin}
+            \begin{flushleft}
+              \qquad Figure 4.22, is our login page. Our login page seamlessly integrates with Line, allowing users to log in using their Line account credentials. Upon clicking "Login by Line," users are directed to a page resembling the Line application. After entering their Line credentials and confirming, their account is linked to their Line account.\par
+            \end{flushleft}
+          \end{figure}
+        \subsubsection{FAQ Page}
+          \begin{figure}[!h]
+            \centering
+            \fbox{\includegraphics[width=.6\textwidth]{Image/web-login_FAQ.png}}
+            \caption{FAQ Feature Web Application}\label{fig:WebAppFAQ}
+            \begin{flushleft}
+              \qquad Figure 4.23 depicts the FAQ page. The FAQ pages for both logged-in and non-logged-in users have the same appearance and functionality. The only difference is that if the user is logged in, a "Follow Up" button will appear, allowing them to use the follow-up feature.\par
+            \end{flushleft}        
+          \end{figure}
+        \subsubsection{All Follow-Up Page}
+          \begin{figure}[!h]
+            \centering
+            \fbox{\includegraphics[width=.6\textwidth]{Image/web-login_FollowUp.png}}
+            \caption{All Follow-Up Web Application}\label{fig:WebAppAllFollowUp}
+            \begin{flushleft}
+              \qquad Figure 4.24 represents the All Follow-up page. This page is only available for logged-in users. This page allows the user to see all follow up case they have had. Follow up chat can then be accessed when clicking on one of the case.\par
+            \end{flushleft}        
+          \end{figure}
+        \subsubsection{Follow-Up Page}
+          \begin{figure}[!h]
+            \centering
+            \fbox{\includegraphics[width=.6\textwidth]{Image/web-login_FollowUpChat.png}}
+            \caption{Follow-Up Web Application}\label{fig:WebAppFollowUp}
+            \begin{flushleft}
+              \qquad Figure 4.25 represents the Follow-up page. This page is only available for logged-in users. Users can view their Follow-Up chat history. A new feature has been added for user convenience: a plus button, allowing users to easily add entries for tracking new follow-up cases, which when clicked, will direct users to the 'Add New Case' page. Additionally, We have removed the switch bar switch between  the FAQ and Follow-up features and placed them in the navigation bar instead, due to issues with fetching data when switching between features, causing the web page to freeze and not function smoothly.\par
+            \end{flushleft}        
+          \end{figure}
+        \subsubsection{Patient Info Page}
+          \begin{figure}[!h]
+            \centering
+            \fbox{\includegraphics[width=.6\textwidth]{Image/web-profile.png}}
+            \caption{Patient Information Web Application}\label{fig:WebAppPatientInfo}
+            \begin{flushleft}
+              \qquad Figure 4.26 shows a patient information page. The user profile page can be accessed by clicking on the name and profile icon. The user profile page will display any relevant data regarding the user, including user’s name and user case history. Users are restricted from modifying any personal information since the account is linked to their Line Account.\par
+              \qquad Additionally, for user convenience, a plus button has been added to easily add new follow-up cases. By clicking this button, users will be directed to the 'Add New Case' page. Furthermore, a 'ติดตาม' button has been introduced, allowing users to directly link to the chat for tracking the progress of the specific case.\par
+            \end{flushleft}       
+          \end{figure}
+        \subsubsection{Add Case Page}
+          \begin{figure}[!h]
+            \centering
+            \begin{minipage}{.5\textwidth}
+              \centering
+              \fbox{\includegraphics[width=.9\linewidth]{Image/web-addcase.png}}
+            \end{minipage}%
+            \begin{minipage}{.5\textwidth}
+              \centering
+              \fbox{\includegraphics[width=.9\linewidth]{Image/web-addcase1.png}}
+            \end{minipage}%
+          
+            \caption{Add Case Web Application}\label{fig:WebAppAddCase}
+            \begin{flushleft}
+              \qquad For adding a new follow-up case, the pink plus button allows users to click on it, leading them to a page where they can select the operations they have performed. Users can only select one operation per new case. After the user confirms their selection, the new case will be added, along with its status and the date it was added. The newly added case can be accessed by users, linking them directly to the follow-up chat associated with that specific case.
+              This page can be accessed in two ways: By navigating to the 'Follow Up' page and clicking on the pink plus button within that page. The other way is users can access it through the pink plus button on the 'Profile' page.\par
+            \end{flushleft}
+          \end{figure}
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+  %%%% Comment this in your report to show only references you have
+  %%%% cited. Otherwise, all the references below will be shown.
+  %\nocite{*}
+  %% Use the kmutt.bst for bibtex bibliography style 
+  %% You must have cpe.bib and string.bib in your current directory.
+  %% You may go to file .bbl to manually edit the bib items.
+  
+  % Sept, 2021 by Thanin
+  % improve url breaks to prevent unnecessary big white spaces in some cases
+  \makeatletter
+  \g@addto@macro{\UrlBreaks}{\UrlOrds}
+  \makeatother
+  % 
+  
+  \bibliographystyle{kmutt}
+  \bibliography{string,cpe}
+        
+  \end{document}
+  
