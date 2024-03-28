@@ -305,8 +305,9 @@ WWW & World Wide Web \\
     \subsection*{Deliverables for Term 2}
       \begin{itemize}
         \item Web application
+        \item Line official Bot
         \item Testing result
-        \item Feedbacks from users
+        \item Feedback from users
         \item Senior Project Report
       \end{itemize}
       \begin{figure}[!h]
@@ -417,15 +418,36 @@ WWW & World Wide Web \\
             \fbox{\includegraphics[width=.6\textwidth]{Image/Random_Forest.png}}
             \caption{Diagram explaining Random Forest}\label{fig:Random_Forest}
           \end{figure}
+        \subsubsection{Naive Bayes}
+          \qquad Naive Bayes uses the Bayes theorem where it calculates the probability of event A based on the past data given. In Naive Bayes it applies this theorem with the ‘Naive’ assumption that the features are independent of each other.\par
+          \begin{equation}
+            P(y|X) = \frac{P(X|y) * P(y)}{P(X)}
+          \end{equation}
+          \qquad This Bayes theorem formula shows X is a feature vector  X=(x1,x2,…,xn) and y is class. And due to the naive assumption, which can be dictate with \par
+          \begin{equation}
+            P(X|y) = P(x_1|y) * P(x_2|y) \ldots P(x_n|y) * P(y)
+          \end{equation}
+          \qquad Thus naives bayes formula can be shown as: \par
+          \begin{equation}
+            P(y|X) = \frac{P(x_1|y) * P(x_2|y) \ldots P(x_n|y) * P(y)}{P(x_1) * P(x_2) \ldots P(x_n)}
+          \end{equation}
+          \qquad Which can then be simplified as: \par
+          \begin{equation}
+            P(y|x_1,x_2,\ldots,x_3) \propto P(y) \prod\limits_{i=1}^{n} P(x_i|y)
+          \end{equation}
+    \subsection{Keyword Search}
+      \qquad For keyword search we have 2 types. One of them uses normal search word search in a sentence while another uses Regular Expression, or Regex for short, in order to find a word in a sentence. Using Regex will allow the word to be searched even if there are typing mistakes in the word such as typing ถอมฟัน instead of ถอนฟัน. The cases that we included for this regular expression is having a letter swapped, added or removed. \par
+
     \subsection{Augmenting Data}
       \qquad We augmented text data to expand data while trying to simulate human error such as misspelling a word or typing a key by mistake. We can achieve this by inserting random characters into the questions, deleting random characters in the questions, and swapping random characters in the questions. We are also able to expand by paraphrasing the sentence. In order to have the best performance for paraphrasing we need to first translate it to English then let the AI model\cite{huggingface2} paraphrase as it is an English paraphrasing model then translate the results back to Thai.\par
     \subsection{Proposed Framework}
-      \qquad The proposed framework has 2 components that are to be used together:\par
+      \qquad The proposed framework has 3 components that are to be used together:\par
       \begin{itemize}
+        \item Keyword Search: classify the input question into each operation        
         \item Random Forest: classify the input question into class
         \item BERT: answer the user's question based on the identified class
       \end{itemize}
-      \qquad We first input a question into a random forest in order to classify which class it belongs to. We then input that class in order to use the correct context in order to get the correct answer. With this method we can reduce time taken while trying to increase its accuracy\par
+      \qquad We first input a question into a keyword search algorithm and random forest model in order to classify which classes, operation and question type respectively, it belongs to. We then input that class in order to use the correct context in order to get the correct answer. With this method we can reduce time taken while trying to increase qa model accuracy. \par
   \section{Related research / Competing solutions}
     \subsection{Related Research}
       \qquad \textbf{Designing a Competent Chatbot to Counter the COVID-19 Pandemic and Empower Risk Communication in an Emergency Response System}\par
@@ -476,6 +498,7 @@ WWW & World Wide Web \\
       \item The web application must allow logged-in users to respond to follow-up chatbot queries.
       \item The web application must permit logged-in users to view their individual profiles.
       \item The web applications must provide the option for all logged-in users to log out.
+      \item The line chat should be able to do both Follow-Up and FAQ Chatbot
     \end{itemize}
 
     \subsection{Feature List}
@@ -489,24 +512,31 @@ WWW & World Wide Web \\
       \qquad This feature enables users to initiate a new follow-up case by scanning a provided QR code at the healthcare unit and selecting the undergone operation. \par
       \subsubsection{View Past Follow-Up Case}
       \qquad This feature allows users to review their history of past follow-up cases. 
+
+  \section{Overall System Flow}
+    \qquad The user will interact with only the client side of the web application and the Line Official Bot. The user will login to the web application using line and will receive notification about follow-up via line application as well. The chatbot model will be hosted by dialogflow and hugging face and the server will be able to use those using API requests while also querying from the database. \par
+    \begin{figure}[!h]
+      \centering
+      \fbox{\includegraphics[width=.5\textwidth]{Image/Overall_System_Flow.png}}
+      \caption{Overall System Flow}\label{fig:Overall_System_Flow}
+    \end{figure}
   \section{System Architecture}
   \begin{figure}[!h]
     \centering
-    \fbox{\includegraphics[width=.8\textwidth]{Image/System_Architecture.png}}
+    \fbox{\includegraphics[width=.45\textwidth]{Image/System_Architecture.png}}
     \caption{Architecture Diagram}\label{fig:System_Architecture}
     \begin{flushleft}
       \qquad In the Figure 3.1 above, show the architecture design of our project. The Technology that we use in this project include. \par
       \begin{itemize}
         \item[] 1. React (Front-end JavaScript library for building UI)
-        \item[] 2. Sweetalert2 (Beautiful popup box react component used in React)
+        \item[] 2. React Router (React Router enables "client side routing")
         \item[] 3. TailwindCSS (CSS framework for styling the UI and used with React)
-        \item[] 4. Chart.js (Free open-source JavaScript library for data visualization)
-        \item[] 5. Node.js (Back-end JavaScript runtime environment)
-        \item[] 6. Express (Back-end framework for Node.js for building REST API)
-        \item[] 7. MongoDB (NoSQL Database)
-        \item[] 8. Mongoose (Node.js based Object Data Modelling (ODM) library for MongoDB)
-        \item[] 9. React Select (A flexible and beautiful Select Input control for ReactJS with multiselect, autocomplete, async, and creatable support)
-        \item[] 10. Dialogflow is employed for follow-up using its API to reduce resource usage in the client’s browser.
+        \item[] 4. Node.js (Back-end JavaScript runtime environment)
+        \item[] 5. Express (Back-end framework for Node.js for building REST API)
+        \item[] 6. MongoDB (NoSQL Database)
+        \item[] 7. Mongoose (Node.js based Object Data Modelling (ODM) library for MongoDB)
+        \item[] 8. Flask (Python web framework for develop both front-end and back-end)
+        \item[] 9. Dialogflow (employed for Follow-Up using its API to reduce resource usage in the client’s browser.)
       \end{itemize}
     \end{flushleft}        
   \end{figure}
@@ -515,8 +545,9 @@ WWW & World Wide Web \\
   \section{Use Case Diagram}
   \begin{figure}[!h]
     \centering
-    \fbox{\includegraphics[width=.8\textwidth]{Image/Use_Case.png}}
-    \caption{Use Case Diagram}\label{fig:Use_Case}
+    \fbox{\includegraphics[width=.45\textwidth]{Image/Use Case Diagram - web.png}}
+    \fbox{\includegraphics[width=.3\textwidth]{Image/Use Case Diagram - line.png}}
+    \caption{Use Case Diagram of Web (Left) and Line (Right)}\label{fig:Use_Case}
   \end{figure}
 
   \section{Use Case Narrative}
@@ -532,12 +563,18 @@ WWW & World Wide Web \\
         \item[] 3. User inputs a question.
         \item[] 4. System provides an answer to the question.
       \end{itemize}
+      \qquad Extension (a)
+      \begin{itemize}
+        \item[] 1a. User goes to the Line Official Bot.
+        \item[] 2a. User inputs a question.
+        \item[] 3a. System provides an answer to the question.
+      \end{itemize}
 
     \subsection{Login}
       \qquad Use case name: Login \par
       \qquad Actors: General Users \par
       \qquad Goal: Users log in to the system \par
-      \qquad Preconditions: User is already registered \par
+      \qquad Preconditions: User is already registered (connected to Line account) \par
       \qquad Main success scenario:
       \begin{itemize}
         \item[] 1. User go to website homepage
@@ -546,11 +583,11 @@ WWW & World Wide Web \\
         \item[] 4. System navigates the user to the FAQ page.
       \end{itemize}
 
-      \subsection{Register}
+      \subsection{Register (connected to Line account)}
         \qquad Use case name: Register \par
         \qquad Actors: General Users \par
         \qquad Goal: Add a new user to the system \par
-        \qquad Preconditions: - \par
+        \qquad Preconditions: User has never connected to Line account \par
         \qquad Main success scenario:
         \begin{itemize}
           \item[] 1. User goes to the website homepage.
@@ -562,7 +599,7 @@ WWW & World Wide Web \\
         \qquad Extension (a)
         \begin{itemize}
           \item[] 1a. System adds the new user.
-          \item[] 2a. User scans the QR code. 
+          \item[] 2a. User searches for Line Official Bot.
           \item[] 3a. User adds Line Official.
           \item[] 4a. User selects the “Allow” button. 
           \item[] 5a. System adds the new user.
@@ -599,6 +636,12 @@ WWW & World Wide Web \\
           \item[] 3. User selects the “Profile” button.
           \item[] 4. User accesses the Profile page displaying case history.
         \end{itemize}
+        \qquad Extension (a)
+        \begin{itemize}
+          \item[] 1a. User logs into the Line Official Bot
+          \item[] 2a. User selects the “View Case” button.
+        \end{itemize}
+
       \subsection{Add New Case via QR Code}
         \qquad Use case name: Add New Case via QR Code \par
         \qquad Actors: Registered User (Patient) \par
@@ -607,7 +650,7 @@ WWW & World Wide Web \\
         \qquad Main success scenario:
         \begin{itemize}
           \item[] 1. User logs into the system.
-          \item[] 2. User selects “Scan QR Code” in the Line Official system.
+          \item[] 2. User selects “Scan QR Code” in the Line Official Bot or Web application..
           \item[] 3. User scans the QR code.
           \item[] 4. User gains access to the form.
           \item[] 5. User selects a treatment operation.
@@ -623,6 +666,7 @@ WWW & World Wide Web \\
         \caption{Question Answering Activity Diagram}\label{fig:AD_FAQ}
         \begin{flushleft}
           \qquad When users access the homepage and click the “\textthai{เริ่มบทสนทนา}” button, the system will display the chatbot interface. Users can then input their questions into the provided text box, and the system will respond with the appropriate answer to the question. \par
+          \qquad Alternatively, if users access via Line Official Bot, users can then input their question to Line Official Bot and can receive the appropriate answer to the question from the system. \par
         \end{flushleft}
       \end{figure}
 
@@ -643,7 +687,7 @@ WWW & World Wide Web \\
         \caption{Register Activity Diagram}\label{fig:AD_Register}
         \begin{flushleft}
           \qquad When users access the homepage and click the “\textthai{เข้าสู่ระบบผ่าน} LINE” button, the system will direct the user to the “Add Line Official” page. If the user clicks “Add Line Official” there, the system will automatically register this user.  \par
-          \qquad Alternatively, if a user accesses via the Line application, selects “Scan QR Code,” scan our QR code at the medical unit, and then selects “Add Line Official,” the system will also automatically register this user.  \par
+          \qquad Alternatively, if a user accesses via the Line application, search our Line Official Bot and then add our Line Official Bot, the system will also automatically register this user.  \par
         \end{flushleft}
       \end{figure}
 
@@ -664,6 +708,7 @@ WWW & World Wide Web \\
         \caption{View case history Activity Diagram}\label{fig:AD_ViewCase}
         \begin{flushleft}
           \qquad When users access the FAQ or Follow-up page and click on the “Profile” button, the system will direct them to the profile page, displaying their case history.  \par
+          \qquad Alternatively, if users access via our Line Official Bot and click on the “View Case” button, the system will display all users' cases. \par
         \end{flushleft}
       \end{figure}
 \newpage
@@ -674,6 +719,7 @@ WWW & World Wide Web \\
         \caption{Add new case via QR code Activity Diagram}\label{fig:AD_AddCase}
         \begin{flushleft}
           \qquad When users open the Line application and scan our QR code, they will access a form where they need to select one of the treatment operations and submit the form.  \par
+          \qquad Alternatively, if users access via profile or follow-up page in web application and click “+” button and scan our qr code they will also access a form where they need to select one of the treatment operations and submit the form. \par
         \end{flushleft}
       \end{figure}
 
@@ -696,10 +742,10 @@ WWW & World Wide Web \\
       \fbox{\includegraphics[width=.35\textwidth]{Image/ER.png}}
       \caption{ER-Diagram}\label{fig:ER}
       \begin{itemize}
-        \item[] 1. User Object: This object includes userID, LineUsername, LineProfilepic, and LineStatusMessage, all linked to the Line profile. Additionally, the User Object contains lists of Records Object.
+        \item[] 1. Figure 3.10 shows the basic database design necessary for storing registered users in our application. The database comprises a total of 4 objectsUser Object: This object includes userID, LineUsername, LineProfilepic, and LineEmail, all linked to the Line profile. Additionally, the User Object contains lists of Records Object.
         \item[] 2. Records Object: It encompasses RecordID, TimeStamp, SurgicalProcedure, Status, ChatMessage and FollowUpChat Object. The RecordID is linked to the User object and FollowUpChat Object.
         \item[] 3. FollowUpChat Object: This object contains FollowUpID, Title, TimeStamp, Chat, and ChatResult. The FollowUpID is linked to the Records object in a one-to-many relation.
-        \item[] 4. FAQChatHist Object: It includes FAQChatHistID, UserChat, and Text.
+        \item[] 4. FAQChatHist Object: It includes FAQChatHistID, UserChat, Text, User and ChatTime which are kept for further training our model.
         \item[] These objects and their interconnections form the basic structure of our database for storing user-related information, their records, follow-ups, and chat interactions.
       \end{itemize}
     \end{figure}
