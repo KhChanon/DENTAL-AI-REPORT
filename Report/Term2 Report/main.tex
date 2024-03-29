@@ -4,6 +4,7 @@
 \usepackage{array}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{ragged2e}
 \setdefaultlanguage{english}
 \setotherlanguage{thai}
 \newfontfamily\thaifont[Script=Thai,Scale=1.23]{TH Sarabun New}
@@ -526,7 +527,7 @@ WWW & World Wide Web \\
     \centering
     \fbox{\includegraphics[width=.45\textwidth]{Image/System_Architecture.png}}
     \caption{Architecture Diagram}\label{fig:System_Architecture}
-    \begin{flushleft}
+    \begin{justify}
       \qquad In the Figure 3.1 above, show the architecture design of our project. The Technology that we use in this project include. \par
       \begin{itemize}
         \item[] 1. React (Front-end JavaScript library for building UI)
@@ -539,7 +540,7 @@ WWW & World Wide Web \\
         \item[] 8. Flask (Python web framework for develop both front-end and back-end)
         \item[] 9. Dialogflow (employed for Follow-Up using its API to reduce resource usage in the client’s browser.)
       \end{itemize}
-    \end{flushleft}        
+    \end{justify}        
   \end{figure}
 
   \newpage
@@ -665,10 +666,10 @@ WWW & World Wide Web \\
         \centering
         \fbox{\includegraphics[width=.15\textwidth]{Image/AD_FAQ.png}}
         \caption{Question Answering Activity Diagram}\label{fig:AD_FAQ}
-        \begin{flushleft}
+        \begin{justify}
           \qquad When users access the homepage and click the “\textthai{เริ่มบทสนทนา}” button, the system will display the chatbot interface. Users can then input their questions into the provided text box, and the system will respond with the appropriate answer to the question. \par
           \qquad Alternatively, if users access via Line Official Bot, users can then input their question to Line Official Bot and can receive the appropriate answer to the question from the system. \par
-        \end{flushleft}
+        \end{justify}
       \end{figure}
 
       \subsection{Login}
@@ -676,9 +677,9 @@ WWW & World Wide Web \\
         \centering
         \fbox{\includegraphics[width=.15\textwidth]{Image/AD_Login.png}}
         \caption{Login Activity Diagram}\label{fig:AD_Login}
-        \begin{flushleft}
+        \begin{justify}
           \qquad When users access the homepage and click the “\textthai{เข้าสู่ระบบผ่าน} LINE”, the system will redirect the user to the Line page and subsequently navigate them to the FAQ page. \par
-        \end{flushleft}
+        \end{justify}
       \end{figure}
 \newpage
       \subsection{Register}
@@ -686,10 +687,10 @@ WWW & World Wide Web \\
         \centering
         \fbox{\includegraphics[width=.4\textwidth]{Image/AD_Regis.png}}
         \caption{Register Activity Diagram}\label{fig:AD_Register}
-        \begin{flushleft}
+        \begin{justify}
           \qquad When users access the homepage and click the “\textthai{เข้าสู่ระบบผ่าน} LINE” button, the system will direct the user to the “Add Line Official” page. If the user clicks “Add Line Official” there, the system will automatically register this user.  \par
           \qquad Alternatively, if a user accesses via the Line application, search our Line Official Bot and then add our Line Official Bot, the system will also automatically register this user.  \par
-        \end{flushleft}
+        \end{justify}
       \end{figure}
 
       \subsection{Follow-Up}
@@ -697,9 +698,9 @@ WWW & World Wide Web \\
         \centering
         \fbox{\includegraphics[width=.12\textwidth]{Image/AD_Follow.png}}
         \caption{Follow-Up Activity Diagram}\label{fig:AD_Follow}
-        \begin{flushleft}
+        \begin{justify}
           \qquad When users access the FAQ page after completing the login process and subsequently switch to the Follow-up page, the system will present the follow-up chatbot interface. The system will then initiate by asking a follow-up question. Upon receiving the user’s answer, the system will analyze it and provide a suggestion to the user. However, if the answer does not pertain to the question asked, the system will attempt to reask the question to obtain a related answer from the user.   \par
-        \end{flushleft}
+        \end{justify}
       \end{figure}
 \newpage
       \subsection{View Case History}
@@ -707,10 +708,10 @@ WWW & World Wide Web \\
         \centering
         \fbox{\includegraphics[width=.15\textwidth]{Image/AD_ViewCase.png}}
         \caption{View case history Activity Diagram}\label{fig:AD_ViewCase}
-        \begin{flushleft}
+        \begin{justify}
           \qquad When users access the FAQ or Follow-up page and click on the “Profile” button, the system will direct them to the profile page, displaying their case history.  \par
           \qquad Alternatively, if users access via our Line Official Bot and click on the “View Case” button, the system will display all users' cases. \par
-        \end{flushleft}
+        \end{justify}
       \end{figure}
 \newpage
       \subsection{Add New Case via QR Code}
@@ -718,10 +719,10 @@ WWW & World Wide Web \\
         \centering
         \fbox{\includegraphics[width=.12\textwidth]{Image/AD_AddCase.png}}
         \caption{Add new case via QR code Activity Diagram}\label{fig:AD_AddCase}
-        \begin{flushleft}
+        \begin{justify}
           \qquad When users open the Line application and scan our QR code, they will access a form where they need to select one of the treatment operations and submit the form.  \par
           \qquad Alternatively, if users access via profile or follow-up page in web application and click “+” button and scan our qr code they will also access a form where they need to select one of the treatment operations and submit the form. \par
-        \end{flushleft}
+        \end{justify}
       \end{figure}
 
   \section{Navigation Map}
@@ -729,11 +730,11 @@ WWW & World Wide Web \\
       \centering
       \fbox{\includegraphics[width=.4\textwidth]{Image/Navigation_Map.png}}
       \caption{Chatbot web application navigation map}\label{fig:Navigation_Map}
-      \begin{flushleft}
+      \begin{justify}
         \qquad For the web application, two user roles exist: Guest users and Registered users. Upon entering the platform, all users start at the Homepage. Guest users have access solely to the FAQ chatbot and the Login page. Conversely, registered users can additionally access the Follow-Up  and View Case History pages.  \par
         \qquad Upon initial access via Line Official, an account will be automatically created and linked to the user’s Line account. For existing account holders, accessing any feature via the Line Official menu will trigger automatic login. However, when users access the platform through the normal web interface, they initially land on the homepage. In this scenario, they can use the Question Answering chatbot without needing to log in.  \par
         \qquad To access the follow-up feature via the normal web interface, users must login using their Line account. \par
-      \end{flushleft}
+      \end{justify}
     \end{figure}
 
   \section{ER Diagram}
@@ -762,13 +763,13 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.4\linewidth]{Image/Mob_Home.png}}
       \end{minipage}
       \caption{Website home page (Desktop and mobile respectively)}\label{fig:HomePage}
-      \begin{flushleft}
+      \begin{justify}
         \qquad Figure 3.11 represents the home page of our web application. This page provides a brief description of our website and features two primary buttons: “Start Chatting” and “Login by Line”.
         \begin{itemize}
           \item The “Start Chatting” button redirect users to the question answering page, facilitating interaction with the chatbot for inquiries.
           \item “Login by Line” directs users to the Line login page, allowing them to log into the platform using their Line account credentials.
         \end{itemize}
-      \end{flushleft}
+      \end{justify}
     \end{figure}
     \newpage
 
@@ -777,7 +778,7 @@ WWW & World Wide Web \\
         \centering
         \fbox{\includegraphics[width=.35\textwidth]{Image/Desk_Follow.png}}
         \caption{Desktop Follow-Up page}\label{fig:Desk_Follow}
-        \begin{flushleft}
+        \begin{justify}
           \qquad Figure 3.12 showcases the Follow-Up page of the web application specifically designed for the desktop use. The layout consists of several key components: \par
           \begin{itemize}
             \item Case History: Positioned on the left side, this section displays the user’s case history. Users can click on specific cases to view their follow-up chat history. The top button allow user to add new case.
@@ -785,7 +786,7 @@ WWW & World Wide Web \\
             \item Input Textbox: Positioned beneath the chat box, this textbox enables users to input their responses during the follow-up conversation. 
             \item Switch Bar: Located at the top of the chat box, this bar facilitates the transition between the FAQ and Follow-up features.
           \end{itemize}
-        \end{flushleft}
+        \end{justify}
       \end{figure}
 
     \begin{figure}[!h]
@@ -803,14 +804,14 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.7\linewidth]{Image/Mob_Follow_3.png}}
       \end{minipage}
       \caption{Mobile Follow-Up page}\label{fig:Mob_Follow}
-      \begin{flushleft}
+      \begin{justify}
         \qquad Figure 3.13 display the mobile version of the Follow-Up page in various scenarios:  \par
         \begin{itemize}
           \item Normal Page (Left): This view represents the default appearance of the Follow-Up page on a mobile device.
           \item Keyboard Usage (Center): When the keyboard is engaged, this display is centered on the chat or input area.
           \item Hamburger Button Pressed (Right): Upon pressing the hamburger button, the keyboard input is dismissed, replaced by a long-closed button. This button allows users to return to the Follow-Up page. The top button allow user to add new case.
         \end{itemize}
-      \end{flushleft}
+      \end{justify}
     \end{figure}
 
     \subsection{FAQ page}
@@ -818,9 +819,9 @@ WWW & World Wide Web \\
       \centering
       \fbox{\includegraphics[width=.4\textwidth]{Image/Desk_FAQ.png}}
       \caption{Desktop Question Answering page}\label{fig:Desk_FAQ}
-      \begin{flushleft}
+      \begin{justify}
         \qquad Figure 3.14 depicts the desktop version of the Question Answering page within the web application. The page features a central chat box facilitating user-system interaction for addressing queries, accompanied by an input textbox positioned at the bottom. Additionally, a switch bar located atop the chat box facilitates switching between the FAQ and Follow-up features. \par
-      \end{flushleft}
+      \end{justify}
     \end{figure}
     \begin{figure}[!h]
       \centering
@@ -833,9 +834,9 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.6\linewidth]{Image/Mob_FAQ_2.png}}
       \end{minipage}%
       \caption{Mobile Question Answering page}\label{fig:Mobile Question Answering page}
-      \begin{flushleft}
+      \begin{justify}
         \qquad Figure 3.15 illustrates the Question Answering page of the web application on mobile. On the left is its normal page view, and on the right is the interface when the keyboard is in use. \par
-      \end{flushleft}
+      \end{justify}
     \end{figure}
 \newpage
     \subsection{Patient Info page}
@@ -850,9 +851,9 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.6\linewidth]{Image/Mob_Info.png}}
       \end{minipage}
       \caption{Patient Information page (Desktop and mobile respectively)}\label{fig:Patient Information page}
-      \begin{flushleft}
+      \begin{justify}
         \qquad Figure 3.16 represents the Patient Information page within the web application, displaying the comprehensive oral medical history registered by the patient. The records display the Record ID, Timestamp, Surgical Procedures type, status, and associated conditions. \par
-      \end{flushleft}
+      \end{justify}
     \end{figure}
     \subsection{Line official page}
     \begin{figure}[!h]
@@ -867,9 +868,9 @@ WWW & World Wide Web \\
       \end{minipage}%
     
       \caption{Line Login Page}\label{fig:Line Login Page}
-      \begin{flushleft}
+      \begin{justify}
         \qquad Figure 3.17 showcases the layout of the Line Official page, acting as the central notification hub within the application. The FAQ button directs users to the question answer website, the Follow-up button leads to the follow-up page on the website, and the View Case navigates users to the patient information page. \par
-      \end{flushleft}
+      \end{justify}
     \end{figure}
 \newpage
   \section{Evaluation Plan}
@@ -953,33 +954,33 @@ WWW & World Wide Web \\
         \centering
         \fbox{\includegraphics[width=.6\textwidth]{Image/Interview_1.jpg}}
         \caption{Our team and the call-center representative}\label{fig:Interview_1}
-        \begin{flushleft}
+        \begin{justify}
           \qquad Figure 4.11 depicts our team alongside the call-center representative employed at the OPD Instant Clinic's call center. This department is responsible for answering questions and assisting OPD patients. \par
-        \end{flushleft}        
+        \end{justify}        
       \end{figure}
       \begin{figure}[!h]
         \centering
         \fbox{\includegraphics[width=.6\textwidth]{Image/Interview_2.jpg}}
         \caption{Working environment of the OPD Instant Clinic's call center}\label{fig:Interview_2}
-        \begin{flushleft}
+        \begin{justify}
           \qquad Figure 4.12 shows the operational environment within the OPD Instant Clinic's call center, where staff members engage in follow-up procedures with patients a day after their surgeries. \par
-        \end{flushleft}
+        \end{justify}
       \end{figure}
       \begin{figure}
         \centering
         \fbox{\includegraphics[width=.5\textwidth]{Image/Interview_3.jpg}}
         \caption{Conversation with the nurse who is experienced in the patient follow-up process}\label{fig:Interview_3}
-        \begin{flushleft}
+        \begin{justify}
           \qquad We engaged in a conversation with an experienced nurse specializing in the patient follow-up process. This follow-up routine typically occurs three days after a patient's discharge, during which the nurse contacts patients and provides necessary advice and support. \par
-        \end{flushleft}
+        \end{justify}
       \end{figure}
       \begin{figure}
         \centering
         \fbox{\includegraphics[width=.5\textwidth]{Image/Interview_4.jpg}}
         \caption{Document that the nurse has documented patient information during follow-up sessions}\label{fig:Interview_4}
-        \begin{flushleft}
+        \begin{justify}
           \qquad Figure 4.14 displays the document used by the nurse to document patient information during follow-up sessions. This documentation includes essential details such as the operation performed, discharge date, follow-up date, contact person, symptoms observed, and any additional notes. This method ensures a comprehensive and precise approach to tracking patient data obtained during follow-up calls. \par
-        \end{flushleft}
+        \end{justify}
       \end{figure}
     
   \FloatBarrier{}    
@@ -1084,9 +1085,9 @@ WWW & World Wide Web \\
       \centering
       \fbox{\includegraphics[width=.5\textwidth]{Image/FAQ-flow.png}}
       \caption{FAQ Flow}\label{fig:FAQ Flow}
-      \begin{flushleft}
+      \begin{justify}
         \qquad Initially, the design question answering feature flow involves taking questions received from users and using them to find labels with the classification model. Then, the labels are matched with contexts that have the same labels. Then use both the question and the context to find the answer to the question using the question-answering pretrained model (DeBERTa). \par
-      \end{flushleft}
+      \end{justify}
     \end{figure}
   \section{Classification Model Experiment}
     \qquad In our experimentation with training models for classifying question types, we chose to explore various machine learning approaches. Specifically, we employed the Python modules sklearn.naivebayes and sklearn.ensemble to utilize a range of algorithms including BernoulliNB, MultinomialNB, GaussianNB, ComplementNB, CategoricalNB, and RandomForestClassifier. Additionally, we employed a technique known as grid search, which involves systematically searching for the optimal hyperparameters by specifying potential values for each machine learning algorithm. This grid search approach enables efficient identification of the best hyperparameters, thereby saving time in tuning each model. The results from all models were derived from testing against two types of test sets: the normal test set and the augmented test set.  The main difference between these two test sets lies in the presence of typing errors, whereas the augmented test set includes samples with simulated typing errors added using the text augmentation technique outlined in section 2.3.7, applied to the normal dataset. \par
@@ -1633,56 +1634,56 @@ WWW & World Wide Web \\
             \centering
             \fbox{\includegraphics[width=.2\textwidth]{Image/FollowUp-OverallFlow.png}}
             \caption{Overall Follow-Up Flow}\label{fig:FollowUpFlow1}
-            \begin{flushleft}
+            \begin{justify}
               \qquad The overall flow of the follow-up  begins with inquiring about bleeding, followed by asking about pain and then swelling around the wound. After that, questions will be asked about food intake and oral hygiene. Finally, the follow-up will conclude with summarizing the follow-up process.\par
-            \end{flushleft}        
+            \end{justify}        
           \end{figure}
         \subsubsection{Bleeding Flow}
           \begin{figure}[!h]
             \centering
             \fbox{\includegraphics[width=.4\textwidth]{Image/FollowUp-BleedingFlow.png}}
             \caption{Bleeding Follow-Up Flow}\label{fig:FollowUpFlow2}
-            \begin{flushleft}
+            \begin{justify}
               \qquad This flow section focuses primarily on bleeding. The bot will ask the user to choose from three levels of bleeding: 1. No bleeding from the wound \textthai{(ไม่มีเลือกซึมจากแผล)}, 2. Bleeding from the wound with saliva mixed with blood \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดปนน้ำลาย)}, 3. Bleeding from the wound with fresh red blood and/or blood clots \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดสีแดงสด และ/หรือมีลิ่มเลือดปนออกมาด้วย)}.\par
               \qquad If the user selects level 1 "No bleeding from the wound," the bot will recommend that the user rinse their mouth and brush their teeth as usual. If the user selects level 2 "Bleeding from the wound with saliva mixed with blood," the bot will recommend that the user bite on gauze for another 30 minutes and avoid spitting frequently. And if the user selects level 3 "Bleeding from the wound with fresh red blood and/or blood clots," the bot will recommend that the user bite on gauze and seek medical attention.\par
-            \end{flushleft}        
+            \end{justify}        
           \end{figure}
         \subsubsection{Pain Flow}
           \begin{figure}[!h]
             \centering
             \fbox{\includegraphics[width=.5\textwidth]{Image/FollowUp-PainFlow.png}}
             \caption{Pain Follow-Up Flow}\label{fig:FollowUpFlow3}
-            \begin{flushleft}
+            \begin{justify}
               \qquad This flow section focuses primarily on bleeding. The bot will ask the user to choose from three levels of bleeding: 1. No bleeding from the wound \textthai{(ไม่มีเลือกซึมจากแผล)}, 2. Bleeding from the wound with saliva mixed with blood \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดปนน้ำลาย)}, 3. Bleeding from the wound with fresh red blood and/or blood clots \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดสีแดงสด และ/หรือมีลิ่มเลือดปนออกมาด้วย)}.\par
               \qquad This flow focuses on pain monitoring. The bot will prompt users to select a pain score from 0-10, where 0 means no pain at all and 10 means unbearable pain. If the user selects a pain level less than 7, the bot will proceed to monitor the  further follow-up procedure and inform the user that there will be another follow-up in 24 hours. If the user selects a pain level of 7 or higher, the bot will ask if the user has taken pain reliever medication. If not, it will recommend taking the pain reliever medication, and if they have taken it, it will inquire if the pain has decreased. If the pain has decreased or is less than 4, the bot will proceed to monitor the further follow-up procedure. If the pain has not decreased or is still greater than 4, the bot will recommend that the user seek medical attention.\par
-            \end{flushleft}        
+            \end{justify}        
           \end{figure}
         \subsubsection{Swell Flow}
           \begin{figure}[!h]
             \centering
             \fbox{\includegraphics[width=.5\textwidth]{Image/FollowUp-SwellFlow.png}}
             \caption{Swellness Follow-Up Flow}\label{fig:FollowUpFlow4}
-            \begin{flushleft}
+            \begin{justify}
               \qquad This flow of monitoring swelling around a wound will begin by asking about the level of swelling around the wound, ranging from 0-10, where 0 means no swelling at all and 10 means the most severe swelling ever experienced. If the user selects a swelling level less than 5, the bot will recommend applying cold compress. However, if the user selects a swelling level of 5 or higher, the bot will inquire about how many days since the surgery. If it's within 3 days of surgery, the bot will recommend applying cold compress. But if it's been more than 3 days since surgery, the bot will ask if there is any accompanying pain or increased swelling. If not, it will recommend applying compression. However, if yes, the bot will recommend that the user seek medical attention.\par
-            \end{flushleft}        
+            \end{justify}        
           \end{figure}
         \subsubsection{Diet  Flow}
           \begin{figure}[!h]
             \centering
             \fbox{\includegraphics[width=.5\textwidth]{Image/FollowUp-DietFlow.png}}
             \caption{Diet Follow-Up Flow}\label{fig:FollowUpFlow5}
-            \begin{flushleft}
+            \begin{justify}
               \qquad In this flow, the bot will focus on the user's diet. It will start by asking if the user can eat normally or not. If the user answers yes,  the bot will proceed to monitor the further follow-up procedure. If not, the bot will inquire about what type of food the user consumes. If the user responds with soft food, the bot will recommend that the user see a medical attention. However, if the user does not consume soft food, the bot will recommend consuming soft food and there will be another follow-up in 24 hours.\par
-            \end{flushleft}        
+            \end{justify}        
           \end{figure}
         \subsubsection{Oral Hygiene Flow}
           \begin{figure}[!h]
             \centering
             \fbox{\includegraphics[width=.5\textwidth]{Image/FollowUp-HygieneFlow.png}}
             \caption{Oral Hygiene Follow-Up Flow}\label{fig:FollowUpFlow6}
-            \begin{flushleft}
+            \begin{justify}
               \qquad In this flow, the bot will focus on the user's oral hygiene. It will ask if the user can brush their teeth or rinse their mouth. If the user responds yes, the bot will then conclude the symptom monitoring and summarize the condition to end the follow-up process. However, if the user responds negatively, the bot will recommend that the user gently avoid cleaning the surgical area.\par
-            \end{flushleft}        
+            \end{justify}        
           \end{figure}
       \subsection{Follow-Up Chatbot}
   
@@ -1701,11 +1702,11 @@ WWW & World Wide Web \\
             \end{minipage}%
           
             \caption{Homepage Web Application}\label{fig:WebAppHomepage}
-            \begin{flushleft}
+            \begin{justify}
               \qquad Figure 4.21 represents the home page of our web application. On the left side is the home page for users who  haven't logged in, while on the right side is the home page for logged-in users.\par
               \qquad The homepage consists of a brief description of our website and two primary buttons: “Start Chatting” and “Login by Line”.  The “Start Chatting” button redirects users to the question answering page, facilitating interaction with the chatbot for inquiries. “Login by Line” directs users to the Line login page, allowing them to log into the platform using their Line account credentials.\par
               \qquad Once users logged in, the  "Login by Line" button is hidden,  and a follow-up button appears on the navigation bar. Additionally, the login button on the navigation bar changes to the user's username.\par
-            \end{flushleft}
+            \end{justify}
           \end{figure}
         \subsubsection{Login Page}
           \begin{figure}[!h]
@@ -1720,46 +1721,46 @@ WWW & World Wide Web \\
             \end{minipage}%
           
             \caption{Line Login Web Application}\label{fig:WebAppLineLogin}
-            \begin{flushleft}
+            \begin{justify}
               \qquad Figure 4.22, is our login page. Our login page seamlessly integrates with Line, allowing users to log in using their Line account credentials. Upon clicking "Login by Line," users are directed to a page resembling the Line application. After entering their Line credentials and confirming, their account is linked to their Line account.\par
-            \end{flushleft}
+            \end{justify}
           \end{figure}
         \subsubsection{FAQ Page}
           \begin{figure}[!h]
             \centering
             \fbox{\includegraphics[width=.6\textwidth]{Image/web-login_FAQ.png}}
             \caption{FAQ Feature Web Application}\label{fig:WebAppFAQ}
-            \begin{flushleft}
+            \begin{justify}
               \qquad Figure 4.23 depicts the FAQ page. The FAQ pages for both logged-in and non-logged-in users have the same appearance and functionality. The only difference is that if the user is logged in, a "Follow Up" button will appear, allowing them to use the follow-up feature.\par
-            \end{flushleft}        
+            \end{justify}        
           \end{figure}
         \subsubsection{All Follow-Up Page}
           \begin{figure}[!h]
             \centering
             \fbox{\includegraphics[width=.6\textwidth]{Image/web-login_FollowUp.png}}
             \caption{All Follow-Up Web Application}\label{fig:WebAppAllFollowUp}
-            \begin{flushleft}
+            \begin{justify}
               \qquad Figure 4.24 represents the All Follow-up page. This page is only available for logged-in users. This page allows the user to see all follow up case they have had. Follow up chat can then be accessed when clicking on one of the case.\par
-            \end{flushleft}        
+            \end{justify}        
           \end{figure}
         \subsubsection{Follow-Up Page}
           \begin{figure}[!h]
             \centering
             \fbox{\includegraphics[width=.6\textwidth]{Image/web-login_FollowUpChat.png}}
             \caption{Follow-Up Web Application}\label{fig:WebAppFollowUp}
-            \begin{flushleft}
+            \begin{justify}
               \qquad Figure 4.25 represents the Follow-up page. This page is only available for logged-in users. Users can view their Follow-Up chat history. A new feature has been added for user convenience: a plus button, allowing users to easily add entries for tracking new follow-up cases, which when clicked, will direct users to the 'Add New Case' page. Additionally, We have removed the switch bar switch between  the FAQ and Follow-up features and placed them in the navigation bar instead, due to issues with fetching data when switching between features, causing the web page to freeze and not function smoothly.\par
-            \end{flushleft}        
+            \end{justify}        
           \end{figure}
         \subsubsection{Patient Info Page}
           \begin{figure}[!h]
             \centering
             \fbox{\includegraphics[width=.6\textwidth]{Image/web-profile.png}}
             \caption{Patient Information Web Application}\label{fig:WebAppPatientInfo}
-            \begin{flushleft}
+            \begin{justify}
               \qquad Figure 4.26 shows a patient information page. The user profile page can be accessed by clicking on the name and profile icon. The user profile page will display any relevant data regarding the user, including user’s name and user case history. Users are restricted from modifying any personal information since the account is linked to their Line Account.\par
               \qquad Additionally, for user convenience, a plus button has been added to easily add new follow-up cases. By clicking this button, users will be directed to the 'Add New Case' page. Furthermore, a 'ติดตาม' button has been introduced, allowing users to directly link to the chat for tracking the progress of the specific case.\par
-            \end{flushleft}       
+            \end{justify}       
           \end{figure}
         \subsubsection{Add Case Page}
           \begin{figure}[!h]
@@ -1774,10 +1775,10 @@ WWW & World Wide Web \\
             \end{minipage}%
           
             \caption{Add Case Web Application}\label{fig:WebAppAddCase}
-            \begin{flushleft}
+            \begin{justify}
               \qquad For adding a new follow-up case, the pink plus button allows users to click on it, leading them to a page where they can select the operations they have performed. Users can only select one operation per new case. After the user confirms their selection, the new case will be added, along with its status and the date it was added. The newly added case can be accessed by users, linking them directly to the follow-up chat associated with that specific case.
               This page can be accessed in two ways: By navigating to the 'Follow Up' page and clicking on the pink plus button within that page. The other way is users can access it through the pink plus button on the 'Profile' page.\par
-            \end{flushleft}
+            \end{justify}
           \end{figure}
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
