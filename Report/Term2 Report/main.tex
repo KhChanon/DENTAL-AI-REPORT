@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{ragged2e}
+\usepackage{float}
 \setdefaultlanguage{english}
 \setotherlanguage{thai}
 \newfontfamily\thaifont[Script=Thai,Scale=1.23]{TH Sarabun New}
@@ -280,7 +281,7 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.9\textwidth]{Image/Term1_Gantt_Actual.png}}
         \caption{Semester 1 actual schedule}\label{fig:Term1_Gantt_Actual}
       \end{figure}
-
+    \clearpage
     \subsection{Semester 2}
       \begin{enumerate}
         \item Deep Learning and Chatbot Implementation
@@ -414,7 +415,7 @@ WWW & World Wide Web \\
           \end{figure}
         
         \subsubsection{Random Forest}
-          \qquad Random Forest is the combination of many decision trees and using results from all decision trees by either averaging or majority voting making it less biased which helps in overfitting problems. As you can see from Figure 1.2, the final results are obtained after getting results from many decision trees.\par
+          \qquad Random Forest is the combination of many decision trees and using results from all decision trees by either averaging or majority voting making it less biased which helps in overfitting problems. As you can see from Figure \ref{fig:Decision_Tree}, the final results are obtained after getting results from many decision trees.\par
           \begin{figure}[!h]
             \centering
             \fbox{\includegraphics[width=.6\textwidth]{Image/Random_Forest.png}}
@@ -485,7 +486,7 @@ WWW & World Wide Web \\
             Post-Surgery Follow-Up & AI System & - & - \\\hline
           \end{tabular}
         \end{table}
-        \qquad According to Table 1, our proposed solution has 2 main features: symptom diagnosis and post-surgery follow-up, both of which are AI-based systems. In contrast, DentalChat only has a symptom diagnosis feature, which is manually answered by the doctors. Psyjai also has an AI-based system for symptom diagnosis but does not have the post-surgery follow-up feature.\par
+        \qquad According to Table \ref{tab:Comparison_Table}, our proposed solution has 2 main features: symptom diagnosis and post-surgery follow-up, both of which are AI-based systems. In contrast, DentalChat only has a symptom diagnosis feature, which is manually answered by the doctors. Psyjai also has an AI-based system for symptom diagnosis but does not have the post-surgery follow-up feature.\par
 
 \chapter{DESIGN AND METHODOLOGY}
   \section{Introduction}
@@ -516,42 +517,44 @@ WWW & World Wide Web \\
       \qquad This feature allows users to review their history of past follow-up cases. 
 
   \section{Overall System Flow}
-    \qquad The user will interact with only the client side of the web application and the Line Official Bot. The user will login to the web application using line and will receive notification about follow-up via line application as well. The chatbot model will be hosted by dialogflow and hugging face and the server will be able to use those using API requests while also querying from the database. \par
     \begin{figure}[!h]
       \centering
       \fbox{\includegraphics[width=.5\textwidth]{Image/Overall_System_Flow.png}}
       \caption{Overall System Flow}\label{fig:Overall_System_Flow}
     \end{figure}
+    \qquad The user will interact with only the client side of the web application and the Line Official Bot. The user will login to the web application using line and will receive notification about follow-up via line application as well. The chatbot model will be hosted by dialogflow and hugging face and the server will be able to use those using API requests while also querying from the database. \par
   \section{System Architecture}
   \begin{figure}[!h]
     \centering
     \fbox{\includegraphics[width=.45\textwidth]{Image/System_Architecture.png}}
     \caption{Architecture Diagram}\label{fig:System_Architecture}
-    \begin{justify}
-      \qquad In the Figure 3.1 above, show the architecture design of our project. The Technology that we use in this project include. \par
-      \begin{itemize}
-        \item[] 1. React (Front-end JavaScript library for building UI)
-        \item[] 2. React Router (React Router enables "client side routing")
-        \item[] 3. TailwindCSS (CSS framework for styling the UI and used with React)
-        \item[] 4. Node.js (Back-end JavaScript runtime environment)
-        \item[] 5. Express (Back-end framework for Node.js for building REST API)
-        \item[] 6. MongoDB (NoSQL Database)
-        \item[] 7. Mongoose (Node.js based Object Data Modelling (ODM) library for MongoDB)
-        \item[] 8. Flask (Python web framework for develop both front-end and back-end)
-        \item[] 9. Dialogflow (employed for Follow-Up using its API to reduce resource usage in the client’s browser.)
-      \end{itemize}
-    \end{justify}        
   \end{figure}
+  \qquad In the Figure \ref{fig:System_Architecture} above, show the architecture design of our project. The Technology that we use in this project include. \par
+  \begin{itemize}
+    \item[] 1. React (Front-end JavaScript library for building UI)
+    \item[] 2. React Router (React Router enables "client side routing")
+    \item[] 3. TailwindCSS (CSS framework for styling the UI and used with React)
+    \item[] 4. Node.js (Back-end JavaScript runtime environment)
+    \item[] 5. Express (Back-end framework for Node.js for building REST API)
+    \item[] 6. MongoDB (NoSQL Database)
+    \item[] 7. Mongoose (Node.js based Object Data Modelling (ODM) library for MongoDB)
+    \item[] 8. Flask (Python web framework for develop both front-end and back-end)
+    \item[] 9. Dialogflow (employed for Follow-Up using its API to reduce resource usage in the client’s browser.)
+  \end{itemize}
 
-  \newpage
   \section{Use Case Diagram}
   \begin{figure}[!h]
     \centering
-    \fbox{\includegraphics[width=.45\textwidth]{Image/Use Case Diagram - web.png}}
+    \fbox{\includegraphics[width=.5\textwidth]{Image/Use Case Diagram - web.png}}
+    \caption{Use Case Diagram of Web}\label{fig:Use_Case_web}
+  \end{figure}
+  \begin{figure}[!h]
+    \centering
     \fbox{\includegraphics[width=.3\textwidth]{Image/Use Case Diagram - line.png}}
-    \caption{Use Case Diagram of Web (Left) and Line (Right)}\label{fig:Use_Case}
+    \caption{Use Case Diagram of Line}\label{fig:Use_Case_line}
   \end{figure}
 
+  \newpage
   \section{Use Case Narrative}
     \subsection{Question Answer}
       \qquad Use case name: Question Answer \par
@@ -664,7 +667,7 @@ WWW & World Wide Web \\
       \subsection{Question Answering}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.15\textwidth]{Image/AD_FAQ.png}}
+        \fbox{\includegraphics[width=.3\textwidth]{Image/AD_FAQ.png}}
         \caption{Question Answering Activity Diagram}\label{fig:AD_FAQ}
         \begin{justify}
           \qquad When users access the homepage and click the “\textthai{เริ่มบทสนทนา}” button, the system will display the chatbot interface. Users can then input their questions into the provided text box, and the system will respond with the appropriate answer to the question. \par
@@ -675,7 +678,7 @@ WWW & World Wide Web \\
       \subsection{Login}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.15\textwidth]{Image/AD_Login.png}}
+        \fbox{\includegraphics[width=.25\textwidth]{Image/AD_Login.png}}
         \caption{Login Activity Diagram}\label{fig:AD_Login}
         \begin{justify}
           \qquad When users access the homepage and click the “\textthai{เข้าสู่ระบบผ่าน} LINE”, the system will redirect the user to the Line page and subsequently navigate them to the FAQ page. \par
@@ -685,7 +688,7 @@ WWW & World Wide Web \\
       \subsection{Register}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.4\textwidth]{Image/AD_Regis.png}}
+        \fbox{\includegraphics[width=.3\textwidth]{Image/AD_Regis.png}}
         \caption{Register Activity Diagram}\label{fig:AD_Register}
         \begin{justify}
           \qquad When users access the homepage and click the “\textthai{เข้าสู่ระบบผ่าน} LINE” button, the system will direct the user to the “Add Line Official” page. If the user clicks “Add Line Official” there, the system will automatically register this user.  \par
@@ -696,7 +699,7 @@ WWW & World Wide Web \\
       \subsection{Follow-Up}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.12\textwidth]{Image/AD_Follow.png}}
+        \fbox{\includegraphics[width=.25\textwidth]{Image/AD_Follow.png}}
         \caption{Follow-Up Activity Diagram}\label{fig:AD_Follow}
         \begin{justify}
           \qquad When users access the FAQ page after completing the login process and subsequently switch to the Follow-up page, the system will present the follow-up chatbot interface. The system will then initiate by asking a follow-up question. Upon receiving the user’s answer, the system will analyze it and provide a suggestion to the user. However, if the answer does not pertain to the question asked, the system will attempt to reask the question to obtain a related answer from the user.   \par
@@ -706,29 +709,29 @@ WWW & World Wide Web \\
       \subsection{View Case History}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.15\textwidth]{Image/AD_ViewCase.png}}
+        \fbox{\includegraphics[width=.3\textwidth]{Image/AD_ViewCase.png}}
         \caption{View case history Activity Diagram}\label{fig:AD_ViewCase}
         \begin{justify}
           \qquad When users access the FAQ or Follow-up page and click on the “Profile” button, the system will direct them to the profile page, displaying their case history.  \par
           \qquad Alternatively, if users access via our Line Official Bot and click on the “View Case” button, the system will display all users' cases. \par
         \end{justify}
       \end{figure}
-\newpage
       \subsection{Add New Case via QR Code}
       \begin{figure}[!h]
         \centering
-        \fbox{\includegraphics[width=.12\textwidth]{Image/AD_AddCase.png}}
+        \fbox{\includegraphics[width=.3\textwidth]{Image/AD_AddCase.png}}
         \caption{Add new case via QR code Activity Diagram}\label{fig:AD_AddCase}
         \begin{justify}
           \qquad When users open the Line application and scan our QR code, they will access a form where they need to select one of the treatment operations and submit the form.  \par
           \qquad Alternatively, if users access via profile or follow-up page in web application and click “+” button and scan our qr code they will also access a form where they need to select one of the treatment operations and submit the form. \par
         \end{justify}
       \end{figure}
+\newpage
 
   \section{Navigation Map}
     \begin{figure}[!h]
       \centering
-      \fbox{\includegraphics[width=.4\textwidth]{Image/Navigation_Map.png}}
+      \fbox{\includegraphics[width=.5\textwidth]{Image/Navigation_Map.png}}
       \caption{Chatbot web application navigation map}\label{fig:Navigation_Map}
       \begin{justify}
         \qquad For the web application, two user roles exist: Guest users and Registered users. Upon entering the platform, all users start at the Homepage. Guest users have access solely to the FAQ chatbot and the Login page. Conversely, registered users can additionally access the Follow-Up  and View Case History pages.  \par
@@ -740,16 +743,17 @@ WWW & World Wide Web \\
   \section{ER Diagram}
     \begin{figure}[!h]
       \centering
-      \fbox{\includegraphics[width=.35\textwidth]{Image/ER.png}}
+      \fbox{\includegraphics[width=.6\textwidth]{Image/ER.png}}
       \caption{ER-Diagram}\label{fig:ER}
-      \begin{itemize}
-        \item[] 1. Figure 3.10 shows the basic database design necessary for storing registered users in our application. The database comprises a total of 4 objectsUser Object: This object includes userID, LineUsername, LineProfilepic, and LineEmail, all linked to the Line profile. Additionally, the User Object contains lists of Records Object.
-        \item[] 2. Records Object: It encompasses RecordID, TimeStamp, SurgicalProcedure, Status, ChatMessage and FollowUpChat Object. The RecordID is linked to the User object and FollowUpChat Object.
-        \item[] 3. FollowUpChat Object: This object contains FollowUpID, Title, TimeStamp, Chat, and ChatResult. The FollowUpID is linked to the Records object in a one-to-many relation.
-        \item[] 4. FAQChatHist Object: It includes FAQChatHistID, UserChat, Text, User and ChatTime which are kept for further training our model.
-        \item[] These objects and their interconnections form the basic structure of our database for storing user-related information, their records, follow-ups, and chat interactions.
-      \end{itemize}
     \end{figure}
+    \begin{itemize}
+      \item[] 1. Figure \ref{fig:ER} shows the basic database design necessary for storing registered users in our application. The database comprises a total of 4 objectsUser Object: This object includes userID, LineUsername, LineProfilepic, and LineEmail, all linked to the Line profile. Additionally, the User Object contains lists of Records Object.
+      \item[] 2. Records Object: It encompasses RecordID, TimeStamp, SurgicalProcedure, Status, ChatMessage and FollowUpChat Object. The RecordID is linked to the User object and FollowUpChat Object.
+      \item[] 3. FollowUpChat Object: This object contains FollowUpID, Title, TimeStamp, Chat, and ChatResult. The FollowUpID is linked to the Records object in a one-to-many relation.
+      \item[] 4. FAQChatHist Object: It includes FAQChatHistID, UserChat, Text, User and ChatTime which are kept for further training our model.
+      \item[] These objects and their interconnections form the basic structure of our database for storing user-related information, their records, follow-ups, and chat interactions.
+    \end{itemize}
+
   \section{User Interface}
     \subsection{Home Page}
     \begin{figure}[!h]
@@ -764,7 +768,7 @@ WWW & World Wide Web \\
       \end{minipage}
       \caption{Website home page (Desktop and mobile respectively)}\label{fig:HomePage}
       \begin{justify}
-        \qquad Figure 3.11 represents the home page of our web application. This page provides a brief description of our website and features two primary buttons: “Start Chatting” and “Login by Line”.
+        \qquad Figure \ref{fig:HomePage} represents the home page of our web application. This page provides a brief description of our website and features two primary buttons: “Start Chatting” and “Login by Line”.
         \begin{itemize}
           \item The “Start Chatting” button redirect users to the question answering page, facilitating interaction with the chatbot for inquiries.
           \item “Login by Line” directs users to the Line login page, allowing them to log into the platform using their Line account credentials.
@@ -779,7 +783,7 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.35\textwidth]{Image/Desk_Follow.png}}
         \caption{Desktop Follow-Up page}\label{fig:Desk_Follow}
         \begin{justify}
-          \qquad Figure 3.12 showcases the Follow-Up page of the web application specifically designed for the desktop use. The layout consists of several key components: \par
+          \qquad Figure \ref{fig:Desk_Follow} showcases the Follow-Up page of the web application specifically designed for the desktop use. The layout consists of several key components: \par
           \begin{itemize}
             \item Case History: Positioned on the left side, this section displays the user’s case history. Users can click on specific cases to view their follow-up chat history. The top button allow user to add new case.
             \item Chat Box: Positioned in the middle, this area hosts the ongoing chat conversation. User can engage in follow-up discussions within this section. 
@@ -805,7 +809,7 @@ WWW & World Wide Web \\
       \end{minipage}
       \caption{Mobile Follow-Up page}\label{fig:Mob_Follow}
       \begin{justify}
-        \qquad Figure 3.13 display the mobile version of the Follow-Up page in various scenarios:  \par
+        \qquad Figure \ref{fig:Mob_Follow} display the mobile version of the Follow-Up page in various scenarios:  \par
         \begin{itemize}
           \item Normal Page (Left): This view represents the default appearance of the Follow-Up page on a mobile device.
           \item Keyboard Usage (Center): When the keyboard is engaged, this display is centered on the chat or input area.
@@ -820,7 +824,7 @@ WWW & World Wide Web \\
       \fbox{\includegraphics[width=.4\textwidth]{Image/Desk_FAQ.png}}
       \caption{Desktop Question Answering page}\label{fig:Desk_FAQ}
       \begin{justify}
-        \qquad Figure 3.14 depicts the desktop version of the Question Answering page within the web application. The page features a central chat box facilitating user-system interaction for addressing queries, accompanied by an input textbox positioned at the bottom. Additionally, a switch bar located atop the chat box facilitates switching between the FAQ and Follow-up features. \par
+        \qquad Figure \ref{fig:Desk_FAQ} depicts the desktop version of the Question Answering page within the web application. The page features a central chat box facilitating user-system interaction for addressing queries, accompanied by an input textbox positioned at the bottom. Additionally, a switch bar located atop the chat box facilitates switching between the FAQ and Follow-up features. \par
       \end{justify}
     \end{figure}
     \begin{figure}[!h]
@@ -833,9 +837,9 @@ WWW & World Wide Web \\
         \centering
         \fbox{\includegraphics[width=.6\linewidth]{Image/Mob_FAQ_2.png}}
       \end{minipage}%
-      \caption{Mobile Question Answering page}\label{fig:Mobile Question Answering page}
+      \caption{Mobile Question Answering page}\label{fig:Mobile_Question_Answering_page}
       \begin{justify}
-        \qquad Figure 3.15 illustrates the Question Answering page of the web application on mobile. On the left is its normal page view, and on the right is the interface when the keyboard is in use. \par
+        \qquad Figure \ref{fig:Mobile_Question_Answering_page} illustrates the Question Answering page of the web application on mobile. On the left is its normal page view, and on the right is the interface when the keyboard is in use. \par
       \end{justify}
     \end{figure}
 \newpage
@@ -850,9 +854,9 @@ WWW & World Wide Web \\
         \centering
         \fbox{\includegraphics[width=.6\linewidth]{Image/Mob_Info.png}}
       \end{minipage}
-      \caption{Patient Information page (Desktop and mobile respectively)}\label{fig:Patient Information page}
+      \caption{Patient Information page (Desktop and mobile respectively)}\label{fig:Patient_Information_page}
       \begin{justify}
-        \qquad Figure 3.16 represents the Patient Information page within the web application, displaying the comprehensive oral medical history registered by the patient. The records display the Record ID, Timestamp, Surgical Procedures type, status, and associated conditions. \par
+        \qquad Figure \ref{fig:Patient_Information_page} represents the Patient Information page within the web application, displaying the comprehensive oral medical history registered by the patient. The records display the Record ID, Timestamp, Surgical Procedures type, status, and associated conditions. \par
       \end{justify}
     \end{figure}
     \subsection{Line official page}
@@ -867,9 +871,9 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.6\linewidth]{Image/Line_2.png}}
       \end{minipage}%
     
-      \caption{Line Login Page}\label{fig:Line Login Page}
+      \caption{Line Login Page}\label{fig:Line_Login_Page}
       \begin{justify}
-        \qquad Figure 3.17 showcases the layout of the Line Official page, acting as the central notification hub within the application. The FAQ button directs users to the question answer website, the Follow-up button leads to the follow-up page on the website, and the View Case navigates users to the patient information page. \par
+        \qquad Figure \ref{fig:Line_Login_Page} showcases the layout of the Line Official page, acting as the central notification hub within the application. The FAQ button directs users to the question answer website, the Follow-up button leads to the follow-up page on the website, and the View Case navigates users to the patient information page. \par
       \end{justify}
     \end{figure}
 \newpage
@@ -945,7 +949,7 @@ WWW & World Wide Web \\
     \qquad This section elucidates our methodology in conducting interviews with the dental clinic's medical staff to gain important insights into the techniques used for post-surgery tracking. \par
     \subsection{Interviewing Dental Clinic Around the University}
       \qquad To gain an insight into and understand the post-surgery follow-up procedure, we initiated interviews at the dental clinic around the university. The interview questions included inquiries about patient symptom monitoring procedures (\textthai{ขั้นตอนการติดตามอาการผู้ป่วย}), typically how many hours post-surgery patient symptoms are usually followed up (\textthai{โดยปกติแล้วจะทำการโทรติดตามอาการคนไข้กี่ชั่วโมงหลังผ่าตัด}), common inquiries asked to patients during symptom follow-ups (\textthai{คำถามที่มักจะถามผู้ป่วยตอนติดตามอาการ}), and the typical questions patients commonly ask during follow-ups (\textthai{คำถามที่ผู้ป่วยมักจะถามกลับมา}). These interviews provided invaluable insights and a deeper understanding of follow-up procedures, enriching our research with firsthand perspectives on patient care during the post-surgical phase within the local dental healthcare landscape. \par
-
+\newpage
     \subsection{Interviewing and Survey at Faculty of Dentistry at Chulalongkorn University}
       \qquad According to the important requirement for an in-depth understanding of the practicalities involved with the follow-up procedure, we needed to familiarize ourselves with the patient's involvement following surgery. This includes an in-depth investigation of  complexity of questions, symptom assessment, patient interaction during the follow-up phase, and response to particular concerns. Regarding the complexity of these interactions, we think it is important to have discussions and obtain advice from professionals, especially those who have experience with the follow-up procedure, and patient communication. \par
       \qquad In order to capture the view of the expert and  match our project with the actual demands of both medical professionals and patients, we conduct an on-site observation and interviews at the Faculty of Dentistry, Chulalongkorn University. \par
@@ -955,7 +959,7 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.6\textwidth]{Image/Interview_1.jpg}}
         \caption{Our team and the call-center representative}\label{fig:Interview_1}
         \begin{justify}
-          \qquad Figure 4.11 depicts our team alongside the call-center representative employed at the OPD Instant Clinic's call center. This department is responsible for answering questions and assisting OPD patients. \par
+          \qquad Figure \ref{fig:Interview_1} depicts our team alongside the call-center representative employed at the OPD Instant Clinic's call center. This department is responsible for answering questions and assisting OPD patients. \par
         \end{justify}        
       \end{figure}
       \begin{figure}[!h]
@@ -963,7 +967,7 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.6\textwidth]{Image/Interview_2.jpg}}
         \caption{Working environment of the OPD Instant Clinic's call center}\label{fig:Interview_2}
         \begin{justify}
-          \qquad Figure 4.12 shows the operational environment within the OPD Instant Clinic's call center, where staff members engage in follow-up procedures with patients a day after their surgeries. \par
+          \qquad Figure \ref{fig:Interview_2} shows the operational environment within the OPD Instant Clinic's call center, where staff members engage in follow-up procedures with patients a day after their surgeries. \par
         \end{justify}
       \end{figure}
       \begin{figure}
@@ -979,37 +983,34 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.5\textwidth]{Image/Interview_4.jpg}}
         \caption{Document that the nurse has documented patient information during follow-up sessions}\label{fig:Interview_4}
         \begin{justify}
-          \qquad Figure 4.14 displays the document used by the nurse to document patient information during follow-up sessions. This documentation includes essential details such as the operation performed, discharge date, follow-up date, contact person, symptoms observed, and any additional notes. This method ensures a comprehensive and precise approach to tracking patient data obtained during follow-up calls. \par
+          \qquad Figure \ref{fig:Interview_4} displays the document used by the nurse to document patient information during follow-up sessions. This documentation includes essential details such as the operation performed, discharge date, follow-up date, contact person, symptoms observed, and any additional notes. This method ensures a comprehensive and precise approach to tracking patient data obtained during follow-up calls. \par
         \end{justify}
       \end{figure}
     
-  \FloatBarrier{}    
+\clearpage   
   \section{Frequently Ask Question Dataset}
     \subsection{Prepare Dataset For Training Classification Model}
       \qquad Initially, the dataset of the project had 240 questions, and we wanted to divide the questions into 4 operations according to the scope of this project. However, due to the large amount of content in each operation, we decided to further divide the data of each operation into different 'Question Types' to make the content clearer and easier to use in the subsequent steps of answering questions. \par
       \qquad When attempting to train a classification model to predict the corresponding operation for a given question, we achieved a maximum accuracy of 0.7. However, the model encountered difficulties in accurately predicting certain question types due to insufficient representation of those types in the dataset. To address this issue, we opted to source additional questions from various channels, resulting in a total of 798 questions. Subsequently, we augmented the dataset using techniques including random insertion, random deletion, random swap, back translation, and paraphrased text. This augmentation process resulted in a total of 2,033 questions within the dataset. \par
-      \qquad The questions were initially categorized into 5 types \textthai{(ข้อดี, ข้อแนะนำ, ทั่วไป, ปัจจัยเสี่ยง, สาเหตุ)}, which we denoted as Question Type 1 (Q1). However, there was an imbalance in the number of questions across each category, which introduced bias during the training process. Therefore, we attempted to reclassify the question types into 7 new categories (Procedure-related, Post-procedure Care, Symptom-related, Risk-related, Medical-related, Technical-related, and General Health), referred to as Question Type 2 (Q2). This restructuring aimed to achieve a more equitable distribution of questions in our dataset, as illustrated in Figure 4. \par
+      \qquad The questions were initially categorized into 5 types \textthai{(ข้อดี, ข้อแนะนำ, ทั่วไป, ปัจจัยเสี่ยง, สาเหตุ)}, which we denoted as Question Type 1 (Q1). However, there was an imbalance in the number of questions across each category, which introduced bias during the training process. Therefore, we attempted to reclassify the question types into 7 new categories (Procedure-related, Post-procedure Care, Symptom-related, Risk-related, Medical-related, Technical-related, and General Health), referred to as Question Type 2 (Q2). This restructuring aimed to achieve a more equitable distribution of questions in our dataset, as illustrated in Figure \ref{fig:Distribution of Question Type} \par
       \qquad Moreover, during our experimentation with classification models, we noticed instances where certain questions did not clearly align with a specific operation, leading to inaccuracies in the models’ predictions. Therefore, we aggregated such questions into a distinct class labeled "No Class," thereby expanding the total number of operations to 5. \par
-      \begin{figure}[!h]
+      \begin{figure}[H]
         \centering
-        \begin{minipage}{.3\textwidth}
-          \centering
-          \fbox{\includegraphics[width=.6\linewidth]{Image/EDAQ1.png}}
-        \end{minipage}%
-        \begin{minipage}{.3\textwidth}
-          \centering
-          \fbox{\includegraphics[width=.6\linewidth]{Image/EDAQ2.png}}
-        \end{minipage}%
+        \fbox{\includegraphics[width=.5\linewidth]{Image/EDAQ1.png}}
+        \vspace{5pt}
+        \fbox{\includegraphics[width=.5\linewidth]{Image/EDAQ2.png}}
         \caption{Distribution of Question Type}\label{fig:Distribution of Question Type}
       \end{figure}
-      
-    \subsection{Train and Test Set of Classification Model}
-      \qquad In every classification model, training followed a structured approach using three types of datasets, arranged in the following sequence: Normal Dataset, Added Normal Dataset, and Augmented Dataset. The dataset sizes differ to facilitate performance comparison across the models. Each dataset is subdivided into training and testing sets at a ratio of 4:1. \par
-      \qquad In tables 4.1 – 4.4, you will observe the inclusion of random state numbers as control variables to regulate the data splitting process within the function. This ensures consistency in test usage across comparisons, a crucial aspect for accurately assessing the model accuracies. \par
-      \qquad In the actual dataset, there are a total of 5 operations: \textthai{ถอนฟัน, ผ่าฟันคุด,ผ่าตัดเหงือก, ผ่าตัดรากฟันเทียม} and NC(No Class). However, for training the Operation + Question Type and Operation -> Question Type models, we excluded the NC operation. Consequently, the dataset sizes are reduced to 689 and 1,767 for the Added Normal and Augmented datasets respectively. As for answering NC operation questions, users will be prompted to re-enter their questions while specifying the operation they are inquiring about. Therefore, classifying this operation class is not necessary for the current model objectives. \par
-      \begin{table}
+\newpage
+       \begin{table}[H]
+        \subsection{Train and Test Set of Classification Model}
+
+        \qquad In every classification model, training followed a structured approach using three types of datasets, arranged in the following sequence: Normal Dataset, Added Normal Dataset, and Augmented Dataset. The dataset sizes differ to facilitate performance comparison across the models. Each dataset is subdivided into training and testing sets at a ratio of 4:1. \par
+        \qquad In tables \ref{tab:data.1} – \ref{tab:data.4}, you will observe the inclusion of random state numbers as control variables to regulate the data splitting process within the function. This ensures consistency in test usage across comparisons, a crucial aspect for accurately assessing the model accuracies. \par
+        \qquad In the actual dataset, there are a total of 5 operations: \textthai{ถอนฟัน, ผ่าฟันคุด,ผ่าตัดเหงือก, ผ่าตัดรากฟันเทียม} and NC(No Class). However, for training the Operation + Question Type and Operation -> Question Type models, we excluded the NC operation. Consequently, the dataset sizes are reduced to 689 and 1,767 for the Added Normal and Augmented datasets respectively. As for answering NC operation questions, users will be prompted to re-enter their questions while specifying the operation they are inquiring about. Therefore, classifying this operation class is not necessary for the current model objectives. \par
+        \vspace{10pt}
         \centering
-        \caption{Train and Test Set of Normal and Augmented Dataset Training With Operation+Q1 and Operation+Q2 Classification model}
+        \caption{Train and Test Set of Normal and Augmented Dataset Training With Operation+Q1 and Operation+Q2 Classification model}\label{tab:data.1}
         \resizebox{\linewidth}{!}{%
         \begin{tabular}{>{\centering\hspace{0pt}}m{0.246\linewidth}>{\centering\hspace{0pt}}m{0.183\linewidth}>{\centering\hspace{0pt}}m{0.235\linewidth}>{\centering\hspace{0pt}}m{0.09\linewidth}>{\centering\hspace{0pt}}m{0.092\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.079\linewidth}} 
           \toprule
@@ -1018,12 +1019,10 @@ WWW & World Wide Web \\
           Operation + Q1          & Normal           & 42                    & 689            & 551            & 138            \\
           Operation + Q2          & Augmented        & 42                    & 1767           & 1413           & 354            \\
           \bottomrule
-        \end{tabular}
+        \end{tabular} 
         }
-      \end{table}
-      \begin{table}
-        \centering
-        \caption{Train and Test Set of Normal and Augmented Dataset Training With Operation, Q1, and Q2 Classification Model}
+        \vspace{10pt}
+        \caption{Train and Test Set of Normal and Augmented Dataset Training With Operation, Q1, and Q2 Classification Model}\label{tab:data.2}
         \resizebox{\linewidth}{!}{%
         \begin{tabular}{>{\centering\hspace{0pt}}m{0.163\linewidth}>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.083\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.325\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.212\linewidth}} 
           \toprule
@@ -1039,11 +1038,9 @@ WWW & World Wide Web \\
           \bottomrule
         \end{tabular}
         }
-      \end{table}
-      \begin{table}
-        \centering
+        \vspace{10pt}
         \scriptsize
-        \caption{Train and Test Set of Normal and Augmented Dataset Training With Q1-Operation and Q2-Operation Classification model}
+        \caption{Train and Test Set of Normal and Augmented Dataset Training With Q1-Operation and Q2-Operation Classification model}\label{tab:data.3}
         \resizebox{\linewidth}{!}{%
         \begin{tabular}{>{\centering\hspace{0pt}}m{0.194\linewidth}>{\centering\hspace{0pt}}m{0.096\linewidth}>{\centering\hspace{0pt}}m{0.052\linewidth}>{\centering\hspace{0pt}}m{0.117\linewidth}>{\centering\hspace{0pt}}m{0.056\linewidth}>{\centering\hspace{0pt}}m{0.048\linewidth}>{\centering\hspace{0pt}}m{0.056\linewidth}>{\centering\hspace{0pt}}m{0.048\linewidth}>{\centering\hspace{0pt}}m{0.056\linewidth}>{\centering\hspace{0pt}}m{0.048\linewidth}>{\centering\hspace{0pt}}m{0.073\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.063\linewidth}} 
           \toprule
@@ -1059,11 +1056,11 @@ WWW & World Wide Web \\
           \bottomrule
         \end{tabular}
         }
-      \end{table}
-      \begin{table}
+        \vspace{5pt}
         \centering
         \scriptsize
-        \caption{Train and Test Set of Normal and Augmented Dataset Training With Q1-Operation and NC and Q2-Operation and NC Classification model}
+        \vspace{10pt}
+        \caption{Train and Test Set of Normal and Augmented Dataset Training With Q1-Operation and NC and Q2-Operation and NC Classification model}\label{tab:data.4}
         \resizebox{\linewidth}{!}{%
         \begin{tabular}{>{\centering\hspace{0pt}}m{0.194\linewidth}>{\centering\hspace{0pt}}m{0.096\linewidth}>{\centering\hspace{0pt}}m{0.052\linewidth}>{\centering\hspace{0pt}}m{0.117\linewidth}>{\centering\hspace{0pt}}m{0.056\linewidth}>{\centering\hspace{0pt}}m{0.048\linewidth}>{\centering\hspace{0pt}}m{0.056\linewidth}>{\centering\hspace{0pt}}m{0.048\linewidth}>{\centering\hspace{0pt}}m{0.056\linewidth}>{\centering\hspace{0pt}}m{0.048\linewidth}>{\centering\hspace{0pt}}m{0.073\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.063\linewidth}} 
           \toprule
@@ -1080,13 +1077,14 @@ WWW & World Wide Web \\
         \end{tabular}
         }
       \end{table}
-  \section{Question Answering Feature Flow}
-    \begin{figure}
+\clearpage    
+  \section{Question Answering Feature Flow}  
+    \begin{figure}[H]
       \centering
       \fbox{\includegraphics[width=.5\textwidth]{Image/FAQ-flow.png}}
       \caption{FAQ Flow}\label{fig:FAQ Flow}
       \begin{justify}
-        \qquad Initially, the design question answering feature flow involves taking questions received from users and using them to find labels with the classification model. Then, the labels are matched with contexts that have the same labels. Then use both the question and the context to find the answer to the question using the question-answering pretrained model (DeBERTa). \par
+        \qquad Initially, the design question answering feature flow involves taking questions received from users and using them to find labels with the classification model. Then, the labels are matched with contexts that have the same labels. Then use both the question and the context to find the answer to the question using the question-answering pretrained model (mDeBERTa). \par
       \end{justify}
     \end{figure}
   \section{Classification Model Experiment}
@@ -1095,10 +1093,10 @@ WWW & World Wide Web \\
     \subsection{Operation Classification }
       \qquad In our quest to determine the optimal model for predicting the operation of each question, we opted to leverage machine learning techniques. Upon analyzing the dataset, we observed that many questions already contain distinct keywords that hint at the associated operations. Consequently, we embarked on further experimentation by incorporating a Keyword Search technique into our methodology. \par
       \subsubsection{Machine Learning Model}
-        \begin{table}
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Operation Classification with Added Normal and Augmented Experiment Result (Machine Learning)}
+          \caption{Operation Classification with Added Normal and Augmented Experiment Result (Machine Learning)}\label{tab:ML_Model}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1115,11 +1113,11 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad Table 4.5 illustrates that for the added normal dataset, the Gaussian Naïve Bayes model achieved the highest accuracy of 0.906 on the normal test set. Additionally, for the augmented dataset, the Categorical Naïve Bayes model resulted in the highest accuracy of 0.981on the normal test set. \par
+        \qquad Table \ref{tab:ML_Model} illustrates that for the added normal dataset, the Gaussian Naïve Bayes model achieved the highest accuracy of 0.906 on the normal test set. Additionally, for the augmented dataset, the Categorical Naïve Bayes model resulted in the highest accuracy of 0.981on the normal test set. \par
       \subsubsection{Keyword Search}
-        \begin{table}
+        \begin{table}[H]
           \centering
-          \caption{Operation Classification with Added Normal and Augmented Experiment Result (Keyword Search)}
+          \caption{Operation Classification with Added Normal and Augmented Experiment Result (Keyword Search)}\label{tab:Keyword_Search}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.158\linewidth}>{\centering\hspace{0pt}}m{0.127\linewidth}>{\centering\hspace{0pt}}m{0.238\linewidth}>{\centering\hspace{0pt}}m{0.14\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.262\linewidth}} 
             \toprule
@@ -1136,10 +1134,10 @@ WWW & World Wide Web \\
         \qquad For Keyword Search, we evaluated the algorithm’s accuracy using the entire dataset, comprising 798 samples for the Normal Data and 2,033 for the Augmented Data. Among the different search methods, Keyword Search2, which employs regular expressions to search for words, outperformed other conventional search techniques in the augmented dataset. This superiority is attributed to its capability to accommodate input questions with errors, leading to significantly improved performance. \par
     \subsection{Simple  Classification}
       \subsubsection{Operation + Q1 Classification}
-        \begin{table}
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Simple Classification Operation + Q1 Result}
+          \caption{Simple Classification Operation + Q1 Result}\label{tab:Q1-Simple}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1156,12 +1154,12 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Categorical Naïve Bayes model achieved the highest accuracy of 0.681 on the normal test set. For the augmented dataset, both the Random Forest and Gaussian Naïve Bayes models attained the highest accuracy of 0.920 on the normal test set. Consequently, when evaluating accuracy from testing with augmented test data, it was determined that the Random Forest model exhibited the highest accuracy, as shown in Table 4.7. \par
+        \qquad In the added normal dataset, the Categorical Naïve Bayes model achieved the highest accuracy of 0.681 on the normal test set. For the augmented dataset, both the Random Forest and Gaussian Naïve Bayes models attained the highest accuracy of 0.920 on the normal test set. Consequently, when evaluating accuracy from testing with augmented test data, it was determined that the Random Forest model exhibited the highest accuracy, as shown in Table \ref{tab:Q1-Simple}. \par
       \subsubsection{Operation + Q2 Classification}
-        \begin{table}
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Simple Classification Operation + Q2 Result}
+          \caption{Simple Classification Operation + Q2 Result}\label{tab:Q2-Simple}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1178,14 +1176,14 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad As shown in Table 4.8, for the added normal dataset, the Bernoulli Naïve Bayes model achieved the highest accuracy of 0.572. Conversely,  the augmented dataset,  the  Gaussian Naïve Bayes model achieved the highest accuracy at 0.928. \par
+        \qquad As shown in Table \ref{tab:Q2-Simple}, for the added normal dataset, the Bernoulli Naïve Bayes model achieved the highest accuracy of 0.572. Conversely,  the augmented dataset,  the  Gaussian Naïve Bayes model achieved the highest accuracy at 0.928. \par
     \subsection{Parallel  Classification}
       \qquad In the Parallel Classification experimentation, both the operation model and the question type model are utilized to label the data. However, due to the distinction in categorizing question types into either 5 question types or 7 question types, the models used for training are referred to as Q1 Classification and Q2 Classification, respectively. \par
       \subsubsection{Q1 Classification}
-        \begin{table}
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q1 Classification with Added Normal and Augmented Experiment Result}
+          \caption{Q1 Classification with Added Normal and Augmented Experiment Result}\label{tab:Q1-Parallel}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1202,12 +1200,12 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-      \qquad In the added normal dataset, both the Complement Naïve Bayes and Categorical Naïve Bayes models achieved the highest accuracy of 0.756 on the normal test set. However, on the augmented test set, the Complement Naïve Bayes model outperformed the Categorical Naïve Bayes model. Additionally, for the augmented dataset, the Random Forest model attained the highest accuracy of 0.956 on the normal test set, as shown in Table 4.9. \par
+      \qquad In the added normal dataset, both the Complement Naïve Bayes and Categorical Naïve Bayes models achieved the highest accuracy of 0.756 on the normal test set. However, on the augmented test set, the Complement Naïve Bayes model outperformed the Categorical Naïve Bayes model. Additionally, for the augmented dataset, the Random Forest model attained the highest accuracy of 0.956 on the normal test set, as shown in Table \ref{tab:Q1-Parallel}. \par
       \subsubsection{Q2 Classification}
-        \begin{table}
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q2 Classification with Added Normal and Augmented Experiment Result}
+          \caption{Q2 Classification with Added Normal and Augmented Experiment Result}\label{tab:Q2-Parallel}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1224,14 +1222,15 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-      \qquad The added normal dataset trained with Complement Naïve Bayes achieved the highest accuracy at 0.706 on normal test set, and for the augmented dataset trained with Categorical Naïve Bayes have achieved the highest accuracy 0.95 on normal test set as shown in the Table 4.10. \par
+      \qquad The added normal dataset trained with Complement Naïve Bayes achieved the highest accuracy at 0.706 on normal test set, and for the augmented dataset trained with Categorical Naïve Bayes have achieved the highest accuracy 0.95 on normal test set as shown in the Table \ref{tab:Q2-Parallel}. \par
+    \newpage
     \subsection{Sequential Classification}
       \qquad In Sequential Classification experimentation, the data is first labeled using the operation model, and then the labeled data is further used to predict the question type label using the question type model. This means that each experiment involves four main question type models, categorized according to the four operations that are the focus of this project. \par
       \subsubsection{Q1-Operation Classification}
-        \begin{table}
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q1-Operation Classification (\textthai{ถอนฟัน}) Result}
+          \caption{Q1-Operation Classification (\textthai{ถอนฟัน}) Result}\label{tab:Q1-Operation.1}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1250,11 +1249,11 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy of 0.758 on the normal test set. Additionally, for the augmented dataset, the Complement Naïve Bayes model achieved the highest accuracy of 0.939 on the normal test set, as shown in the Table 4.11. \par
-        \begin{table}
+        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy of 0.758 on the normal test set. Additionally, for the augmented dataset, the Complement Naïve Bayes model achieved the highest accuracy of 0.939 on the normal test set, as shown in the Table \ref{tab:Q1-Operation.1}. \par
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q1-Operation Classification (\textthai{ผ่าฟันคุด}) Result}
+          \caption{Q1-Operation Classification (\textthai{ผ่าฟันคุด}) Result}\label{tab:Q1-Operation.2}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1273,11 +1272,11 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Categorical Naïve Bayes model achieved the highest accuracy of 0.750 on the normal test set. Additionally, for the augmented dataset, the Random Forest, Gaussian Naïve Bayes, Bernoulli Naïve Bayes, and Categorical Naïve Bayes model achieved the highest accuracy of 0.917 on the normal test set, as shown in the Table 4.12. \par
-        \begin{table}
+        \qquad In the added normal dataset, the Categorical Naïve Bayes model achieved the highest accuracy of 0.750 on the normal test set. Additionally, for the augmented dataset, the Random Forest, Gaussian Naïve Bayes, Bernoulli Naïve Bayes, and Categorical Naïve Bayes model achieved the highest accuracy of 0.917 on the normal test set, as shown in the Table \ref{tab:Q1-Operation.2}. \par
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q1-Operation Classification (\textthai{ผ่าตัดเหงือก}) Result}
+          \caption{Q1-Operation Classification (\textthai{ผ่าตัดเหงือก}) Result}\label{tab:Q1-Operation.3}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1296,11 +1295,11 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.815 on the normal test set. Additionally, for the augmented dataset, the Categorical Naïve Bayes model achieved the highest accuracy of 0.963 on the normal test set, as shown in the Table 4.13. \par
-        \begin{table}
+        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.815 on the normal test set. Additionally, for the augmented dataset, the Categorical Naïve Bayes model achieved the highest accuracy of 0.963 on the normal test set, as shown in the Table \ref{tab:Q1-Operation.3}. \par
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q1-Operation Classification (\textthai{ผ่าตัดรากฟันเทียม}) Result}
+          \caption{Q1-Operation Classification (\textthai{ผ่าตัดรากฟันเทียม}) Result}\label{tab:Q1-Operation.4}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1319,12 +1318,12 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Multinomial Naïve Bayes and Categorical Naïve Bayes model achieved the highest accuracy 0.639 on the normal test set. Additionally, for the augmented dataset, the Random Forest model achieved the highest accuracy of 0.944 on the normal test set, as shown in the Table 4.14. \par
+        \qquad In the added normal dataset, the Multinomial Naïve Bayes and Categorical Naïve Bayes model achieved the highest accuracy 0.639 on the normal test set. Additionally, for the augmented dataset, the Random Forest model achieved the highest accuracy of 0.944 on the normal test set, as shown in the Table \ref{tab:Q1-Operation.4}. \par
       \subsubsection{Q1-Operation with NC Classification}
-        \begin{table}
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q1-Operation with NC Classification (\textthai{ถอนฟัน}) Result}
+          \caption{Q1-Operation with NC Classification (\textthai{ถอนฟัน}) Result}\label{tab:Q1-NC-Operation.1}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
           \toprule
@@ -1343,11 +1342,11 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Random Forest model achieved the highest accuracy 0.738 on the normal test set. Additionally, for the augmented dataset, the Random Forest and Gaussian Naïve Bayes  model achieved the highest accuracy of 0.934 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table 4.15. \par
-        \begin{table}
+        \qquad In the added normal dataset, the Random Forest model achieved the highest accuracy 0.738 on the normal test set. Additionally, for the augmented dataset, the Random Forest and Gaussian Naïve Bayes  model achieved the highest accuracy of 0.934 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table \ref{tab:Q1-NC-Operation.1}. \par
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q1-Operation with NC Classification (\textthai{ผ่าฟันคุด}) Result}
+          \caption{Q1-Operation with NC Classification (\textthai{ผ่าฟันคุด}) Result}\label{tab:Q1-NC-Operation.2}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1366,11 +1365,11 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Random Forest model achieved the highest accuracy 0.734 on the normal test set. Additionally, for the augmented dataset, the Random Forest model achieved the highest accuracy of 0.953 on the normal test set, as shown in the Table 4.16. \par
-        \begin{table}
+        \qquad In the added normal dataset, the Random Forest model achieved the highest accuracy 0.734 on the normal test set. Additionally, for the augmented dataset, the Random Forest model achieved the highest accuracy of 0.953 on the normal test set, as shown in the Table \ref{tab:Q1-NC-Operation.2}. \par
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q1-Operation with NC Classification (\textthai{ผ่าตัดเหงือก}) Result}
+          \caption{Q1-Operation with NC Classification (\textthai{ผ่าตัดเหงือก}) Result}\label{tab:Q1-NC-Operation.3}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1389,11 +1388,11 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.764 on the normal test set. Additionally, for the augmented dataset, the Random Forest model achieved the highest accuracy of 0.964 on the normal test set, as shown in the Table 4.17. \par
-        \begin{table}
+        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.764 on the normal test set. Additionally, for the augmented dataset, the Random Forest model achieved the highest accuracy of 0.964 on the normal test set, as shown in the Table \ref{tab:Q1-NC-Operation.3}. \par
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q1-Operation with NC Classification (\textthai{ผ่าตัดรากฟันเทียม}) Result}
+          \caption{Q1-Operation with NC Classification (\textthai{ผ่าตัดรากฟันเทียม}) Result}\label{tab:Q1-NC-Operation.4}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1412,12 +1411,12 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Categorical Naïve Bayes model achieved the highest accuracy 0.719 on the normal test set. Additionally, for the augmented dataset, the Bernoulli Naïve Bayes model achieved the highest accuracy of 0.964 on the normal test set, as shown in the Table 4.18. \par
+        \qquad In the added normal dataset, the Categorical Naïve Bayes model achieved the highest accuracy 0.719 on the normal test set. Additionally, for the augmented dataset, the Bernoulli Naïve Bayes model achieved the highest accuracy of 0.964 on the normal test set, as shown in the Table \ref{tab:Q1-NC-Operation.4}. \par
       \subsubsection{Q2-Operation Classification}
-        \begin{table}
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q2-Operation Classification (\textthai{ถอนฟัน}) Result}
+          \caption{Q2-Operation Classification (\textthai{ถอนฟัน}) Result}\label{tab:Q2-Operation.1}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1436,11 +1435,11 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.630 on the normal test set. Additionally, for the augmented dataset, the Multinomial Naïve Bayes, Bernoulli Naïve Bayes and Complement Naïve Bayes model achieved the highest accuracy of 0.963 on the normal test set; when considering the augmented test data, Multinomial Naïve Bayes receives the highest accuracy shown in Table 4.19. \par
-        \begin{table}
+        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.630 on the normal test set. Additionally, for the augmented dataset, the Multinomial Naïve Bayes, Bernoulli Naïve Bayes and Complement Naïve Bayes model achieved the highest accuracy of 0.963 on the normal test set; when considering the augmented test data, Multinomial Naïve Bayes receives the highest accuracy shown in Table \ref{tab:Q2-Operation.1}. \par
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q2-Operation Classification (\textthai{ผ่าฟันคุด}) Result}
+          \caption{Q2-Operation Classification (\textthai{ผ่าฟันคุด}) Result}\label{tab:Q2-Operation.2}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1459,11 +1458,11 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Multinomial Naïve Bayes model achieved the highest accuracy 0.600 on the normal test set. Additionally, for the augmented dataset, the Random Forest, Gaussian Naïve Bayes, Bernoulli Naïve Bayes and Categorical Naïve Bayes model achieved the highest accuracy of 0.920 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table 4.20. \par
-        \begin{table}
+        \qquad In the added normal dataset, the Multinomial Naïve Bayes model achieved the highest accuracy 0.600 on the normal test set. Additionally, for the augmented dataset, the Random Forest, Gaussian Naïve Bayes, Bernoulli Naïve Bayes and Categorical Naïve Bayes model achieved the highest accuracy of 0.920 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table \ref{tab:Q2-Operation.2}. \par
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q2-Operation Classification (\textthai{ผ่าตัดเหงือก}) Result}
+          \caption{Q2-Operation Classification (\textthai{ผ่าตัดเหงือก}) Result}\label{tab:Q2-Operation.3}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1482,11 +1481,11 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Random Forest model achieved the highest accuracy 0.545 on the normal test set. Additionally, for the augmented dataset, the Random Forest, Multinomial Naïve Bayes, Gaussian Naïve Bayes, Bernoulli Naïve Bayes and Categorical Naïve Bayes model achieved the highest accuracy of 0.909 on the normal test set; when considering the augmented test data, Multinomial Naïve Bayes, Gaussian Naïve Bayes, Bernoulli Naïve Bayes, and Categorical Naïve Bayes receives the highest accuracy shown in Table 4.21. \par
-        \begin{table}
+        \qquad In the added normal dataset, the Random Forest model achieved the highest accuracy 0.545 on the normal test set. Additionally, for the augmented dataset, the Random Forest, Multinomial Naïve Bayes, Gaussian Naïve Bayes, Bernoulli Naïve Bayes and Categorical Naïve Bayes model achieved the highest accuracy of 0.909 on the normal test set; when considering the augmented test data, Multinomial Naïve Bayes, Gaussian Naïve Bayes, Bernoulli Naïve Bayes, and Categorical Naïve Bayes receives the highest accuracy shown in Table \ref{tab:Q2-Operation.3}. \par
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q2-Operation Classification (\textthai{ผ่าตัดรากฟันเทียม}) Result}
+          \caption{Q2-Operation Classification (\textthai{ผ่าตัดรากฟันเทียม}) Result}\label{tab:Q2-Operation.4}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1505,12 +1504,12 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Random Forest, Multinomial Naïve Bayes, and Complement Naïve Bayes model achieved the highest accuracy 0.714 on the normal test set. When considering the augmented test data, Multinomial Naïve Bayes receive the highest accuracy. Additionally, for the augmented dataset, the Random Forest, Gaussian Naïve Bayes, and Bernoulli Naïve Bayes model achieved the highest accuracy of 0.976 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table 4.22. \par
+        \qquad In the added normal dataset, the Random Forest, Multinomial Naïve Bayes, and Complement Naïve Bayes model achieved the highest accuracy 0.714 on the normal test set. When considering the augmented test data, Multinomial Naïve Bayes receive the highest accuracy. Additionally, for the augmented dataset, the Random Forest, Gaussian Naïve Bayes, and Bernoulli Naïve Bayes model achieved the highest accuracy of 0.976 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table \ref{tab:Q2-Operation.4}. \par
       \subsubsection{Q2-Operation with NC Classification}
-        \begin{table}
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q2-Operation with NC Classification (\textthai{ถอนฟัน}) Result}
+          \caption{Q2-Operation with NC Classification (\textthai{ถอนฟัน}) Result}\label{tab:Q2-NC-Operation.1}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1529,11 +1528,11 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.609 on the normal test set. Additionally, for the augmented dataset, the Multinomial Naïve Bayes, and Categorical Naïve Baye model achieved the highest accuracy of 0.978 on the normal test set; when considering the augmented test data, Categorical Naïve Bayes receives the highest accuracy shown in Table 4.23. \par
-        \begin{table}
+        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.609 on the normal test set. Additionally, for the augmented dataset, the Multinomial Naïve Bayes, and Categorical Naïve Baye model achieved the highest accuracy of 0.978 on the normal test set; when considering the augmented test data, Categorical Naïve Bayes receives the highest accuracy shown in Table \ref{tab:Q2-NC-Operation.1}. \par
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q2-Operation with NC Classification (\textthai{ผ่าฟันคุด}) Result}
+          \caption{Q2-Operation with NC Classification (\textthai{ผ่าฟันคุด}) Result}\label{tab:Q2-NC-Operation.2}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1552,11 +1551,11 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Gaussian Naïve Bayes model achieved the highest accuracy 0.638 on the normal test set. Additionally, for the augmented dataset, the Gaussian Naïve Bayes model achieved the highest accuracy of 0.942 on the normal test set, as shown in the Table 4.24. \par
-        \begin{table}
+        \qquad In the added normal dataset, the Gaussian Naïve Bayes model achieved the highest accuracy 0.638 on the normal test set. Additionally, for the augmented dataset, the Gaussian Naïve Bayes model achieved the highest accuracy of 0.942 on the normal test set, as shown in the Table \ref{tab:Q2-NC-Operation.2}. \par
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q2-Operation with NC Classification (\textthai{ผ่าตัดเหงือก}) Result}
+          \caption{Q2-Operation with NC Classification (\textthai{ผ่าตัดเหงือก}) Result}\label{tab:Q2-NC-Operation.3}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1575,11 +1574,11 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Gaussian Naïve Bayes model achieved the highest accuracy 0.512 on the normal test set. Additionally, for the augmented dataset, the Random Forest, Gaussian Naïve Bayes, Bernoulli Naïve Bayes, and Categorical Naïve Bayes achieved the highest accuracy of 0.951 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table 4.25. \par
-        \begin{table}
+        \qquad In the added normal dataset, the Gaussian Naïve Bayes model achieved the highest accuracy 0.512 on the normal test set. Additionally, for the augmented dataset, the Random Forest, Gaussian Naïve Bayes, Bernoulli Naïve Bayes, and Categorical Naïve Bayes achieved the highest accuracy of 0.951 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table \ref{tab:Q2-NC-Operation.3}. \par
+        \begin{table}[H]
           \scriptsize
           \centering
-          \caption{Q2-Operation with NC Classification (\textthai{ผ่าตัดรากฟันเทียม}) Result}
+          \caption{Q2-Operation with NC Classification (\textthai{ผ่าตัดรากฟันเทียม}) Result}\label{tab:Q2-NC-Operation.4}
           \resizebox{\linewidth}{!}{%
           \begin{tabular}{>{\centering\hspace{0pt}}m{0.081\linewidth}>{\centering\hspace{0pt}}m{0.071\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.062\linewidth}>{\centering\hspace{0pt}}m{0.069\linewidth}>{\centering\hspace{0pt}}m{0.06\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.069\linewidth}} 
             \toprule
@@ -1598,12 +1597,14 @@ WWW & World Wide Web \\
           \end{tabular}
           }
         \end{table}
-        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.639 on the normal test set. Additionally, for the augmented dataset, the Random Forest, and Multinomial Naïve Bayes achieved the highest accuracy of 0.984 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table 4.26. \par
+        \qquad In the added normal dataset, the Complement Naïve Bayes model achieved the highest accuracy 0.639 on the normal test set. Additionally, for the augmented dataset, the Random Forest, and Multinomial Naïve Bayes achieved the highest accuracy of 0.984 on the normal test set; when considering the augmented test data, Random Forest receives the highest accuracy shown in Table \ref{tab:Q2-NC-Operation.4}. \par
     \subsection{Final Accuracy}
-      \begin{table}
+      \qquad In order to decide which classifier to use, it is necessary to measure the final performance of each classifier. We chose to use Final Accuracy as the metric for comparing performance. Final Accuracy is obtained by predicting the Test Set with the models to be used together, such as the Operation model parallel with the Q1 model. All samples that are correctly predicted by both models are then divided by the total number of samples in the Test Set, except the 'Operation + Q1' model and 'Operation + Q2' model, which use only one model to predict both operation and question type. \par
+      \qquad We will select only the operation model trained with keyword search 2, which, as shown in Table \ref{tab:Keyword_Search}, provides the best possible results. This will be used to determine the final accuracy and compare it with other models. \par
+      \begin{table}[H]
         \centering\
         \scriptsize
-        \caption{Final Accuracy Of model with keyword search for classifying operation}
+        \caption{Final Accuracy Of model with keyword search for classifying operation}\label{tab:final-accuracy}
         \resizebox{\linewidth}{!}{%
         \begin{tabular}{>{\centering\hspace{0pt}}m{0.075\linewidth}>{\centering\hspace{0pt}}m{0.119\linewidth}>{\centering\hspace{0pt}}m{0.058\linewidth}>{\centering\hspace{0pt}}m{0.065\linewidth}>{\centering\hspace{0pt}}m{0.058\linewidth}>{\centering\hspace{0pt}}m{0.065\linewidth}>{\centering\hspace{0pt}}m{0.058\linewidth}>{\centering\hspace{0pt}}m{0.065\linewidth}>{\centering\hspace{0pt}}m{0.058\linewidth}>{\centering\hspace{0pt}}m{0.065\linewidth}>{\centering\hspace{0pt}}m{0.058\linewidth}>{\centering\hspace{0pt}}m{0.065\linewidth}>{\centering\hspace{0pt}}m{0.058\linewidth}>{\centering\arraybackslash\hspace{0pt}}m{0.065\linewidth}} 
           \toprule
@@ -1626,11 +1627,10 @@ WWW & World Wide Web \\
       \end{table}
       \qquad From the table, it can be seen that the Operation parallel with Q1, which uses the Operation model paired with the Question type model being Random Forest, achieved the highest final accuracy of 0.95 for the normal test set and 0.885 for the augmented test set. As for the Operation parallel with Q2, it can be seen that Categorical Naïve Bayes achieved the highest final accuracy of 0.95. However, for the augmented test set, it is slightly lower than Random Forest by 0.035 or 3.5 percent. But for the normal test set, Random Forest's accuracy is only lower by 0.006. Therefore, it can be concluded that for Q2, the Operation parallel with Q2, which utilizes Random Forest as the question type model, is the best. \par
 
-
       \section{Follow-Up}
       \subsection{Follow-Up Flow Chart}
         \subsubsection{Overall Flow}
-          \begin{figure}[!h]
+          \begin{figure}[H]
             \centering
             \fbox{\includegraphics[width=.2\textwidth]{Image/FollowUp-OverallFlow.png}}
             \caption{Overall Follow-Up Flow}\label{fig:FollowUpFlow1}
@@ -1639,9 +1639,9 @@ WWW & World Wide Web \\
             \end{justify}        
           \end{figure}
         \subsubsection{Bleeding Flow}
-          \begin{figure}[!h]
+          \begin{figure}[H]
             \centering
-            \fbox{\includegraphics[width=.4\textwidth]{Image/FollowUp-BleedingFlow.png}}
+            \fbox{\includegraphics[width=.6\textwidth]{Image/FollowUp-BleedingFlow.png}}
             \caption{Bleeding Follow-Up Flow}\label{fig:FollowUpFlow2}
             \begin{justify}
               \qquad This flow section focuses primarily on bleeding. The bot will ask the user to choose from three levels of bleeding: 1. No bleeding from the wound \textthai{(ไม่มีเลือกซึมจากแผล)}, 2. Bleeding from the wound with saliva mixed with blood \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดปนน้ำลาย)}, 3. Bleeding from the wound with fresh red blood and/or blood clots \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดสีแดงสด และ/หรือมีลิ่มเลือดปนออกมาด้วย)}.\par
@@ -1649,48 +1649,46 @@ WWW & World Wide Web \\
             \end{justify}        
           \end{figure}
         \subsubsection{Pain Flow}
-          \begin{figure}[!h]
+          \begin{figure}[H]
             \centering
-            \fbox{\includegraphics[width=.5\textwidth]{Image/FollowUp-PainFlow.png}}
+            \fbox{\includegraphics[width=.7\textwidth]{Image/FollowUp-PainFlow.png}}
             \caption{Pain Follow-Up Flow}\label{fig:FollowUpFlow3}
             \begin{justify}
-              \qquad This flow section focuses primarily on bleeding. The bot will ask the user to choose from three levels of bleeding: 1. No bleeding from the wound \textthai{(ไม่มีเลือกซึมจากแผล)}, 2. Bleeding from the wound with saliva mixed with blood \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดปนน้ำลาย)}, 3. Bleeding from the wound with fresh red blood and/or blood clots \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดสีแดงสด และ/หรือมีลิ่มเลือดปนออกมาด้วย)}.\par
               \qquad This flow focuses on pain monitoring. The bot will prompt users to select a pain score from 0-10, where 0 means no pain at all and 10 means unbearable pain. If the user selects a pain level less than 7, the bot will proceed to monitor the  further follow-up procedure and inform the user that there will be another follow-up in 24 hours. If the user selects a pain level of 7 or higher, the bot will ask if the user has taken pain reliever medication. If not, it will recommend taking the pain reliever medication, and if they have taken it, it will inquire if the pain has decreased. If the pain has decreased or is less than 4, the bot will proceed to monitor the further follow-up procedure. If the pain has not decreased or is still greater than 4, the bot will recommend that the user seek medical attention.\par
             \end{justify}        
           \end{figure}
         \subsubsection{Swell Flow}
-          \begin{figure}[!h]
+          \begin{figure}[H]
             \centering
-            \fbox{\includegraphics[width=.5\textwidth]{Image/FollowUp-SwellFlow.png}}
+            \fbox{\includegraphics[width=.6\textwidth]{Image/FollowUp-SwellFlow.png}}
             \caption{Swellness Follow-Up Flow}\label{fig:FollowUpFlow4}
             \begin{justify}
               \qquad This flow of monitoring swelling around a wound will begin by asking about the level of swelling around the wound, ranging from 0-10, where 0 means no swelling at all and 10 means the most severe swelling ever experienced. If the user selects a swelling level less than 5, the bot will recommend applying cold compress. However, if the user selects a swelling level of 5 or higher, the bot will inquire about how many days since the surgery. If it's within 3 days of surgery, the bot will recommend applying cold compress. But if it's been more than 3 days since surgery, the bot will ask if there is any accompanying pain or increased swelling. If not, it will recommend applying compression. However, if yes, the bot will recommend that the user seek medical attention.\par
             \end{justify}        
           \end{figure}
         \subsubsection{Diet  Flow}
-          \begin{figure}[!h]
+          \begin{figure}[H]
             \centering
-            \fbox{\includegraphics[width=.5\textwidth]{Image/FollowUp-DietFlow.png}}
+            \fbox{\includegraphics[width=.4\textwidth]{Image/FollowUp-DietFlow.png}}
             \caption{Diet Follow-Up Flow}\label{fig:FollowUpFlow5}
             \begin{justify}
               \qquad In this flow, the bot will focus on the user's diet. It will start by asking if the user can eat normally or not. If the user answers yes,  the bot will proceed to monitor the further follow-up procedure. If not, the bot will inquire about what type of food the user consumes. If the user responds with soft food, the bot will recommend that the user see a medical attention. However, if the user does not consume soft food, the bot will recommend consuming soft food and there will be another follow-up in 24 hours.\par
             \end{justify}        
           \end{figure}
         \subsubsection{Oral Hygiene Flow}
-          \begin{figure}[!h]
+          \begin{figure}[H]
             \centering
-            \fbox{\includegraphics[width=.5\textwidth]{Image/FollowUp-HygieneFlow.png}}
+            \fbox{\includegraphics[width=.35\textwidth]{Image/FollowUp-HygieneFlow.png}}
             \caption{Oral Hygiene Follow-Up Flow}\label{fig:FollowUpFlow6}
             \begin{justify}
               \qquad In this flow, the bot will focus on the user's oral hygiene. It will ask if the user can brush their teeth or rinse their mouth. If the user responds yes, the bot will then conclude the symptom monitoring and summarize the condition to end the follow-up process. However, if the user responds negatively, the bot will recommend that the user gently avoid cleaning the surgical area.\par
             \end{justify}        
           \end{figure}
-      \subsection{Follow-Up Chatbot}
   
     \section{Web application Development}
       \subsection{Web Application Final Design}
         \subsubsection{Homepage}\
-          \begin{figure}[!h]
+          \begin{figure}[H]
             \centering
             \begin{minipage}{.5\textwidth}
               \centering
@@ -1703,13 +1701,13 @@ WWW & World Wide Web \\
           
             \caption{Homepage Web Application}\label{fig:WebAppHomepage}
             \begin{justify}
-              \qquad Figure 4.21 represents the home page of our web application. On the left side is the home page for users who  haven't logged in, while on the right side is the home page for logged-in users.\par
+              \qquad Figure \ref{fig:WebAppHomepage} represents the home page of our web application. On the left side is the home page for users who  haven't logged in, while on the right side is the home page for logged-in users.\par
               \qquad The homepage consists of a brief description of our website and two primary buttons: “Start Chatting” and “Login by Line”.  The “Start Chatting” button redirects users to the question answering page, facilitating interaction with the chatbot for inquiries. “Login by Line” directs users to the Line login page, allowing them to log into the platform using their Line account credentials.\par
               \qquad Once users logged in, the  "Login by Line" button is hidden,  and a follow-up button appears on the navigation bar. Additionally, the login button on the navigation bar changes to the user's username.\par
             \end{justify}
           \end{figure}
         \subsubsection{Login Page}
-          \begin{figure}[!h]
+          \begin{figure}[H]
             \centering
             \begin{minipage}{.5\textwidth}
               \centering
@@ -1722,48 +1720,48 @@ WWW & World Wide Web \\
           
             \caption{Line Login Web Application}\label{fig:WebAppLineLogin}
             \begin{justify}
-              \qquad Figure 4.22, is our login page. Our login page seamlessly integrates with Line, allowing users to log in using their Line account credentials. Upon clicking "Login by Line," users are directed to a page resembling the Line application. After entering their Line credentials and confirming, their account is linked to their Line account.\par
+              \qquad Figure \ref{fig:WebAppLineLogin}, is our login page. Our login page seamlessly integrates with Line, allowing users to log in using their Line account credentials. Upon clicking "Login by Line," users are directed to a page resembling the Line application. After entering their Line credentials and confirming, their account is linked to their Line account.\par
             \end{justify}
           \end{figure}
         \subsubsection{FAQ Page}
-          \begin{figure}[!h]
+          \begin{figure}[H]
             \centering
             \fbox{\includegraphics[width=.6\textwidth]{Image/web-login_FAQ.png}}
             \caption{FAQ Feature Web Application}\label{fig:WebAppFAQ}
             \begin{justify}
-              \qquad Figure 4.23 depicts the FAQ page. The FAQ pages for both logged-in and non-logged-in users have the same appearance and functionality. The only difference is that if the user is logged in, a "Follow Up" button will appear, allowing them to use the follow-up feature.\par
+              \qquad Figure \ref{fig:WebAppFAQ} depicts the FAQ page. The FAQ pages for both logged-in and non-logged-in users have the same appearance and functionality. The only difference is that if the user is logged in, a "Follow Up" button will appear, allowing them to use the follow-up feature.\par
             \end{justify}        
           \end{figure}
         \subsubsection{All Follow-Up Page}
-          \begin{figure}[!h]
+          \begin{figure}[H]
             \centering
             \fbox{\includegraphics[width=.6\textwidth]{Image/web-login_FollowUp.png}}
             \caption{All Follow-Up Web Application}\label{fig:WebAppAllFollowUp}
             \begin{justify}
-              \qquad Figure 4.24 represents the All Follow-up page. This page is only available for logged-in users. This page allows the user to see all follow up case they have had. Follow up chat can then be accessed when clicking on one of the case.\par
+              \qquad Figure \ref{fig:WebAppAllFollowUp} represents the All Follow-up page. This page is only available for logged-in users. This page allows the user to see all follow up case they have had. Follow up chat can then be accessed when clicking on one of the case.\par
             \end{justify}        
           \end{figure}
         \subsubsection{Follow-Up Page}
-          \begin{figure}[!h]
+          \begin{figure}[H]
             \centering
             \fbox{\includegraphics[width=.6\textwidth]{Image/web-login_FollowUpChat.png}}
             \caption{Follow-Up Web Application}\label{fig:WebAppFollowUp}
             \begin{justify}
-              \qquad Figure 4.25 represents the Follow-up page. This page is only available for logged-in users. Users can view their Follow-Up chat history. A new feature has been added for user convenience: a plus button, allowing users to easily add entries for tracking new follow-up cases, which when clicked, will direct users to the 'Add New Case' page. Additionally, We have removed the switch bar switch between  the FAQ and Follow-up features and placed them in the navigation bar instead, due to issues with fetching data when switching between features, causing the web page to freeze and not function smoothly.\par
+              \qquad Figure \ref{fig:WebAppFollowUp} represents the Follow-up page. This page is only available for logged-in users. Users can view their Follow-Up chat history. A new feature has been added for user convenience: a plus button, allowing users to easily add entries for tracking new follow-up cases, which when clicked, will direct users to the 'Add New Case' page. Additionally, We have removed the switch bar switch between  the FAQ and Follow-up features and placed them in the navigation bar instead, due to issues with fetching data when switching between features, causing the web page to freeze and not function smoothly.\par
             \end{justify}        
           \end{figure}
         \subsubsection{Patient Info Page}
-          \begin{figure}[!h]
+          \begin{figure}[H]
             \centering
             \fbox{\includegraphics[width=.6\textwidth]{Image/web-profile.png}}
             \caption{Patient Information Web Application}\label{fig:WebAppPatientInfo}
             \begin{justify}
-              \qquad Figure 4.26 shows a patient information page. The user profile page can be accessed by clicking on the name and profile icon. The user profile page will display any relevant data regarding the user, including user’s name and user case history. Users are restricted from modifying any personal information since the account is linked to their Line Account.\par
-              \qquad Additionally, for user convenience, a plus button has been added to easily add new follow-up cases. By clicking this button, users will be directed to the 'Add New Case' page. Furthermore, a 'ติดตาม' button has been introduced, allowing users to directly link to the chat for tracking the progress of the specific case.\par
+              \qquad Figure \ref{fig:WebAppPatientInfo} shows a patient information page. The user profile page can be accessed by clicking on the name and profile icon. The user profile page will display any relevant data regarding the user, including user’s name and user case history. Users are restricted from modifying any personal information since the account is linked to their Line Account.\par
+              \qquad Additionally, for user convenience, a plus button has been added to easily add new follow-up cases. By clicking this button, users will be directed to the 'Add New Case' page. Furthermore, a \textthai{'ติดตาม'} button has been introduced, allowing users to directly link to the chat for tracking the progress of the specific case.\par
             \end{justify}       
           \end{figure}
         \subsubsection{Add Case Page}
-          \begin{figure}[!h]
+          \begin{figure}[H]
             \centering
             \begin{minipage}{.5\textwidth}
               \centering
