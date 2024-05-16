@@ -1917,8 +1917,7 @@ WWW & World Wide Web \\
           \end{minipage}
           \caption{Follow-up Feature Evaluation Survey}\label{fig:followupform}
             \begin{justify}
-              \qquad The testing process will begin by instructing testers to add the Line official bot as a friend on the Line application. Then, they will be prompted to scan a QR code to add a follow-up case to the system. Subsequently, notifications of post-surgery follow-up will be sent through the Line application immediately after the testers add the case to the system. Testers will then answer post-surgery follow-up questions until completion before proceeding to answer the evaluation questions mentioned above.
-              \par            
+              \qquad The testing process will begin by instructing testers to add the Line official bot as a friend on the Line application. Then, they will be prompted to scan a QR code to add a follow-up case to the system. Subsequently, notifications of post-surgery follow-up will be sent through the Line application immediately after the testers add the case to the system. Testers will then answer post-surgery follow-up questions until completion before proceeding to answer the evaluation questions mentioned above.\par            
             \end{justify}
         \end{figure}
       \subsection{Evaluation Result}
@@ -1927,8 +1926,33 @@ WWW & World Wide Web \\
         \text{CUQ} = \frac{\text{total score}}{\text{total number of questions}}
         \]
         \qquad The CUQ score represents the overall usability of the chatbot, providing a comprehensive measure of participants' perceptions of both FAQ feature and Follow-Up feature.\par
-          
-  
+    
+    \chapter{CONCLUSIONS}
+      \section{Problem and Solution}
+        \subsection{Lack of Dataset}
+          \qquad For training a model for classification, it is necessary to use a large amount of data to ensure the model performs well in categorizing the input data. However, due to insufficient data on websites and survey results for collecting data related to oral surgery questions, it is difficult to train the model effectively. \par
+          \qquad To address this issue, we have chosen to increase the dataset by modifying existing questions by keeping the original meaning of the sentence intact. Another method is to augment the dataset using techniques including random insertion, random deletion, random swap, back translation, and paraphrased text. \par
+        \subsection{Server and Model Incompatibility}
+          \qquad In the first place, we planned to create a server using Node.js. However, since the Question Answering feature requires a model written in Python, integrating this model into a Node.js server is not feasible due to compatibility issues. \par
+          \qquad To address this issue, we have decided to create another server written in Python to handle all the steps related to the Question Answering feature and utilize the model within this server.\par
+          \qquad The reason for not integrating all servers into a single Python server is because the Follow-Up feature involves using Dialogflow, which utilizes Fulfillment to connect with the backend. Fulfillment is developed in JavaScript, Therefore, a Node.js server is also required. \par
+        \subsection{QA Model}
+          \qquad We planned to train the QA model ourselves but we faced the problem of lack of dataset as the pretrained version is trained with more than 100,000 data while our dataset has only 240 data which is insignificant compared to the pretrained dataset. So in the end we used the pretrained version. \par
+          \qquad We then tried to tune the QA model but were faced with another problem as our best device cannot handle the training process as the QA model is very big so we are unable to tune the model. \par
+          \qquad Finally, we then try to host the QA model in order to reduce the response time it takes for getting the answer to our question input. But the host we used in order to deploy our server, does not allow as the QA model size is too large so we have to use API requests instead. \par
+        \subsection{Quick Reply Limited for Mobile and Tablet}
+          \qquad In the follow-up feature, we also utilize Dialogflow to design the response messages. We have chosen to employ quick reply text responses for the convenience of users in answering questions. However, quick reply functionality is only available within the LINE application on mobile phones and tablets. \par
+      \section{Conclusion}
+        \qquad The project has achieved success as practically every aspect of the intended plan has been accomplished, with additional features, question answering, and follow-up via Line official chat being integrated based on ideas from the committee during the development period. All of the proposed features, such as patient registration, frequently asked questions answering, post-surgery follow-up, adding a new follow-up case, and viewing past follow-up cases, were seamlessly integrated into our web application and official line account. The keyword search used to classify the question’s  operation had an accuracy of 100\% and The classification model used to classify the question type had an accuracy of 96.4\%. And when both classifiers are used in parallel, had an accuracy of 94.4\%. (not finished yet,  waiting for feedback result) \par
+      \section{Future Work}
+        \begin{itemize}
+          \item Create a new page to allow medical staff to access and check the medical history and post surgery follow-up record of patients. 
+          \item Enhance the context for the Question Answering feature to provide more accurate and improved responses to questions.
+          \item Make it support a greater variety of surgical procedures.
+          \item For the follow-up case which is needed to do further follow-up again, modify it to send notification after the patient completes the initial Follow-Up form, ideally within the first 24 hours of completion instead of sending notification at 10 o'clock everyday.
+          \item Training and tuning question answering models instead of using pretrained model to improve performance of question answering features to get better Thai language answers.                  
+        \end{itemize}  
+
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
