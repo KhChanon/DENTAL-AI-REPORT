@@ -477,18 +477,18 @@
 %\def\thesis{Thesis}
 \def\makesignaturepage{
    \newpage\thispagestyle{empty}\baselineskip \baselineskipxi {\centering
-   \makebox {\disstitleone} \par 
+   \makebox {\disstitleoneLower} \par 
    \ifx \titleempty\disstitletwo \else  
    \makebox{\disstitletwo} \par
    \fi
    %\makebox {\disstitletwo} \par
    %\makebox {\disstitlethree} \par \makebox {\disstitlefour} \par
-   \vfill \dissauthor \qquad \dissauthorID \par 
-   \ifx \titleempty\dissauthortwo \else  
-   \makebox{\dissauthortwo \qquad \dissauthortwoID} \par
+   \vfill \dissauthorLower \par 
+   \ifx \titleempty\dissauthortwoLower \else  
+   \makebox{\dissauthortwoLower} \par
    \fi
-   \ifx \titleempty\dissauthorthree \else  
-   \makebox{\dissauthorthree \qquad \dissauthorthreeID} \par
+   \ifx \titleempty\dissauthorthreeLower \else  
+   \makebox{\dissauthorthreeLower} \par
    \fi
    \vfill A Project Submitted in Partial Fulfillment 
    of the Requirements for 
@@ -517,6 +517,24 @@
   (\disscoadvisortwo) & \\
   & \\ \\ \\
 \fi
+%%%%%%% comittee %%%%%%%%%%%%%%%%%%
+\ifx \titleempty\discommitee \else
+  \dotrule{3.6in} & \ Committee Member\\
+  (\discommitee) & \\
+  & \\ \\ \\
+\fi
+%%%%%%% comittee %%%%%%%%%%%%%%%%%%
+\ifx \titleempty\discommiteetwo \else
+  \dotrule{3.6in} & \ Committee Member\\
+  (\discommitee) & \\
+  & \\ \\ \\
+\fi
+%%%%%%% comittee %%%%%%%%%%%%%%%%%%
+\ifx \titleempty\discommitee \else
+  \dotrule{3.6in} & \ Committee Member\\
+  (\discommitee) & \\
+  & \\ \\ \\
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tabular*}
@@ -538,17 +556,17 @@
 \addcontentsline{toc}{chapterx}{\mdseries ABSTRACT}
 \begin{flushleft}
 \begin{tabular}{@{}lp{0.7\textwidth}}
- \worktype\ Title & \disstitleone\ \\ 
+ \worktype\ Title & \disstitleoneLower\ \\ 
 \ifx \titleempty\disstitletwo \else
               & \disstitletwo \\
 \fi
 Credits & \disscredit \\
- Member(s) & \dissauthor \\
-\ifx \titleempty\dissauthortwo \else
-              & \dissauthortwo \\
+ Member(s) & \dissauthorLower \\
+\ifx \titleempty\dissauthortwoLower \else
+              & \dissauthortwoLower \\
 \fi
-\ifx \titleempty\dissauthorthree \else
-              & \dissauthorthree \\
+\ifx \titleempty\dissauthorthreeLower \else
+              & \dissauthorthreeLower \\
 \fi
 \worktype\ Advisor & \dissadvisor \\
 \ifx \titleempty\disscoadvisor \else
