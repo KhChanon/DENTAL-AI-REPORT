@@ -22,24 +22,22 @@
 % The ones that are optional can be left blank. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % First line of title
-\def\disstitleone{DENTAL AI CHATBOT FOR ORAL QUESTION ANSWERING AND POST-SURGERY CARE}   
+\def\disstitleone{DENTAL AI CHATBOT FOR ORAL QUESTION ANSWERING AND POST-SURGERY CARE}
+\def\disstitleoneLower{Dental AI Chatbot for Oral Question Answering and Post-Surgery Care}   
 \def\thaidisstitleone{\textthai{แชทบอท AI สำหรับการตอบคำถามเกี่ยวกับการผ่าตัดในช่องปากและการดูแลหลังผ่าตัด}}
 % Your first name and lastname
 \def\dissauthor{MR. CHANON KHANIJOH}   % 1st member
 %%% Put other group member names here ..
 \def\dissauthortwo{MR. PECHDANAI SAEPONG}   % 2nd member (optional)
 \def\dissauthorthree{MS. FASAI SAE-TAE}   % 3rd member (optional)
-\def\dissauthorID{63070503408}              % Author of dissertation
-\def\dissauthortwoID{63070503434}              % Author of dissertation
-\def\dissauthorthreeID{63070503436}   
-\def\dissauthorEMAIL{chanon.kha@mail.kmutt.ac.th}              % Author of dissertation
-\def\dissauthortwoEMAIL{pechdanai.sp@mail.kmutt.ac.th}              % Author of dissertation
-\def\dissauthorthreeEMAIL{fasai.sae@mail.kmutt.ac.th} 
+
+\def\dissauthorLower{Mr. Chanon Knanijoh}   % 1st member
+\def\dissauthortwoLower{Mr. Pechdanai Saepong}   % 2nd member (optional)
+\def\dissauthorthreeLower{Ms. Fasai Sae-Tae}   % 3rd member (optional)
 
 \def\thaidissauthor{\textthai{นายชานนท์ คาร์นิยอร์}}   % 1st member
 \def\thaidissauthortwo{\textthai{นายเพชรดนัย แซ่พง}}  % 2nd member (optional)
 \def\thaidissauthorthree{\textthai{นางสาวฟ้าใส แซ่แต้}}  % 3rd member (optional)
-
 
 % The degree that you're persuing..
 \def\dissdegree{Bachelor of Engineering} % Name of the degree
@@ -51,7 +49,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Your project and independent study committee..
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\dissadvisor{Dr. Unchalisa Taetragool , Ph.D.}  % Advisor
+\def\dissadvisor{Dr. Unchalisa Taetragool, Ph.D.}  % Advisor
 \def\thaidissadvisor{\textthai{ดร.อัญชลิสา แต้ตระกูล}}
 %%% Leave it empty if you have no Co-advisor
 \def\disscoadvisor{Dr. Vorapat Trachoo, D.D.S., M.D.}  % Co-advisor
@@ -59,6 +57,12 @@
 %%% Leave it empty if you have no Co-advisor 2
 \def\disscoadvisortwo{Dr. Kritsasith Warin, D.D.S.}  % Co-advisor 2
 \def\thaidisscoadvisortwo{\textthai{ดร.กฤษสิทธิ์ วารินทร์}}
+
+%%committee
+\def\discommitee{Asst.Prof. Sanan Srakaew, Ph.D.}  % Commitee 1
+\def\discommiteetwo{Kittipong Piyawanno, Ph.D.}  % Commitee 2
+\def\discommiteethree{Piyanit Wepulanon,  Ph.D.}  % Commitee 3
+
 
 \def\worktype{Project} %%  Project or Independent study
 \def\disscredit{3}   %% 3 credits or 6 credits
@@ -129,7 +133,7 @@
 \abstract{
   \qquad This project addresses the challenges faced by individuals seeking oral healthcare by developing an AI-powered chatbot for oral surgery inquiries and post-operation follow-ups. With a growing demand for medical attention and a scarcity of healthcare providers, patients often struggle to access timely and accurate information, leading to unnecessary visits and financial strain. Moreover, healthcare providers face immense workloads, hindering their ability to address patient concerns effectively. Motivated by these issues, our project aims to develop a chatbot utilizing advanced natural language processing and machine learning techniques to provide accurate responses to frequently asked questions related to oral surgeries. Additionally, the chatbot will facilitate post-surgery follow-ups, reducing the burden on healthcare professionals and improving the overall patient experience. The scope encompasses the development of a fully functional chatbot integrated into a web application and Line chatbot, focusing on four specific surgical operations: tooth extraction, wisdom tooth removal, periodontal surgery, and dental implant surgery. Through extensive research, machine learning model development, and usability testing, this project attempts to enhance access to oral healthcare information and streamline patient-provider interactions. The results of this project indicate that the FAQ component effectively addresses oral surgery questions at a satisfactory level, while the follow-up feature significantly reduces nurse workload. \par
   
-  \textbf{Keywords:} Oral Surgery, Frequently Asked Question, Diagnose, Follow-up, Artificial Intelligence, Chatbot, Machine Learning, Natural Language Processing
+  \textbf{Keywords:} Oral Surgery, Frequently Asked Question, Follow-up, Artificial Intelligence, Chatbot, Machine Learning, Natural Language Processing
 }
 \thaiabstract{
   \qquad \textthai{โครงการนี้เป็นโครงการที่พัฒนาขึ้นเพื่อแก้ไขปัญหาที่ผู้ป่วยต้องเผชิญในการพบทันตแพทย์ โดยการพัฒนาแชทบอทนี้ได้ประยุกต์ใช้ปัญญาประดิษฐ์สำหรับการตอบคำถามเกี่ยวกับการผ่าตัดทางช่องปากและการติดตามอาการหลังผ่าตัด ด้วยความต้องการที่เพิ่มขึ้นสำหรับการรักษาและการขาดแคลนทรัพยากรทางการแพทย์ ผู้ป่วยจึงมักประสบปัญหาในการเข้าถึงข้อมูลที่แม่นยำและทันท่วงที ซึ่งนำไปสู่การไปพบแพทย์โดยไม่จำเป็นและทำให้เกิดภาระทางการเงินเพิ่มขึ้น นอกจากนี้ ทันตแพทย์ต้องเผชิญกับภาระงานจำนวนมาก ซึ่งเป็นอุปสรรคต่อการดูแลผู้ป่วยอย่างมีประสิทธิภาพ โดยที่โครงการของเรามุ่งเน้นการพัฒนาแชทบอทโดยใช้เทคนิคการการประมวลผลภาษาธรรม ชาติ และเทคโนโลยีแมชชีนเลิร์นนิ่งเพื่อให้คำตอบที่แม่นยำสำหรับคำถามที่พบบ่อยที่เกี่ยวข้องกับการผ่าตัดในช่องปาก นอกจากนี้ แชทบอทยังช่วยในการติดตามอาการหลังผ่าตัดเพื่อลดภาระงานของบุคลากรทางการแพทย์ โครงการนี้เน้นการพัฒนาแชทบอทที่มีประสิทธิภาพติดตั้งในเว็บแอปพลิเคชันและไลน์แชทบอท โดยมุ่งเน้นไปที่การผ่าตัดเฉพาะสี่หัตถการ ได้แก่ การถอนฟัน การถอนฟันคุด การผ่าตัดปริทันต์ และการผ่าตัดรากฟันเทียม โดยมีเป้าหมายที่จะเพิ่มการเข้าถึงของข้อมูลด้านการรักษาทางช่องปาก และลดภาระในด้านการติดตามอาการหลังผ่าตัดของบุคลากรทางการแพทย์ ผลลัพธ์ของโครงการนี้แสดงให้เห็นว่าแชทบอทสามารถตอบคำเกี่ยวข้องกับการผ่าตัดในช่องปาก ได้ในระดับที่น่าพอใจ และสามารถลดภาระงานของบุคลากรทางการแพทย์ ในการการติดตามอาการหลังผ่าตัดได้อย่างมีนัยสำคัญ} \par
@@ -206,9 +210,6 @@ WWW & World Wide Web \\
 %%%%%%%%%%%%%%%%%%%%%%%% Main body %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Introduction}
-  \section{Keywords}
-    \qquad Keywords: Oral Surgery, Frequently Asked Question, Diagnose, Follow-up, Artificial Intelligence, Chatbot, Machine Learning, Natural Language Processing
-
   \section{Problem Statement}
     \subsection{Problem Statement and Motivation}
       \qquad Individuals seeking healthcare in today's world often run into a number of challenges while attempting to acquire correct information regarding their symptoms and appropriate treatment. Many patients have minor illnesses or symptoms that might not necessarily require immediate medical attention from a doctor. Nevertheless, these individuals usually resort to clinics or hospitals for a diagnosis as there is a lack of information and assistance available. \par
@@ -321,7 +322,6 @@ WWW & World Wide Web \\
           \begin{itemize}
             \item Backend
             \item Frontend
-            \item Test Case Design
             \item Unit Testing
             \item Usability Testing
           \end{itemize}
@@ -359,15 +359,15 @@ WWW & World Wide Web \\
   \section{Theory and Core Concepts}
     \qquad Common oral problems, including tooth decay, wisdom teeth complications, and gum disease, require consistent treatment for a considerable number of patients. Dentists, who routinely engage with patient inquiries and symptom tracking, have recommended that our focus be directed towards Tooth Extraction, Wisdom Tooth Removal, Periodontal Surgery, and Dental Implant Surgery. These specific procedures directly address the aforementioned common oral problems, aligning our work with the suggestions of dental professionals.\par
     \subsection{Tooth Extraction}
-      \qquad Tooth extraction is a common dental procedure performed by a dentist or oral surgeon to remove a tooth from its socket in the jawbone. It is necessary for various reasons, including extensive tooth decay, crowding, tooth impaction, or as part of orthodontic treatment. Recovery typically takes a few days to a few weeks. The benefits of tooth extraction vary depending on the reason for the procedure. However, the disadvantages of tooth extraction often include challenges with chewing food and a potential loss of aesthetic appeal. Additionally, there may be complications that require careful monitoring, such as post-surgical swelling or infection.\par
+      \qquad Tooth extraction is a common dental procedure performed by a dentist or oral surgeon to remove a tooth from its socket in the jawbone. It is necessary for various reasons, including extensive tooth decay, crowding, tooth impaction, or as part of orthodontic treatment. Recovery typically takes a few days to a few weeks. The benefits of tooth extraction vary depending on the reason for the procedure. However, the disadvantages of tooth extraction often include challenges with chewing food and a potential loss of aesthetic appeal. Additionally, there may be complications that require careful monitoring, such as post-surgical swelling or infection.\cite{ToothRemoval}\par
     \subsection{Wisdom Tooth Removal}
-      \qquad Wisdom tooth extraction, also known as third molar extraction, is a dental procedure performed to remove the third molars, commonly referred to as wisdom teeth. These teeth often become impacted or lead to various dental issues due to their slow growth and limited space in the jaw. Surgery becomes necessary for various reasons, including the prevention of pain arising from the inability of third molars to erupt properly or the prevention of issues related to crowded and misaligned teeth. However, the most common concerns associated with this procedure are the potential side effects after surgery, such as swelling, unusually significant or continuous discharge, or facial distortion lasting more than two weeks.\par
+      \qquad Wisdom tooth extraction, also known as third molar extraction, is a dental procedure performed to remove the third molars, commonly referred to as wisdom teeth. These teeth often become impacted or lead to various dental issues due to their slow growth and limited space in the jaw. Surgery becomes necessary for various reasons, including the prevention of pain arising from the inability of third molars to erupt properly or the prevention of issues related to crowded and misaligned teeth. However, the most common concerns associated with this procedure are the potential side effects after surgery, such as swelling, unusually significant or continuous discharge, or facial distortion lasting more than two weeks.\cite{WisdomTooth}\par
   
     \subsection{Periodontal Surgery}
-      \qquad Periodontal surgery, also known as gum surgery, is a dental procedure aimed at treating various gum diseases and conditions. It involves the removal of infected gum tissue and, in some cases, the reshaping of the underlying bone to restore gum health and improve the stability of teeth. During this surgery, the dentist or periodontist carefully removes the diseased tissue and then shapes and contours the remaining gum and bone to promote optimal healing. In more advanced cases, bone grafts or tissue-stimulating proteins may be used to encourage tissue regeneration. Periodontal surgery is crucial in preventing the progression of gum diseases, reducing gum pockets, and ultimately preserving the natural teeth. Besides its significant impact on oral health, undergoing periodontal surgery can also enhance an individual's confidence and self-esteem by restoring a healthy, aesthetically pleasing smile.\par
+      \qquad Periodontal surgery, also known as gum surgery, is a dental procedure aimed at treating various gum diseases and conditions. It involves the removal of infected gum tissue and, in some cases, the reshaping of the underlying bone to restore gum health and improve the stability of teeth. During this surgery, the dentist or periodontist carefully removes the diseased tissue and then shapes and contours the remaining gum and bone to promote optimal healing. In more advanced cases, bone grafts or tissue-stimulating proteins may be used to encourage tissue regeneration. Periodontal surgery is crucial in preventing the progression of gum diseases, reducing gum pockets, and ultimately preserving the natural teeth. Besides its significant impact on oral health, undergoing periodontal surgery can also enhance an individual's confidence and self-esteem by restoring a healthy, aesthetically pleasing smile.\cite{periodontal1,periodontal2}\par
   
     \subsection{Dental Implant Surgery}
-      \qquad A dental implant is a technology used to replace missing teeth by employing sturdy materials as dental implants to serve as replacements for natural tooth roots. Presently, it is common to use dental implants that encompass both the root and the tooth, as they closely resemble natural teeth in appearance and function realistically. Additionally, they aid in preventing the deterioration of the jawbone where the implant is placed. To be a suitable candidate for dental implants, a patient must possess healthy gums and adequate bone support for the tooth roots. Following a root canal procedure, it is imperative for the patient to consistently maintain their oral health. Dental implants offer numerous advantages, including the prevention of teeth from shifting or becoming misaligned due to tooth loss, as well as contributing to the strengthening and preservation of oral hygiene.\par
+      \qquad A dental implant is a technology used to replace missing teeth by employing sturdy materials as dental implants to serve as replacements for natural tooth roots. Presently, it is common to use dental implants that encompass both the root and the tooth, as they closely resemble natural teeth in appearance and function realistically. Additionally, they aid in preventing the deterioration of the jawbone where the implant is placed. To be a suitable candidate for dental implants, a patient must possess healthy gums and adequate bone support for the tooth roots. Following a root canal procedure, it is imperative for the patient to consistently maintain their oral health. Dental implants offer numerous advantages, including the prevention of teeth from shifting or becoming misaligned due to tooth loss, as well as contributing to the strengthening and preservation of oral hygiene.\cite{dentalImplant1,dentalImplant2}\par
   
   \section{Languages and Technologies}
     \subsection{Web Development Language}
@@ -380,7 +380,7 @@ WWW & World Wide Web \\
         \qquad Developed by Microsoft, TypeScript (or TS) is an enhanced version of JavaScript, adding strong typing and advanced features to the original language.\par
         \qquad One of the most noticeable changes from default JavaScript is the introduction of a strong tying system. TypeScript requires variables, function parameters, and function return types to be explicitly defined with data types. This enhances error detection during the development process, resulting in fewer bugs when the website is deployed. It also promotes easier cooperation between developers, as the code becomes more understandable.\par
         \qquad TypeScript offers additional features, such as interfaces and custom type definitions, which enable objects to have specific shapes. This feature enhances code comprehension and facilitates integration with third-party libraries.\par
-      
+      \newpage
       \subsubsection{Python}
         \qquad Python, famous for its ease of use and readability, has gained in popularity in web programming due to its flexibility and an extensive collection of frameworks designed for web application development. It is frequently employed in web backend development, offering developers a wide range of frameworks and libraries to choose from. This diversity makes it an attractive choice for creating robust and scalable websites.\par
   
@@ -494,16 +494,17 @@ WWW & World Wide Web \\
       \end{figure}
       \qquad This paper presented the development process and the characteristics of a competent chatbot, with an emphasis on COVID-19. The paper used Design Science Research Methodology (DSRM) as the development process to implement the chatbot, which consisted of 6 steps. Line Application was chosen as the main channel for the development and was deployed using Dialogflow. In phase one, the development focused on implementing a chatbot capable of answering various frequently asked questions and providing knowledge about COVID-19. The emphasis shifted to more complex questions and chatbot efficiency in phase 2 of the development.\par
       \qquad The knowledge in this paper regarding the development process can be used and applied to our development process since the output products are similar in terms of use. However, the step of product evaluation will be different since we do not have a large number of users, and some key features, such as follow-up, are different.\par
-    \subsection{Competing Solution}
+    \newpage
+      \subsection{Competing Solution}
       \subsubsection{DentalChat}
-        \begin{figure}[!h]
+        \begin{figure}[H]
           \centering
           \fbox{\includegraphics[width=.2\textwidth]{Image/DentalChat_Logo.png}}
           \caption{DentalChat Logo\cite{dentalchat}}\label{fig:DentalChat_Logo}
         \end{figure}
         \qquad DentalChat is an AI dental care application that connects and allows users to ask dental questions and is assisted by a dentist in real-time. DentalChat features consist of finding a local dentist, asking dental questions, post consult requests, and chatting with the dentist.\par
       \subsubsection{PsyJai}
-        \begin{figure}[!h]
+        \begin{figure}[H]
           \centering
           \fbox{\includegraphics[width=.2\textwidth]{Image/PsyJai_Logo.png}}
           \caption{PsyJai Logo\cite{psyjai}}\label{fig:PsyJai_Logo}
@@ -552,7 +553,7 @@ WWW & World Wide Web \\
   \section{Overall System Flow}
     \begin{figure}[!h]
       \centering
-      \fbox{\includegraphics[width=.5\textwidth]{Image/Overall_System_Flow.png}}
+      \fbox{\includegraphics[width=.6\textwidth]{Image/Overall_System_Flow.png}}
       \caption{Overall System Flow}\label{fig:Overall_System_Flow}
     \end{figure}
     \qquad The user will interact only with the client side of the web application and the Line Official Bot. The user will log in to the web application using Line and will receive notifications about follow-ups via the Line application as well. The QA model is hosted by Hugging Face, while Dialogflow is used for follow-up chats. A Flask server is used for connecting with the Line Messaging API, while a Node.js server is connected to the Line Login API and Dialogflow API. Both servers will query the database and send responses to the client web application.\par
@@ -582,7 +583,7 @@ WWW & World Wide Web \\
   \end{figure}
   \begin{figure}[!h]
     \centering
-    \fbox{\includegraphics[width=.3\textwidth]{Image/Use Case Diagram - line.png}}
+    \fbox{\includegraphics[width=.45\textwidth]{Image/Use Case Diagram - line.png}}
     \caption{Use Case Diagram of Line}\label{fig:Use_Case_line}
   \end{figure}
 
@@ -681,8 +682,6 @@ WWW & World Wide Web \\
           \item[] 5. User selects a treatment operation.
           \item[] 6. User submits the form to the system.
         \end{itemize}
-
-\newpage
     \section{Activity Diagram}
       \subsection{Question Answering}
       \begin{figure}[H]
@@ -776,15 +775,15 @@ WWW & World Wide Web \\
 
   \section{User Interface}
     \subsection{Home Page}
-    \begin{figure}[!h]
+    \begin{figure}[H]
       \centering
       \begin{minipage}{.5\textwidth}
         \centering
-        \fbox{\includegraphics[width=.7\linewidth]{Image/Desk_Home.png}}
+        \fbox{\includegraphics[width=.9\linewidth]{Image/Desk_Home.png}}
       \end{minipage}%
       \begin{minipage}{.3\textwidth}
         \centering
-        \fbox{\includegraphics[width=.4\linewidth]{Image/Mob_Home.png}}
+        \fbox{\includegraphics[width=.6\linewidth]{Image/Mob_Home.png}}
       \end{minipage}
       \caption{Website home page (Desktop and mobile respectively)}\label{fig:HomePage}
       \begin{justify}
@@ -798,9 +797,9 @@ WWW & World Wide Web \\
     \newpage
 
     \subsection{Follow-Up page}
-      \begin{figure}[!h]
+      \begin{figure}[H]
         \centering
-        \fbox{\includegraphics[width=.35\textwidth]{Image/Desk_Follow.png}}
+        \fbox{\includegraphics[width=.45\textwidth]{Image/Desk_Follow.png}}
         \caption{Desktop Follow-Up page}\label{fig:Desk_Follow}
         \begin{justify}
           \qquad Figure \ref{fig:Desk_Follow} showcases the Follow-Up page of the web application specifically designed for the desktop use. The layout consists of several key components: \par
@@ -813,7 +812,7 @@ WWW & World Wide Web \\
         \end{justify}
       \end{figure}
 
-    \begin{figure}[!h]
+    \begin{figure}[H]
       \centering
       \begin{minipage}{.15\textwidth}
         \centering
@@ -839,15 +838,15 @@ WWW & World Wide Web \\
     \end{figure}
 
     \subsection{FAQ page}
-    \begin{figure}[!h]
+    \begin{figure}[H]
       \centering
-      \fbox{\includegraphics[width=.4\textwidth]{Image/Desk_FAQ.png}}
+      \fbox{\includegraphics[width=.45\textwidth]{Image/Desk_FAQ.png}}
       \caption{Desktop Question Answering page}\label{fig:Desk_FAQ}
       \begin{justify}
         \qquad Figure \ref{fig:Desk_FAQ} depicts the desktop version of the Question Answering page within the web application. The page features a central chat box facilitating user-system interaction for addressing queries, accompanied by an input textbox positioned at the bottom. Additionally, a switch bar located atop the chat box facilitates switching between the FAQ and Follow-up features. \par
       \end{justify}
     \end{figure}
-    \begin{figure}[!h]
+    \begin{figure}[H]
       \centering
       \begin{minipage}{.3\textwidth}
         \centering
@@ -862,9 +861,8 @@ WWW & World Wide Web \\
         \qquad Figure \ref{fig:Mobile_Question_Answering_page} illustrates the Question Answering page of the web application on mobile. On the left is its normal page view, and on the right is the interface when the keyboard is in use. \par
       \end{justify}
     \end{figure}
-\newpage
     \subsection{Patient Info page}
-    \begin{figure}[!h]
+    \begin{figure}[H]
       \centering
       \begin{minipage}{.7\textwidth}
         \centering
@@ -872,7 +870,7 @@ WWW & World Wide Web \\
       \end{minipage}%
       \begin{minipage}{.25\textwidth}
         \centering
-        \fbox{\includegraphics[width=.6\linewidth]{Image/Mob_Info.png}}
+        \fbox{\includegraphics[width=.65\linewidth]{Image/Mob_Info.png}}
       \end{minipage}
       \caption{Patient Information page (Desktop and mobile respectively)}\label{fig:Patient_Information_page}
       \begin{justify}
@@ -880,7 +878,7 @@ WWW & World Wide Web \\
       \end{justify}
     \end{figure}
     \subsection{Line official page}
-    \begin{figure}[!h]
+    \begin{figure}[H]
       \centering
       \begin{minipage}{.3\textwidth}
         \centering
@@ -896,7 +894,7 @@ WWW & World Wide Web \\
         \qquad Figure \ref{fig:Line_Login_Page} showcases the layout of the Line Official page, acting as the central notification hub within the application. The FAQ button directs users to the question answer website, the Follow-up button leads to the follow-up page on the website, and the View Case navigates users to the patient information page. \par
       \end{justify}
     \end{figure}
-\newpage
+  \newpage
   \section{Evaluation Plan}
     \subsection{User Evaluation}
       \qquad Upon the completion of platform development aligned with our objectives, we aim to conduct testing and gather user feedback. Our assessment will encompass overall satisfaction, usability, user experience, and suggestions for enhancements. Subsequently, the collected data will undergo thorough analysis to evaluate the application. \par
@@ -1715,7 +1713,7 @@ WWW & World Wide Web \\
         \subsubsection{Setup and Configuration}
           \begin{figure}[H]
             \centering
-            \fbox{\includegraphics[width=.6\textwidth]{Image/dialogflow-intent.png}}
+            \fbox{\includegraphics[width=.55\textwidth]{Image/dialogflow-intent.png}}
             \caption{Dialogflow intents and its follow-up intents}\label{fig:dialogflow-intent}
             \begin{justify}
               \qquad The process of creating intents involves initially structuring them according to a predefined flow and then gradually expanding them by adding steps between each follow-up intent. Each follow-up intent will accept new parameters input from the user, linking them together until reaching the final intent in the flow. The entire follow-up process comprises 18 flows from start to finish. Each intent includes contexts for receiving and sending data between intents, a training phase for collecting expected user triggers, action and parameter sections for defining all parameters that the intent will accept from both the previous and current intents, including specifying the entity of each parameter. Finally, there's the response section, which outlines what the intent will reply with when triggered.\par
@@ -1723,7 +1721,7 @@ WWW & World Wide Web \\
           \end{figure}
           \begin{figure}[H]
             \centering
-            \fbox{\includegraphics[width=.6\textwidth]{Image/dialogflow-actionandparameter.png}}
+            \fbox{\includegraphics[width=.55\textwidth]{Image/dialogflow-actionandparameter.png}}
             \caption{Dialogflow action and parameter}\label{fig:dialogflow-actionandparameter}
             \begin{justify}
               \qquad The parameters used in our system include:\par
@@ -1861,7 +1859,7 @@ WWW & World Wide Web \\
           \subsubsection{Line FAQ}
             \begin{figure}[H]
               \centering
-              \fbox{\includegraphics[width=.6\textwidth]{Image/line-faq.jpg}}
+              \fbox{\includegraphics[width=.25\textwidth]{Image/line-faq.jpg}}
               \caption{Line Question Answering}\label{fig:lineFAQ}
               \begin{justify}
                 \qquad The Line Official chatbot features an intuitive question answering system that enables users to inquire about dental procedures. Users can input any question related to dental operations, specifically focusing on tooth extraction, wisdom tooth removal, gum surgery, and root canal surgery. In case the question does not clearly specify the type of dental procedure, the chatbot prompts the user to provide clarification, reminding them to specify the surgical operation in their query, "\textthai{ไม่ได้ระบุชื่อชัดเจนจะแจ้งเตือนมาว่า ขออภัย โปรดระบุศัลยกรรมในคำถาม (ถอนฟัน, ผ่าฟันคุด, ผ่าตัดเหงือก, ผ่าตัดรากฟันเทียม)}"\par
@@ -1950,7 +1948,7 @@ WWW & World Wide Web \\
       \subsection{Evaluation Result}
         \qquad The CUQ (Chatbot Usability Questionnaire) score was calculated based on responses provided by participants. Each response was assigned a numerical value on a scale from 1 (Strongly Disagree) to 5 (Strongly Agree). The formula for CUQ Score Calculation is given by:
         \[
-        \text{CUQ} = \frac{\text{total score}}{\text{total number of questions}}
+        \text{CUQ} = \frac{\text{total score}}{\text{total number of questions}}\cite{CUQ}
         \]
         \qquad The CUQ score represents the overall usability of the chatbot, providing a comprehensive measure of participants' perceptions of both FAQ feature and Follow-Up feature.\par
     
