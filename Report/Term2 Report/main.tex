@@ -22,7 +22,7 @@
 % The ones that are optional can be left blank. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % First line of title
-\def\disstitleone{DENTAL AI CHATBOT FOR DIAGNOSTICS AND POST-SURGERY CARE}   
+\def\disstitleone{DENTAL AI CHATBOT FOR ORAL QUESTION ANSWERING AND POST-SURGERY CARE}   
 % Your first name and lastname
 \def\dissauthor{MR. CHANON KHANIJOH}   % 1st member
 %%% Put other group member names here ..
@@ -180,7 +180,7 @@ WWW & World Wide Web \\
 
 \chapter{Introduction}
   \section{Keywords}
-    \qquad Keywords: Oral Surgery, Dentistry, Diagnose, Follow-up, Artificial Intelligence, Chatbot, Machine Learning, Natural Language Processing
+    \qquad Keywords: Oral Surgery, Frequently Asked Question, Diagnose, Follow-up, Artificial Intelligence, Chatbot, Machine Learning, Natural Language Processing
 
   \section{Problem Statement}
     \subsection{Problem Statement and Motivation}
@@ -188,7 +188,7 @@ WWW & World Wide Web \\
       \qquad This rise in patient visits not only places a considerable burden on healthcare facilities but also results in financial implications for patients themselves. The associated costs, such as consultation fees, diagnostic tests, and travel expenses, can impose an unreasonable financial strain on individuals. Moreover, this increased demand for medical attention has contributed to an imbalance in the doctor-to-patient ratio, affecting the overall quality of healthcare services provided. According to the National Statistical Office, the ratio of doctor-to-patient ratio is 1 to 8,057\cite{NSODashboard}.\par
       \qquad Furthermore, the challenges do not cease once treatment is initiated. After receiving medical care, many patients still have many concerns about their health conditions. Many patients desire prompt answers to their worries about their conditions. In addition to these concerns, patients often have recurring questions, commonly categorized as frequently asked questions (FAQs).\par
       \qquad Regrettably, doctors and medical staff find themselves overwhelmed by the immense workload caused from the increased patient influx. As they aim to deliver quality care and diagnosis, they may have limited time and resources to respond satisfactorily to the patients.\par
-      \qquad To address these pressing issues and enhance the healthcare experience for both patients and healthcare providers, we were motivated to develop an application that can effectively address these issues. The application will have the capability to diagnose common diseases and answer frequently asked questions from the patient's symptoms. Additionally, it will feature a chatbot designed to follow-up on patient conditions after surgery.\par
+      \qquad To address these pressing issues and enhance the healthcare experience for both patients and healthcare providers, we were motivated to develop an application that can effectively address these issues. The application will have the capability to answer frequently asked questions from the patient's symptoms. Additionally, it will feature a chatbot designed to follow-up on patient conditions after surgery.\par
 
 
     \subsection{Potential Benefits}
@@ -313,10 +313,16 @@ WWW & World Wide Web \\
         \item Feedback from users
         \item Senior Project Report
       \end{itemize}
+      \newpage
       \begin{figure}[!h]
         \centering
         \fbox{\includegraphics[width=.9\textwidth]{Image/Term2_Gantt.png}}
         \caption{Semester 2 plan schedule}\label{fig:Term2_Gantt}
+      \end{figure}
+      \begin{figure}[!h]
+        \centering
+        \fbox{\includegraphics[width=.9\textwidth]{Image/Term2_Gantt_Actual.png}}
+        \caption{Semester 2 actual schedule}\label{fig:Term2_Gantt_Actual}
       \end{figure}
 
 \chapter{THEORY AND RELATED RESEARCH}
@@ -459,7 +465,7 @@ WWW & World Wide Web \\
         \fbox{\includegraphics[width=.6\textwidth]{Image/Research_1.jpg}}
         \caption{Overview of DSRM development process\cite{relatedwork1}}\label{fig:Research_1}
       \end{figure}
-      \qquad This paper presented the development process and the characteristics of a competent chatbot, with an emphasis on COVID-19. The paper used Design Science Research Methodology (DSRM) as the development process to implement the chatbot, which consisted of 6 steps. Line Application was chosen as the main channel for the development and was deployed using Dialog Flow. In phase one, the development focused on implementing a chatbot capable of answering various frequently asked questions and providing knowledge about COVID-19. The emphasis shifted to more complex questions and chatbot efficiency in phase 2 of the development.\par
+      \qquad This paper presented the development process and the characteristics of a competent chatbot, with an emphasis on COVID-19. The paper used Design Science Research Methodology (DSRM) as the development process to implement the chatbot, which consisted of 6 steps. Line Application was chosen as the main channel for the development and was deployed using Dialogflow. In phase one, the development focused on implementing a chatbot capable of answering various frequently asked questions and providing knowledge about COVID-19. The emphasis shifted to more complex questions and chatbot efficiency in phase 2 of the development.\par
       \qquad The knowledge in this paper regarding the development process can be used and applied to our development process since the output products are similar in terms of use. However, the step of product evaluation will be different since we do not have a large number of users, and some key features, such as follow-up, are different.\par
     \subsection{Competing Solution}
       \subsubsection{DentalChat}
@@ -498,7 +504,7 @@ WWW & World Wide Web \\
       \item The web application must automatically log in users accessing via Line.
       \item The web application must facilitate all users in asking frequently asked questions through a chatbot.
       \item The web application must enable logged-in users to scan a QR code to create a new follow-up case.
-      \item The web application must allow logged-in users to respond to follow-up chatbot queries.
+      \item The web application must allow logged-in users to respond to follow-up queries.
       \item The web application must permit logged-in users to view their individual profiles.
       \item The web applications must provide the option for all logged-in users to log out.
       \item The line chat should be able to do both Follow-Up and FAQ Chatbot
@@ -522,7 +528,7 @@ WWW & World Wide Web \\
       \fbox{\includegraphics[width=.5\textwidth]{Image/Overall_System_Flow.png}}
       \caption{Overall System Flow}\label{fig:Overall_System_Flow}
     \end{figure}
-    \qquad The user will interact with only the client side of the web application and the Line Official Bot. The user will login to the web application using line and will receive notification about follow-up via line application as well. The chatbot model will be hosted by dialogflow and hugging face and the server will be able to use those using API requests while also querying from the database. \par
+    \qquad The user will interact only with the client side of the web application and the Line Official Bot. The user will log in to the web application using Line and will receive notifications about follow-ups via the Line application as well. The QA model is hosted by Hugging Face, while Dialogflow is used for follow-up chats. A Flask server is used for connecting with the Line Messaging API, while a Node.js server is connected to the Line Login API and Dialogflow API. Both servers will query the database and send responses to the client web application.\par
   \section{System Architecture}
   \begin{figure}[!h]
     \centering
@@ -531,15 +537,14 @@ WWW & World Wide Web \\
   \end{figure}
   \qquad In the Figure \ref{fig:System_Architecture} above, show the architecture design of our project. The Technology that we use in this project include. \par
   \begin{itemize}
-    \item[] 1. React (Front-end JavaScript library for building UI)
-    \item[] 2. React Router (React Router enables "client side routing")
-    \item[] 3. TailwindCSS (CSS framework for styling the UI and used with React)
-    \item[] 4. Node.js (Back-end JavaScript runtime environment)
-    \item[] 5. Express (Back-end framework for Node.js for building REST API)
-    \item[] 6. MongoDB (NoSQL Database)
-    \item[] 7. Mongoose (Node.js based Object Data Modelling (ODM) library for MongoDB)
-    \item[] 8. Flask (Python web framework for develop both front-end and back-end)
-    \item[] 9. Dialogflow (employed for Follow-Up using its API to reduce resource usage in the client’s browser.)
+    \item[] 1. React TS(Front-end JavaScript library for building UI)
+    \item[] 2. TailwindCSS (CSS framework for styling the UI and used with React)
+    \item[] 3. Node.js (Back-end JavaScript runtime environment)
+    \item[] 4. Express (Back-end framework for Node.js for building REST API)
+    \item[] 5. MongoDB (NoSQL Database)
+    \item[] 6. Mongoose (Node.js based Object Data Modelling (ODM) library for MongoDB)
+    \item[] 7. Flask (Python web framework for develop both front-end and back-end)
+    \item[] 8. Dialogflow (employed for Follow-Up using its API to reduce resource usage in the client’s browser.)
   \end{itemize}
 
   \section{Use Case Diagram}
@@ -563,8 +568,8 @@ WWW & World Wide Web \\
       \qquad Preconditions: - \par
       \qquad Main success scenario:
       \begin{itemize}
-        \item[] 1. Users go to the home page.
-        \item[] 2. User selects the chatbot button.
+        \item[] 1. User goes to the website.
+        \item[] 2. User selects the FAQ button.
         \item[] 3. User inputs a question.
         \item[] 4. System provides an answer to the question.
       \end{itemize}
@@ -579,35 +584,27 @@ WWW & World Wide Web \\
       \qquad Use case name: Login \par
       \qquad Actors: General Users \par
       \qquad Goal: Users log in to the system \par
-      \qquad Preconditions: User is already registered (connected to Line account) \par
+      \qquad Preconditions: User is already registered (connected with Line account) \par
       \qquad Main success scenario:
       \begin{itemize}
-        \item[] 1. User go to website homepage
-        \item[] 2. User selects the “Login with Line Application” button
-        \item[] 3. System navigates to the Line page and sets the token to this account.
-        \item[] 4. System navigates the user to the FAQ page.
+        \item[] 1. User go to the website.
+        \item[] 2. User selects the “Login with Line Application” button.
+        \item[] 3. System navigates to the Line page.
+        \item[] 4. System navigates the user to the homepage.
       \end{itemize}
 
       \subsection{Register (connected to Line account)}
         \qquad Use case name: Register \par
         \qquad Actors: General Users \par
         \qquad Goal: Add a new user to the system \par
-        \qquad Preconditions: User has never connected to Line account \par
+        \qquad Preconditions: User has never connected with Line account \par
         \qquad Main success scenario:
         \begin{itemize}
-          \item[] 1. User goes to the website homepage.
+          \item[] 1. User goes to the website.
           \item[] 2. User selects the “Login with Line” button.
           \item[] 3. System navigates to the Line official login page.
           \item[] 4. User selects the “Allow” button.
           \item[] 5. System adds the new user.
-        \end{itemize}
-        \qquad Extension (a)
-        \begin{itemize}
-          \item[] 1a. System adds the new user.
-          \item[] 2a. User searches for Line Official Bot.
-          \item[] 3a. User adds Line Official.
-          \item[] 4a. User selects the “Allow” button. 
-          \item[] 5a. System adds the new user.
         \end{itemize}
       
       \subsection{Follow-Up}
@@ -617,16 +614,17 @@ WWW & World Wide Web \\
         \qquad Preconditions: User has undergone surgery and scanned the QR code \par
         \qquad Main success scenario:
         \begin{itemize}
-          \item[] 1. User logs into the system.
-          \item[] 2. System presents follow-up questions.
-          \item[] 3. Logged-in user answers the questions.
-          \item[] 4. The answer pertains to the question.
-          \item[] 5. System analyzes and offers suggestions to the patient.
+          \item[] 1. User goes to the website.
+          \item[] 2. Logged-in users select the “Follow-Up” button.
+          \item[] 3. User completes the form.
+          \item[] 4. System analyzes and offers suggestions to the patient.
         \end{itemize}
         \qquad Extension (a)
         \begin{itemize}
-          \item[] 4a. The answer does not correspond to the question.
-          \item[] 5a. System sends an error message and returns to step 2.
+          \item[] 1a. User goes to the Line Official Bot.
+          \item[] 2a. User select record a case.
+          \item[] 3a. The answer pertains to the question.
+          \item[] 4a. System analyzes and offers suggestions to the patient.
         \end{itemize}
 
       \subsection{View Case History}
@@ -641,11 +639,6 @@ WWW & World Wide Web \\
           \item[] 3. User selects the “Profile” button.
           \item[] 4. User accesses the Profile page displaying case history.
         \end{itemize}
-        \qquad Extension (a)
-        \begin{itemize}
-          \item[] 1a. User logs into the Line Official Bot
-          \item[] 2a. User selects the “View Case” button.
-        \end{itemize}
 
       \subsection{Add New Case via QR Code}
         \qquad Use case name: Add New Case via QR Code \par
@@ -655,9 +648,9 @@ WWW & World Wide Web \\
         \qquad Main success scenario:
         \begin{itemize}
           \item[] 1. User logs into the system.
-          \item[] 2. User selects “Scan QR Code” in the Line Official Bot or Web application..
+          \item[] 2. User selects “Scan QR Code” in the Line Official Bot or Web application.
           \item[] 3. User scans the QR code.
-          \item[] 4. User gains access to the form.
+          \item[] 4. User gain access to the form.
           \item[] 5. User selects a treatment operation.
           \item[] 6. User submits the form to the system.
         \end{itemize}
@@ -665,59 +658,58 @@ WWW & World Wide Web \\
 \newpage
     \section{Activity Diagram}
       \subsection{Question Answering}
-      \begin{figure}[!h]
+      \begin{figure}[H]
         \centering
         \fbox{\includegraphics[width=.3\textwidth]{Image/AD_FAQ.png}}
         \caption{Question Answering Activity Diagram}\label{fig:AD_FAQ}
         \begin{justify}
-          \qquad When users access the homepage and click the “\textthai{เริ่มบทสนทนา}” button, the system will display the chatbot interface. Users can then input their questions into the provided text box, and the system will respond with the appropriate answer to the question. \par
-          \qquad Alternatively, if users access via Line Official Bot, users can then input their question to Line Official Bot and can receive the appropriate answer to the question from the system. \par
+          \qquad When users access the homepage and click the “\textthai{เริ่มบทสนทนา}” button, the system will display the chatbot interface. Users can then input their questions into the provided text box, and the system will respond with the appropriate answer. \par
+          \qquad Alternatively, if users access via the Line Official Bot, they can input their questions into the Line Official Bot and can receive the appropriate answer to the question from the system. \par
         \end{justify}
       \end{figure}
 
       \subsection{Login}
-      \begin{figure}[!h]
+      \begin{figure}[H]
         \centering
-        \fbox{\includegraphics[width=.25\textwidth]{Image/AD_Login.png}}
+        \fbox{\includegraphics[width=.15\textwidth]{Image/AD_Login.png}}
         \caption{Login Activity Diagram}\label{fig:AD_Login}
         \begin{justify}
-          \qquad When users access the homepage and click the “\textthai{เข้าสู่ระบบผ่าน} LINE”, the system will redirect the user to the Line page and subsequently navigate them to the FAQ page. \par
+          \qquad When users access the homepage and click the “\textthai{เข้าสู่ระบบผ่าน} LINE”, the system will redirect the user to the Line page and subsequently navigate them to the homepage. \par
         \end{justify}
       \end{figure}
 \newpage
-      \subsection{Register}
-      \begin{figure}[!h]
+      \subsection{Register (First Login)}
+      \begin{figure}[H]
         \centering
-        \fbox{\includegraphics[width=.3\textwidth]{Image/AD_Regis.png}}
+        \fbox{\includegraphics[width=.15\textwidth]{Image/AD_Regis.png}}
         \caption{Register Activity Diagram}\label{fig:AD_Register}
         \begin{justify}
-          \qquad When users access the homepage and click the “\textthai{เข้าสู่ระบบผ่าน} LINE” button, the system will direct the user to the “Add Line Official” page. If the user clicks “Add Line Official” there, the system will automatically register this user.  \par
-          \qquad Alternatively, if a user accesses via the Line application, search our Line Official Bot and then add our Line Official Bot, the system will also automatically register this user.  \par
+          \qquad When users access the homepage and click the “\textthai{เข้าสู่ระบบผ่าน} LINE” button, the system will direct the user to the “Add Line Official” page. If the user clicks the “Allow” button and "Add Line Official" there, the system will automatically register this user.  \par
         \end{justify}
       \end{figure}
 
       \subsection{Follow-Up}
-      \begin{figure}[!h]
+      \begin{figure}[H]
         \centering
-        \fbox{\includegraphics[width=.25\textwidth]{Image/AD_Follow.png}}
+        \fbox{\includegraphics[width=.3\textwidth]{Image/AD_Follow.png}}
         \caption{Follow-Up Activity Diagram}\label{fig:AD_Follow}
         \begin{justify}
-          \qquad When users access the FAQ page after completing the login process and subsequently switch to the Follow-up page, the system will present the follow-up chatbot interface. The system will then initiate by asking a follow-up question. Upon receiving the user’s answer, the system will analyze it and provide a suggestion to the user. However, if the answer does not pertain to the question asked, the system will attempt to reask the question to obtain a related answer from the user.   \par
+          \qquad When users access the website after completing the login process and click on the “Follow-Up” button, the system will direct them to the follow-up page. User selects a case, the system will direct them to the follow-up form page, then the user fills in the follow-up form, and the system will provide recommendations.\par
+          \qquad Alternatively, if users access via Line official and select a follow-up case card, the system will ask follow-up questions, user answers questions subsequently, the system will also provide recommendations. \par
         \end{justify}
       \end{figure}
 \newpage
       \subsection{View Case History}
-      \begin{figure}[!h]
+      \begin{figure}[H]
         \centering
-        \fbox{\includegraphics[width=.3\textwidth]{Image/AD_ViewCase.png}}
+        \fbox{\includegraphics[width=.15\textwidth]{Image/AD_ViewCase.png}}
         \caption{View case history Activity Diagram}\label{fig:AD_ViewCase}
         \begin{justify}
-          \qquad When users access the FAQ or Follow-up page and click on the “Profile” button, the system will direct them to the profile page, displaying their case history.  \par
-          \qquad Alternatively, if users access via our Line Official Bot and click on the “View Case” button, the system will display all users' cases. \par
+          \qquad When users access the website and click on the user profile, the system will direct them to the profile page, displaying their case history.  \par
         \end{justify}
       \end{figure}
       \subsection{Add New Case via QR Code}
-      \begin{figure}[!h]
+      \begin{figure}[H]
         \centering
         \fbox{\includegraphics[width=.3\textwidth]{Image/AD_AddCase.png}}
         \caption{Add new case via QR code Activity Diagram}\label{fig:AD_AddCase}
@@ -734,9 +726,8 @@ WWW & World Wide Web \\
       \fbox{\includegraphics[width=.5\textwidth]{Image/Navigation_Map.png}}
       \caption{Chatbot web application navigation map}\label{fig:Navigation_Map}
       \begin{justify}
-        \qquad For the web application, two user roles exist: Guest users and Registered users. Upon entering the platform, all users start at the Homepage. Guest users have access solely to the FAQ chatbot and the Login page. Conversely, registered users can additionally access the Follow-Up  and View Case History pages.  \par
-        \qquad Upon initial access via Line Official, an account will be automatically created and linked to the user’s Line account. For existing account holders, accessing any feature via the Line Official menu will trigger automatic login. However, when users access the platform through the normal web interface, they initially land on the homepage. In this scenario, they can use the Question Answering chatbot without needing to log in.  \par
-        \qquad To access the follow-up feature via the normal web interface, users must login using their Line account. \par
+        \qquad For the web application, two user roles exist: Guest users and Registered users. Upon entering the platform, all users start at the Homepage. Guest users have access solely to the FAQ chatbot and the Login page. Conversely, registered users can additionally access the Follow-Up and View Case History pages.  \par
+        \qquad Users accessing via Line Official will have the ability to utilize the FAQ feature by conversing normally in the chat. If a user is registered and has a pending follow-up case, they can complete it by clicking on a card notification, which is sent to all users on a daily basis. Additionally, a card notification will also be sent upon adding a new case via QR scan in the web application. Within Line Official, users can access the FAQ, Follow-Up, and Add Case pages in the web application using the button located in the menu section of the Line chat.\par
       \end{justify}
     \end{figure}
 
@@ -746,13 +737,15 @@ WWW & World Wide Web \\
       \fbox{\includegraphics[width=.6\textwidth]{Image/ER.png}}
       \caption{ER-Diagram}\label{fig:ER}
     \end{figure}
+    \qquad Figure \ref{fig:ER} shows the basic database design necessary for storing registered users in our application. The database comprises a total of 5 objects:\par
     \begin{itemize}
-      \item[] 1. Figure \ref{fig:ER} shows the basic database design necessary for storing registered users in our application. The database comprises a total of 4 objectsUser Object: This object includes userID, LineUsername, LineProfilepic, and LineEmail, all linked to the Line profile. Additionally, the User Object contains lists of Records Object.
-      \item[] 2. Records Object: It encompasses RecordID, TimeStamp, SurgicalProcedure, Status, ChatMessage and FollowUpChat Object. The RecordID is linked to the User object and FollowUpChat Object.
-      \item[] 3. FollowUpChat Object: This object contains FollowUpID, Title, TimeStamp, Chat, and ChatResult. The FollowUpID is linked to the Records object in a one-to-many relation.
+      \item[] 1. User Object: This object includes userID, LineUsername, LineProfilepic, and LineEmail, all linked to the Line profile. Additionally, the User Object contains lists of Records Objects.
+      \item[] 2. Records Object: This object includes RecordID, SurgicalDate, SurgicalProcedure, SurgicalStatus and FollowUpRecord Object Array. The RecordID is linked to the User object and the FollowUpRecord Object.
+      \item[] 3. FollowUpRecord Object: This object contains FollowUpRecordID, Record, and a FollowUp Object Array. The Record is linked to the Records object in a one-to-many relationship. Additionally, the FollowUpRecord Object contains lists of FollowUp Objects.
       \item[] 4. FAQChatHist Object: It includes FAQChatHistID, UserChat, Text, User and ChatTime which are kept for further training our model.
-      \item[] These objects and their interconnections form the basic structure of our database for storing user-related information, their records, follow-ups, and chat interactions.
+      \item[] 5. FAQChatHist Object: This object includes FAQChatHistID, ChatReply, ChatText, User, and ChatTime, which are kept for further training our model.
     \end{itemize}
+    \qquad These objects and their interconnections form the basic structure of our database for storing user-related information, their records, follow-ups, and chat interactions. \par
 
   \section{User Interface}
     \subsection{Home Page}
@@ -1084,7 +1077,7 @@ WWW & World Wide Web \\
       \fbox{\includegraphics[width=.5\textwidth]{Image/FAQ-flow.png}}
       \caption{FAQ Flow}\label{fig:FAQ Flow}
       \begin{justify}
-        \qquad Initially, the design question answering feature flow involves taking questions received from users and using them to find labels with the classification model. Then, the labels are matched with contexts that have the same labels. Then use both the question and the context to find the answer to the question using the question-answering pretrained model (mDeBERTa). \par
+        \qquad Initially, the design question answering feature flow involves taking questions received from users and using them to find labels with the classification model. Then, the labels are matched with contexts that have the same labels. Then use both the question and the context to find the answer to the question using the question-answering pretrained model (DeBERTa). \par
       \end{justify}
     \end{figure}
   \section{Classification Model Experiment}
@@ -1627,7 +1620,7 @@ WWW & World Wide Web \\
       \end{table}
       \qquad From the table, it can be seen that the Operation parallel with Q1, which uses the Operation model paired with the Question type model being Random Forest, achieved the highest final accuracy of 0.95 for the normal test set and 0.885 for the augmented test set. As for the Operation parallel with Q2, it can be seen that Categorical Naïve Bayes achieved the highest final accuracy of 0.95. However, for the augmented test set, it is slightly lower than Random Forest by 0.035 or 3.5 percent. But for the normal test set, Random Forest's accuracy is only lower by 0.006. Therefore, it can be concluded that for Q2, the Operation parallel with Q2, which utilizes Random Forest as the question type model, is the best. \par
 
-      \section{Follow-Up}
+    \section{Follow-Up}
       \subsection{Follow-Up Flow Chart}
         \subsubsection{Overall Flow}
           \begin{figure}[H]
@@ -1641,7 +1634,7 @@ WWW & World Wide Web \\
         \subsubsection{Bleeding Flow}
           \begin{figure}[H]
             \centering
-            \fbox{\includegraphics[width=.6\textwidth]{Image/FollowUp-BleedingFlow.png}}
+            \fbox{\includegraphics[width=.4\textwidth]{Image/FollowUp-BleedingFlow.png}}
             \caption{Bleeding Follow-Up Flow}\label{fig:FollowUpFlow2}
             \begin{justify}
               \qquad This flow section focuses primarily on bleeding. The bot will ask the user to choose from three levels of bleeding: 1. No bleeding from the wound \textthai{(ไม่มีเลือกซึมจากแผล)}, 2. Bleeding from the wound with saliva mixed with blood \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดปนน้ำลาย)}, 3. Bleeding from the wound with fresh red blood and/or blood clots \textthai{(ยังมีเลือดซึมจากแผล เป็นเลือดสีแดงสด และ/หรือมีลิ่มเลือดปนออกมาด้วย)}.\par
@@ -1651,19 +1644,26 @@ WWW & World Wide Web \\
         \subsubsection{Pain Flow}
           \begin{figure}[H]
             \centering
-            \fbox{\includegraphics[width=.7\textwidth]{Image/FollowUp-PainFlow.png}}
+            \fbox{\includegraphics[width=.4\textwidth]{Image/FollowUp-PainFlow.png}}
             \caption{Pain Follow-Up Flow}\label{fig:FollowUpFlow3}
             \begin{justify}
-              \qquad This flow focuses on pain monitoring. The bot will prompt users to select a pain score from 0-10, where 0 means no pain at all and 10 means unbearable pain. If the user selects a pain level less than 7, the bot will proceed to monitor the  further follow-up procedure and inform the user that there will be another follow-up in 24 hours. If the user selects a pain level of 7 or higher, the bot will ask if the user has taken pain reliever medication. If not, it will recommend taking the pain reliever medication, and if they have taken it, it will inquire if the pain has decreased. If the pain has decreased or is less than 4, the bot will proceed to monitor the further follow-up procedure. If the pain has not decreased or is still greater than 4, the bot will recommend that the user seek medical attention.\par
+              \qquad This flow focuses on pain monitoring. The bot will prompt users to select a pain score from 0-10, where 0 means no pain at all and 10 means unbearable pain. If the user selects a pain level less than 7, the bot will proceed to monitor the further follow-up procedure. If the user selects a pain level of 7 or higher, the bot will ask if the user has taken pain reliever medication. If not, it will recommend taking the pain reliever medication. If they have taken it, it will inquire if the pain has decreased. If the pain has decreased or is less than 4, the bot will proceed to monitor the further follow-up procedure. If the pain has not decreased or is still greater than 4, the bot will recommend that the user seek medical attention. Then, the chatbot will inform the user that there will be another follow-up in 24 hours.\par
             \end{justify}        
           \end{figure}
         \subsubsection{Swell Flow}
           \begin{figure}[H]
             \centering
-            \fbox{\includegraphics[width=.6\textwidth]{Image/FollowUp-SwellFlow.png}}
+            \fbox{\includegraphics[width=.5\textwidth]{Image/FollowUp-SwellFlow.png}}
             \caption{Swellness Follow-Up Flow}\label{fig:FollowUpFlow4}
             \begin{justify}
-              \qquad This flow of monitoring swelling around a wound will begin by asking about the level of swelling around the wound, ranging from 0-10, where 0 means no swelling at all and 10 means the most severe swelling ever experienced. If the user selects a swelling level less than 5, the bot will recommend applying cold compress. However, if the user selects a swelling level of 5 or higher, the bot will inquire about how many days since the surgery. If it's within 3 days of surgery, the bot will recommend applying cold compress. But if it's been more than 3 days since surgery, the bot will ask if there is any accompanying pain or increased swelling. If not, it will recommend applying compression. However, if yes, the bot will recommend that the user seek medical attention.\par
+              \qquad This flow for monitoring swelling around a wound will begin with the user choosing from four levels of swelling:\par
+              \begin{itemize}
+                \item[] 1. No swelling \textthai{(ไม่บวม)}
+                \item[] 2. Little swelling \textthai{(บวมนิดหน่อย)}
+                \item[] 3. Swelling, clearly visible from outside \textthai{(บวมเห็นภายนอกชัดเจน)}
+                \item[] 4. Swelling, clearly visible from outside along with any of the other symptoms: difficulty breathing, blurred vision, fever \textthai{(บวมเห็นภายนอกชัดเจน ร่วมกับมีอาการข้อใดข้อหนึ่งดังต่อนี้ ได้แก่ หายใจลำบาก, ตามองภาพไม่ชัด, มีไข้)}
+              \end{itemize}
+              \qquad If the user selects level 1 "No swelling" or level 2 “Little swelling,” the bot will recommend applying a cold compress. If the user selects level 3 "Swelling, clearly visible from outside" or level 4 “Swelling, clearly visible from outside along with any of the other symptoms: difficulty breathing, blurred vision, fever,” the bot will inquire about how many days have passed since the surgery. If it is within 3 days of surgery, the bot will recommend applying a cold compress and inform the user that there will be another follow-up in 24 hours. If it has been more than 3 days since surgery, the bot will ask if there is any accompanying pain or increased swelling. If not, it will recommend applying compression and inform the user that there will be another follow-up in 24 hours. However, if yes, the bot will recommend that the user seek medical attention.\par
             \end{justify}        
           \end{figure}
         \subsubsection{Diet  Flow}
@@ -1672,7 +1672,7 @@ WWW & World Wide Web \\
             \fbox{\includegraphics[width=.4\textwidth]{Image/FollowUp-DietFlow.png}}
             \caption{Diet Follow-Up Flow}\label{fig:FollowUpFlow5}
             \begin{justify}
-              \qquad In this flow, the bot will focus on the user's diet. It will start by asking if the user can eat normally or not. If the user answers yes,  the bot will proceed to monitor the further follow-up procedure. If not, the bot will inquire about what type of food the user consumes. If the user responds with soft food, the bot will recommend that the user see a medical attention. However, if the user does not consume soft food, the bot will recommend consuming soft food and there will be another follow-up in 24 hours.\par
+              \qquad In this flow, the bot will focus on the user's diet. It will start by asking if the user can eat normally or not. If the user answers yes, the bot will proceed to monitor the further follow-up procedure. If not, the bot will inquire about what type of food the user consumes. If the user responds with soft food, the bot will recommend that the user see a medical attention. However, if the user does not consume soft food, the bot will recommend consuming soft food and there will be another follow-up in 24 hours.\par
             \end{justify}        
           \end{figure}
         \subsubsection{Oral Hygiene Flow}
@@ -1681,10 +1681,77 @@ WWW & World Wide Web \\
             \fbox{\includegraphics[width=.35\textwidth]{Image/FollowUp-HygieneFlow.png}}
             \caption{Oral Hygiene Follow-Up Flow}\label{fig:FollowUpFlow6}
             \begin{justify}
-              \qquad In this flow, the bot will focus on the user's oral hygiene. It will ask if the user can brush their teeth or rinse their mouth. If the user responds yes, the bot will then conclude the symptom monitoring and summarize the condition to end the follow-up process. However, if the user responds negatively, the bot will recommend that the user gently avoid cleaning the surgical area.\par
+              \qquad In this flow, the bot will focus on the user's oral hygiene. It will ask if the user can brush their teeth or rinse their mouth. If the user responds yes, the bot will then conclude the symptom monitoring and summarize the condition to end the follow-up process. However, if the user responds no, the bot will recommend that the user gently avoid cleaning the surgical area.\par
             \end{justify}        
           \end{figure}
-  
+      \subsection{Dialogflow Implementation}
+        \subsubsection{Setup and Configuration}
+          \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[width=.6\textwidth]{Image/dialogflow-intent.png}}
+            \caption{Dialogflow intents and its follow-up intents}\label{fig:dialogflow-intent}
+            \begin{justify}
+              \qquad The process of creating intents involves initially structuring them according to a predefined flow and then gradually expanding them by adding steps between each follow-up intent. Each follow-up intent will accept new parameters input from the user, linking them together until reaching the final intent in the flow. The entire follow-up process comprises 18 flows from start to finish. Each intent includes contexts for receiving and sending data between intents, a training phase for collecting expected user triggers, action and parameter sections for defining all parameters that the intent will accept from both the previous and current intents, including specifying the entity of each parameter. Finally, there's the response section, which outlines what the intent will reply with when triggered.\par
+            \end{justify}        
+          \end{figure}
+          \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[width=.6\textwidth]{Image/dialogflow-actionandparameter.png}}
+            \caption{Dialogflow action and parameter}\label{fig:dialogflow-actionandparameter}
+            \begin{justify}
+              \qquad The parameters used in our system include:\par
+              \begin{itemize}
+                \item can\_brush: Indicates whether the patient can brush their teeth.
+                \item bleed\_choice: Captures the user's choice regarding bleeding
+                \item pain\_level: Represents the level of pain experienced by the patient.
+                \item taken\_medication: Indicates whether the patient has taken pain reliever medication.
+                \item pain\_decrease: Indicates whether the user’s pain has decreased after taking the pain reliever medication.
+                \item swelling\_level: Represents the level of swelling experienced by the patient.
+                \item days: Captures the number of days since the procedure.
+                \item symptoms: Indicates whether the user's swelling is accompanied by pain.
+                \item can\_eat: Indicates whether the patient can eat normally.
+                \item eat\_soft\_food: Indicates whether the patient eats soft foods.
+                \item record\_id: Unique identifier for the patient's record.
+              \end{itemize}
+              \makeatletter
+                \qquad We primarily utilize basic entities provided by Dialogflow, such as @sys.any for yes/no responses and @sys.number for numerical values like pain scores and days since the procedure, as shown in \ref{fig:dialogflow-actionandparameter}. \par
+              \makeatother
+              \qquad Parameters need to be continuously passed along each follow-up intent until reaching the final intent of the flow to send the received user input data to fulfillment. This enables the fulfillment to determine what recommendations the user should receive and store that data in the database.\par
+            \end{justify}     
+          \end{figure}
+          \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[width=.6\textwidth]{Image/dialogflow-textresponse.png}}
+            \caption{Dialogflow Text Response}\label{fig:dialogflow-textresponse}       
+          \end{figure}
+          \begin{figure}[H]
+            \centering
+            \begin{minipage}{.5\textwidth}
+              \centering
+              \fbox{\includegraphics[width=.9\linewidth]{Image/dialogflow-quick reply.png}}
+            \end{minipage}%
+            \begin{minipage}{.5\textwidth}
+              \centering
+              \fbox{\includegraphics[width=.5\linewidth]{Image/line-quick reply.jpg}}
+            \end{minipage}%
+          
+            \caption{Line Quick Reply}\label{fig:quickreply}
+            \begin{justify}
+              \qquad In the response section of each intent, we utilize both text responses for sending standard messages and quick replies. Text responses are used for sending regular messages, while quick replies are selected to enhance the interaction between the user and follow-up features by providing easy-to-access options for responding to follow-up questions. This approach allows users to select their preferred response without the need for typing. However, during implementation, we encountered a limitation with the predefined quick-reply templates, which only allowed for a maximum of 10 choices. Since we required 11 choices, we had to incorporate custom payloads to customize the quick reply options and accommodate the desired number of choices.\par            \end{justify}
+          \end{figure}
+          \begin{figure}[H]
+            \centering
+            \fbox{\includegraphics[width=.6\textwidth]{Image/line-Carousel Card.jpg}}
+            \caption{Line carousal cars}\label{fig:line-Carousel Card}
+            \begin{justify}
+              \qquad Due to the limitation of Dialogflow not being able to initiate conversations on its own without a trigger phase, we have incorporated carousel cards to assist in triggering the follow-up conversation based on symptoms. These carousel cards are displayed every day at 10 AM or when a user adds a new case. The information on the carousel cards includes the operation name, the date the operation was added to the system, and a “Follow-Up” button. When the user clicks the “Follow Up” button, Dialogflow is triggered with the record ID of that specific case to initiate the symptom tracking process.\par
+            \end{justify}
+          \end{figure}
+        \subsubsection{Fulfillment}
+          \qquad Firstly, when the user clicks on the card in Line, it will send the record ID from the Dialogflow agent to the server’s function handleCheckStatus. The handleCheckStatus function checks the status of a user's post-operative recovery. It verifies the user's record ID and retrieves their surgical status from the database. If the status is "Done," it informs the user that the form has been completed. If the status is "Follow Up," it provides recommendations based on the user's previous scores. If the status is “Pending,” it prompts the user to provide information about bleeding severity through a quick reply interface. The flow then progresses until it is finished. \par
+          \qquad When the user finishes the flow, the Dialogflow agent will then send all the parameters provided by the user input to the server, which then goes to the handleRecommendation function. The handleRecommendation function processes user input related to post-operative care. It checks parameters like bleeding severity, pain level, swelling, dietary restrictions, medication status, and symptoms. Based on these inputs, it provides personalized recommendations for the user's recovery. For example, it advises on actions to control bleeding, manage pain, reduce swelling, follow dietary guidelines, and maintain oral hygiene post-surgery. It also updates the user's surgical status to either “Follow Up” or “Done” based on the user input if the user needs another follow-up within 24 hours.\par
+          \qquad Both functions are integral parts of a system designed to guide users through their post-operative recovery process and ensure optimal care based on their individual needs and progress. \par
+    \newpage
     \section{Web application Development}
       \subsection{Web Application Final Design}
         \subsubsection{Homepage}\
@@ -1701,26 +1768,9 @@ WWW & World Wide Web \\
           
             \caption{Homepage Web Application}\label{fig:WebAppHomepage}
             \begin{justify}
-              \qquad Figure \ref{fig:WebAppHomepage} represents the home page of our web application. On the left side is the home page for users who  haven't logged in, while on the right side is the home page for logged-in users.\par
-              \qquad The homepage consists of a brief description of our website and two primary buttons: “Start Chatting” and “Login by Line”.  The “Start Chatting” button redirects users to the question answering page, facilitating interaction with the chatbot for inquiries. “Login by Line” directs users to the Line login page, allowing them to log into the platform using their Line account credentials.\par
-              \qquad Once users logged in, the  "Login by Line" button is hidden,  and a follow-up button appears on the navigation bar. Additionally, the login button on the navigation bar changes to the user's username.\par
-            \end{justify}
-          \end{figure}
-        \subsubsection{Login Page}
-          \begin{figure}[H]
-            \centering
-            \begin{minipage}{.5\textwidth}
-              \centering
-              \fbox{\includegraphics[width=.9\linewidth]{Image/web-line login.png}}
-            \end{minipage}%
-            \begin{minipage}{.5\textwidth}
-              \centering
-              \fbox{\includegraphics[width=.9\linewidth]{Image/web-line login2.png}}
-            \end{minipage}%
-          
-            \caption{Line Login Web Application}\label{fig:WebAppLineLogin}
-            \begin{justify}
-              \qquad Figure \ref{fig:WebAppLineLogin}, is our login page. Our login page seamlessly integrates with Line, allowing users to log in using their Line account credentials. Upon clicking "Login by Line," users are directed to a page resembling the Line application. After entering their Line credentials and confirming, their account is linked to their Line account.\par
+              \qquad Figure \ref{fig:WebAppHomepage} represents the home page of our web application. On the left side is the home page for users who haven't logged in, while on the right side is the home page for logged-in users.\par
+              \qquad The homepage consists of a brief description of our website and three primary buttons for users who haven't logged in: “Start Chatting”, “Login by Line”, and "Add Line Official Bot". The “Start Chatting” button redirects users to the question answering page, facilitating interaction with the chatbot for inquiries. “Login by Line” directs users to the Line login page, allowing them to log into the platform using their Line account credentials. "Add Line Official Bot" redirects users to a QR page where they can add the official bot via the QR code.\par
+              \qquad Once users are logged in, the "Login by Line" button changes to the "Add Line Official Bot" button, and a follow-up button appears on the\par
             \end{justify}
           \end{figure}
         \subsubsection{FAQ Page}
@@ -1732,22 +1782,23 @@ WWW & World Wide Web \\
               \qquad Figure \ref{fig:WebAppFAQ} depicts the FAQ page. The FAQ pages for both logged-in and non-logged-in users have the same appearance and functionality. The only difference is that if the user is logged in, a "Follow Up" button will appear, allowing them to use the follow-up feature.\par
             \end{justify}        
           \end{figure}
-        \subsubsection{All Follow-Up Page}
-          \begin{figure}[H]
-            \centering
-            \fbox{\includegraphics[width=.6\textwidth]{Image/web-login_FollowUp.png}}
-            \caption{All Follow-Up Web Application}\label{fig:WebAppAllFollowUp}
-            \begin{justify}
-              \qquad Figure \ref{fig:WebAppAllFollowUp} represents the All Follow-up page. This page is only available for logged-in users. This page allows the user to see all follow up case they have had. Follow up chat can then be accessed when clicking on one of the case.\par
-            \end{justify}        
-          \end{figure}
         \subsubsection{Follow-Up Page}
           \begin{figure}[H]
             \centering
-            \fbox{\includegraphics[width=.6\textwidth]{Image/web-login_FollowUpChat.png}}
+              \centering
+              \fbox{\includegraphics[width=.45\linewidth]{Image/web-login_FollowUp.png}}
+            \begin{minipage}{.5\textwidth}
+              \centering
+              \fbox{\includegraphics[width=.9\linewidth]{Image/web-followup.png}}
+            \end{minipage}%
+            \begin{minipage}{.5\textwidth}
+              \centering
+              \fbox{\includegraphics[width=.9\linewidth]{Image/web-followup2.png}}
+            \end{minipage}%
+
             \caption{Follow-Up Web Application}\label{fig:WebAppFollowUp}
             \begin{justify}
-              \qquad Figure \ref{fig:WebAppFollowUp} represents the Follow-up page. This page is only available for logged-in users. Users can view their Follow-Up chat history. A new feature has been added for user convenience: a plus button, allowing users to easily add entries for tracking new follow-up cases, which when clicked, will direct users to the 'Add New Case' page. Additionally, We have removed the switch bar switch between  the FAQ and Follow-up features and placed them in the navigation bar instead, due to issues with fetching data when switching between features, causing the web page to freeze and not function smoothly.\par
+              \qquad Figure \ref{fig:WebAppFollowUp} represents the Follow-up page. This page is only available for logged-in users. A new feature has been added for user convenience: a plus button, allowing users to easily add entries for tracking new follow-up cases. When clicked, it will display a QR code scanner for scanning QR codes in order to add new cases. Additionally, the Follow-up feature has changed from a chat-like follow-up into a form for more convenience and easier use. Users can now fill in the form with relevant details, and upon submission, a recommendation will pop up based on the information provided. This streamlines the follow-up process and provides users with immediate guidance. Users can also click on a finished form to see the recommendation that was last given.\par
             \end{justify}        
           \end{figure}
         \subsubsection{Patient Info Page}
@@ -1756,8 +1807,9 @@ WWW & World Wide Web \\
             \fbox{\includegraphics[width=.6\textwidth]{Image/web-profile.png}}
             \caption{Patient Information Web Application}\label{fig:WebAppPatientInfo}
             \begin{justify}
-              \qquad Figure \ref{fig:WebAppPatientInfo} shows a patient information page. The user profile page can be accessed by clicking on the name and profile icon. The user profile page will display any relevant data regarding the user, including user’s name and user case history. Users are restricted from modifying any personal information since the account is linked to their Line Account.\par
-              \qquad Additionally, for user convenience, a plus button has been added to easily add new follow-up cases. By clicking this button, users will be directed to the 'Add New Case' page. Furthermore, a \textthai{'ติดตาม'} button has been introduced, allowing users to directly link to the chat for tracking the progress of the specific case.\par
+              \qquad Figure \ref{fig:WebAppPatientInfo} shows a patient information page. The user profile page can be accessed by clicking on the name and profile icon. The user profile page will display any relevant data regarding the user, including the user’s name and user case history. Users are restricted from modifying any personal information since the account is linked to their Line Account.\par
+              \qquad Additionally, for user convenience, a plus button has been added to easily add new follow-up cases. By clicking this button, users will be directed to the 'Add New Case' page. Furthermore, a \textthai{'ติดตาม'}  button has been introduced, allowing users to directly link to the chat for tracking the progress of the specific case.\par
+              \qquad Moreover, a pie chart has been incorporated to provide users with a visual representation of the portion of all cases with their respective statuses (pending, follow-up, done). This allows users to quickly grasp the distribution of their cases and their current statuses, enhancing their understanding of their overall case history.\par
             \end{justify}       
           \end{figure}
         \subsubsection{Add Case Page}
@@ -1765,19 +1817,117 @@ WWW & World Wide Web \\
             \centering
             \begin{minipage}{.5\textwidth}
               \centering
-              \fbox{\includegraphics[width=.9\linewidth]{Image/web-addcase.png}}
+              \fbox{\includegraphics[width=.9\linewidth]{Image/web-addCase.png}}
             \end{minipage}%
             \begin{minipage}{.5\textwidth}
               \centering
-              \fbox{\includegraphics[width=.9\linewidth]{Image/web-addcase1.png}}
+              \fbox{\includegraphics[width=.9\linewidth]{Image/web-addCase2.png}}
             \end{minipage}%
           
             \caption{Add Case Web Application}\label{fig:WebAppAddCase}
             \begin{justify}
-              \qquad For adding a new follow-up case, the pink plus button allows users to click on it, leading them to a page where they can select the operations they have performed. Users can only select one operation per new case. After the user confirms their selection, the new case will be added, along with its status and the date it was added. The newly added case can be accessed by users, linking them directly to the follow-up chat associated with that specific case.
-              This page can be accessed in two ways: By navigating to the 'Follow Up' page and clicking on the pink plus button within that page. The other way is users can access it through the pink plus button on the 'Profile' page.\par
+              \qquad To add a new follow-up case, the dark blue plus button, located in the Follow-Up page, Follow-Up form page, and Patient Information page, allows users to click on it, leading them to a QR code scanner popup. Users should scan the QR code to add a new follow-up case. Once the user scans the QR code, they will be redirected to the 'Add New Case' page where they can select the operations they have performed. Users can only select one operation per new case. After the user confirms their selection, the new case will be added, along with its status and the date it was added. The newly added case can be accessed by users, linking them directly to the follow-up chat associated with that specific case.\par
+              \qquad This page can be accessed in two ways: By navigating to the 'Follow Up' page and clicking on the pink plus button within that page. The other way is users can access it through the pink plus button on the 'Profile' page.\par
             \end{justify}
           \end{figure}
+      \subsection{Line Official Chatbot Results}
+          \subsubsection{Line FAQ}
+            \begin{figure}[H]
+              \centering
+              \fbox{\includegraphics[width=.6\textwidth]{Image/line-faq.jpg}}
+              \caption{Line Question Answering}\label{fig:lineFAQ}
+              \begin{justify}
+                \qquad The Line Official chatbot features an intuitive question answering system that enables users to inquire about dental procedures. Users can input any question related to dental operations, specifically focusing on tooth extraction, wisdom tooth removal, gum surgery, and root canal surgery. In case the question does not clearly specify the type of dental procedure, the chatbot prompts the user to provide clarification, reminding them to specify the surgical operation in their query, "\textthai{ไม่ได้ระบุชื่อชัดเจนจะแจ้งเตือนมาว่า ขออภัย โปรดระบุศัลยกรรมในคำถาม (ถอนฟัน, ผ่าฟันคุด, ผ่าตัดเหงือก, ผ่าตัดรากฟันเทียม)}"\par
+              \end{justify}
+            \end{figure}
+          \subsubsection{Line Follow-Up}
+            \begin{figure}[H]
+              \centering
+              \begin{minipage}{0.3\textwidth}
+                \centering
+                \fbox{\includegraphics[width=.9\linewidth]{Image/line-followup1.jpg}}
+              \end{minipage}%
+              \hfill
+              \begin{minipage}{0.3\textwidth}
+                \centering
+                \fbox{\includegraphics[width=.9\linewidth]{Image/line-followup2.jpg}}
+              \end{minipage}%
+              \hfill
+              \begin{minipage}{0.3\textwidth}
+                \centering
+                \fbox{\includegraphics[width=.9\linewidth]{Image/line-followup3.jpg}}
+              \end{minipage}
+              \caption{Line Follow-Up}\label{fig:lineFollowUp}
+              \begin{justify}
+                \qquad The Line Official chatbot's follow-up feature is designed to facilitate symptom monitoring by sending daily follow-up notifications at 10 a.m. Users will receive cards for various surgical procedures they have added to the system. From these, users select the operation they wish to follow up on. The chatbot then sends follow-up questions prompting them to perform follow-up procedures for their patients, allowing users to respond easily using quick reply buttons. Once the follow-up questions are completed, the chatbot provides recommendations based on the user's responses. Moreover, whenever a new case is added to the system, an immediate notification is sent to the user's Line account to indicate the addition of the new case.\par
+                \qquad If follow-up monitoring is necessary within the next 24 hours, the operation card remains visible. However, if further follow-up monitoring is unnecessary, the card disappears, and the status is changed to "done." This system ensures efficient symptom tracking and management for users\par
+              \end{justify}
+            \end{figure}
+    \section{User evaluation}
+      \subsection{Question Answering Feature Evaluation}
+        \qquad In evaluating the Question Answering feature, we choose to conduct user evaluations through scoring on satisfaction with the chatbot usage, answer clarity, responsiveness, accuracy of the received answers, reduction in time for searching answers related to oral surgery, and additional suggestions for chatbot improvement and development. Testers will be encouraged to ask any number of questions related to oral surgery. They can ask these questions via the Line official bot or the FAQ feature on the website and then evaluate the experiment using a form afterward.\par
+        \begin{figure}[H]
+          \centering
+          \begin{minipage}{0.3\textwidth}
+            \centering
+            \fbox{\includegraphics[width=.9\linewidth]{Image/FAQform1.png}}
+          \end{minipage}
+          \begin{minipage}{0.3\textwidth}
+            \centering
+            \fbox{\includegraphics[width=.9\linewidth]{Image/FAQform2.png}}
+          \end{minipage}\\[1em] % Add vertical space between the top and bottom rows
+          \begin{minipage}{0.3\textwidth}
+            \centering
+            \fbox{\includegraphics[width=.9\linewidth]{Image/FAQform3.png}}
+          \end{minipage}
+          \begin{minipage}{0.3\textwidth}
+            \centering
+            \fbox{\includegraphics[width=.9\linewidth]{Image/FAQform4.png}}
+          \end{minipage}
+          \caption{FAQ Feature Evaluation Survey}\label{fig:FAQform}
+          \begin{justify}
+            \qquad Figure \ref{fig:FAQform} provides the form used to send to users for testing the Question Answering chatbot feature. It includes an explanation of the usage process, a QR code for accessing the chatbot within the LINE application, a set of sample questions consisting of 10 questions for each oral surgery procedure, and finally, a section for users to score various aspects.\par
+          \end{justify}
+        \end{figure}     
+      \subsection{Follow-Up Feature Evaluation}
+        \begin{figure}[H]
+          \centering
+          \begin{minipage}{0.3\textwidth}
+            \centering
+            \fbox{\includegraphics[width=.9\linewidth]{Image/form-medstaff.png}}
+          \end{minipage}
+          \begin{minipage}{0.3\textwidth}
+            \centering
+            \fbox{\includegraphics[width=.9\linewidth]{Image/form-normaluser.png}}
+          \end{minipage}
+          \caption{Scoring Criteria for Medical staff and Regular user}\label{fig:Medandnormalquestion}
+            \begin{justify}
+              \qquad In evaluating the follow-up feature, we choose two main groups of testers: regular users and medical staff. The evaluation criteria for both groups will differ. In Figure \ref{fig:Medandnormalquestion}, different questions will be shown for medical staff and regular users. For regular users, the assessment will focus on whether using the Follow-Up feature is more convenient than traditional phone follow-ups and how easy it is to understand this feature in the role of a patient receiving follow-up care. For medical staff, the assessment will focus on how much it helps reduce the workload involved in patient follow-up. We have chosen to have testers experiment with the feature directly face-to-face with us because we need to explain the usage process of the follow-up feature.\par            
+            \end{justify}
+        \end{figure}
+        \begin{figure}[H]
+          \centering
+          \begin{minipage}{0.3\textwidth}
+            \centering
+            \fbox{\includegraphics[width=.9\linewidth]{Image/followupform1.png}}
+          \end{minipage}
+          \begin{minipage}{0.3\textwidth}
+            \centering
+            \fbox{\includegraphics[width=.9\linewidth]{Image/followupform2.png}}
+          \end{minipage}
+          \caption{Follow-up Feature Evaluation Survey}\label{fig:followupform}
+            \begin{justify}
+              \qquad The testing process will begin by instructing testers to add the Line official bot as a friend on the Line application. Then, they will be prompted to scan a QR code to add a follow-up case to the system. Subsequently, notifications of post-surgery follow-up will be sent through the Line application immediately after the testers add the case to the system. Testers will then answer post-surgery follow-up questions until completion before proceeding to answer the evaluation questions mentioned above.
+              \par            
+            \end{justify}
+        \end{figure}
+      \subsection{Evaluation Result}
+        \qquad The CUQ (Chatbot Usability Questionnaire) score was calculated based on responses provided by participants. Each response was assigned a numerical value on a scale from 1 (Strongly Disagree) to 5 (Strongly Agree). The formula for CUQ Score Calculation is given by:
+        \[
+        \text{CUQ} = \frac{\text{total score}}{\text{total number of questions}}
+        \]
+        \qquad The CUQ score represents the overall usability of the chatbot, providing a comprehensive measure of participants' perceptions of both FAQ feature and Follow-Up feature.\par
+          
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

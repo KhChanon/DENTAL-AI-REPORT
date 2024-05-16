@@ -483,14 +483,19 @@
    \fi
    %\makebox {\disstitletwo} \par
    %\makebox {\disstitlethree} \par \makebox {\disstitlefour} \par
-   \vfill \dissauthor \qquad \dissauthorID \qquad \dissauthorEMAIL\par 
+   \vfill \dissauthor \qquad \dissauthorID \par 
    \ifx \titleempty\dissauthortwo \else  
-   \makebox{\dissauthortwo \qquad \dissauthortwoID \qquad \dissauthortwoEMAIL} \par
+   \makebox{\dissauthortwo \qquad \dissauthortwoID} \par
    \fi
    \ifx \titleempty\dissauthorthree \else  
-   \makebox{\dissauthorthree \qquad \dissauthorthreeID \qquad \dissauthorthreeEMAIL} \par
+   \makebox{\dissauthorthree \qquad \dissauthorthreeID} \par
    \fi
-   \vfill “I have read this report and approved its content.” \\ \par}
+   \vfill A Project Submitted in Partial Fulfillment 
+   of the Requirements for 
+   the Degree of Bachelor of Engineering (Computer Engineering) 
+   Faculty of Engineering 
+   King Mongkut’s University of Technology Thonburi 
+   2023 \\ \par}
  \emptyline 1
 \begin{center}
 
