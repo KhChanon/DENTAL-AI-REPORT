@@ -23,6 +23,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % First line of title
 \def\disstitleone{DENTAL AI CHATBOT FOR ORAL QUESTION ANSWERING AND POST-SURGERY CARE}   
+\def\thaidisstitleone{\textthai{แชทบอท AI สำหรับการตอบคำถามเกี่ยวกับการผ่าตัดในช่องปากและการดูแลหลังผ่าตัด}}
 % Your first name and lastname
 \def\dissauthor{MR. CHANON KHANIJOH}   % 1st member
 %%% Put other group member names here ..
@@ -33,11 +34,16 @@
 \def\dissauthorthreeID{63070503436}   
 \def\dissauthorEMAIL{chanon.kha@mail.kmutt.ac.th}              % Author of dissertation
 \def\dissauthortwoEMAIL{pechdanai.sp@mail.kmutt.ac.th}              % Author of dissertation
-\def\dissauthorthreeEMAIL{fasai.sae@mail.kmutt.ac.th}  
+\def\dissauthorthreeEMAIL{fasai.sae@mail.kmutt.ac.th} 
+
+\def\thaidissauthor{\textthai{นายชานนท์ คาร์นิยอร์}}   % 1st member
+\def\thaidissauthortwo{\textthai{นายเพชรดนัย แซ่พง}}  % 2nd member (optional)
+\def\thaidissauthorthree{\textthai{นางสาวฟ้าใส แซ่แต้}}  % 3rd member (optional)
 
 
 % The degree that you're persuing..
 \def\dissdegree{Bachelor of Engineering} % Name of the degree
+\def\thaidissdegree{\textthai{วิศวกรรมศาสตรบัณฑิต}} % Name of the degree
 \def\dissdegreeabrev{B.Eng} % Abbreviation of the degree
 \def\dissyear{2023}                   % Year of submission
 \def\thaidissyear{2566}               % Year of submission (B.E.)
@@ -46,18 +52,24 @@
 % Your project and independent study committee..
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\dissadvisor{Dr. Unchalisa Taetragool , Ph.D.}  % Advisor
+\def\thaidissadvisor{\textthai{ดร.อัญชลิสา แต้ตระกูล}}
 %%% Leave it empty if you have no Co-advisor
 \def\disscoadvisor{Dr. Vorapat Trachoo, D.D.S., M.D.}  % Co-advisor
+\def\thaidisscoadvisor{\textthai{ดร.วรภัทร ตราชู}}
 %%% Leave it empty if you have no Co-advisor 2
 \def\disscoadvisortwo{Dr. Kritsasith Warin, D.D.S.}  % Co-advisor 2
+\def\thaidisscoadvisortwo{\textthai{ดร.กฤษสิทธิ์ วารินทร์}}
 
 \def\worktype{Project} %%  Project or Independent study
 \def\disscredit{3}   %% 3 credits or 6 credits
 
 
 \def\fieldofstudy{Computer Engineering} 
-\def\department{Computer Engineering} 
+\def\thaifieldofstudy{\textthai{วิศวกรรมคอมพิวเตอร์}}
+\def\department{Computer Engineering}
+\def\thaidepartment{\textthai{วิศวกรรมคอมพิวเตอร์}}
 \def\faculty{Engineering}
+\def\thaifaculty{\textthai{วิศวกรรมศาสตร์}}
 
 \def\appendixnames{Appendix} %%% Appendices or Appendix
 
@@ -113,6 +125,23 @@
 \maketitlepage 
 \makesignaturepage 
 
+
+\abstract{
+  \qquad This project addresses the challenges faced by individuals seeking oral healthcare by developing an AI-powered chatbot for oral surgery inquiries and post-operation follow-ups. With a growing demand for medical attention and a scarcity of healthcare providers, patients often struggle to access timely and accurate information, leading to unnecessary visits and financial strain. Moreover, healthcare providers face immense workloads, hindering their ability to address patient concerns effectively. Motivated by these issues, our project aims to develop a chatbot utilizing advanced natural language processing and machine learning techniques to provide accurate responses to frequently asked questions related to oral surgeries. Additionally, the chatbot will facilitate post-surgery follow-ups, reducing the burden on healthcare professionals and improving the overall patient experience. The scope encompasses the development of a fully functional chatbot integrated into a web application and Line chatbot, focusing on four specific surgical operations: tooth extraction, wisdom tooth removal, periodontal surgery, and dental implant surgery. Through extensive research, machine learning model development, and usability testing, this project attempts to enhance access to oral healthcare information and streamline patient-provider interactions. The results of this project indicate that the FAQ component effectively addresses oral surgery questions at a satisfactory level, while the follow-up feature significantly reduces nurse workload. \par
+  
+  \textbf{Keywords:} Oral Surgery, Frequently Asked Question, Diagnose, Follow-up, Artificial Intelligence, Chatbot, Machine Learning, Natural Language Processing
+}
+\thaiabstract{
+  \qquad \textthai{โครงการนี้เป็นโครงการที่พัฒนาขึ้นเพื่อแก้ไขปัญหาที่ผู้ป่วยต้องเผชิญในการพบทันตแพทย์ โดยการพัฒนาแชทบอทนี้ได้ประยุกต์ใช้ปัญญาประดิษฐ์สำหรับการตอบคำถามเกี่ยวกับการผ่าตัดทางช่องปากและการติดตามอาการหลังผ่าตัด ด้วยความต้องการที่เพิ่มขึ้นสำหรับการรักษาและการขาดแคลนทรัพยากรทางการแพทย์ ผู้ป่วยจึงมักประสบปัญหาในการเข้าถึงข้อมูลที่แม่นยำและทันท่วงที ซึ่งนำไปสู่การไปพบแพทย์โดยไม่จำเป็นและทำให้เกิดภาระทางการเงินเพิ่มขึ้น นอกจากนี้ ทันตแพทย์ต้องเผชิญกับภาระงานจำนวนมาก ซึ่งเป็นอุปสรรคต่อการดูแลผู้ป่วยอย่างมีประสิทธิภาพ โดยที่โครงการของเรามุ่งเน้นการพัฒนาแชทบอทโดยใช้เทคนิคการการประมวลผลภาษาธรรม ชาติ และเทคโนโลยีแมชชีนเลิร์นนิ่งเพื่อให้คำตอบที่แม่นยำสำหรับคำถามที่พบบ่อยที่เกี่ยวข้องกับการผ่าตัดในช่องปาก นอกจากนี้ แชทบอทยังช่วยในการติดตามอาการหลังผ่าตัดเพื่อลดภาระงานของบุคลากรทางการแพทย์ โครงการนี้เน้นการพัฒนาแชทบอทที่มีประสิทธิภาพติดตั้งในเว็บแอปพลิเคชันและไลน์แชทบอท โดยมุ่งเน้นไปที่การผ่าตัดเฉพาะสี่หัตถการ ได้แก่ การถอนฟัน การถอนฟันคุด การผ่าตัดปริทันต์ และการผ่าตัดรากฟันเทียม โดยมีเป้าหมายที่จะเพิ่มการเข้าถึงของข้อมูลด้านการรักษาทางช่องปาก และลดภาระในด้านการติดตามอาการหลังผ่าตัดของบุคลากรทางการแพทย์ ผลลัพธ์ของโครงการนี้แสดงให้เห็นว่าแชทบอทสามารถตอบคำเกี่ยวข้องกับการผ่าตัดในช่องปาก ได้ในระดับที่น่าพอใจ และสามารถลดภาระงานของบุคลากรทางการแพทย์ ในการการติดตามอาการหลังผ่าตัดได้อย่างมีนัยสำคัญ} \par
+  
+  \textbf{\textthai{คําสําคัญ:}} \textthai{ศัลยศาสตร์ช่องปาก, ทันตกรรม, คำถามที่ถามบ่อย, การติดตามหลังการผ่าตัด, ปัญญาประดิษฐ์, แชทบอท, เทคโนโลยีแมชชีนเลิร์นนิ่ง, การประมวลผลภาษาธรรมชาติ}
+}
+\preface{
+  \qquad The authors would like to express our heartful gratitude to Dr. Unchalisa Taetragoo, the project advisor, whose unwavering support and guidance have been invaluable throughout this project journey. Her expertise and mentorship have played a pivotal role in shaping this research. \par
+  \qquad A warm thank you to our co-advisors, Dr. Vorapat Trachoo and Dr. Kritsasith Warin, for their insightful feedback, constructive criticism, and continuous encouragement. Their collaborations have truly made a difference. We also extend our appreciation to the dental professionals and medical staff affiliated with the Faculty of Dentistry who are acknowledged with gratitude for their various contributions in assisting us without any hesitation. \par
+  \qquad Additionally, would like to thank you for the various diverse learning resources from dental clinic, including ChatGPT and Stack Overflow, that enabled us to successfully undertake this project. Without these resources, our achievement would not have been possible.\par
+  \qquad Lastly, we would like to say thank you to everyone including our supportive family, friends, and everyone who has contributed in any capacity to this project. All the support and encouragement have been integral to its successful completion. \par
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%% ToC, List of figures/tables %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -176,8 +205,6 @@ WWW & World Wide Web \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%% Main body %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \chapter{Introduction}
   \section{Keywords}
     \qquad Keywords: Oral Surgery, Frequently Asked Question, Diagnose, Follow-up, Artificial Intelligence, Chatbot, Machine Learning, Natural Language Processing
