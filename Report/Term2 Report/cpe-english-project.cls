@@ -526,13 +526,13 @@
 %%%%%%% comittee %%%%%%%%%%%%%%%%%%
 \ifx \titleempty\discommiteetwo \else
   \dotrule{3.6in} & \ Committee Member\\
-  (\discommitee) & \\
+  (\discommiteetwo) & \\
   & \\ \\ \\
 \fi
 %%%%%%% comittee %%%%%%%%%%%%%%%%%%
-\ifx \titleempty\discommitee \else
+\ifx \titleempty\discommiteethree \else
   \dotrule{3.6in} & \ Committee Member\\
-  (\discommitee) & \\
+  (\discommiteethree) & \\
   & \\ \\ \\
 \fi
 
